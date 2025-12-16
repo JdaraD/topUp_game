@@ -20,15 +20,15 @@
                 <img src="{{ asset('image/bag.png') }}" alt="" class="h-4.5 w-4.5">
                 <p class="text-sm font-medium text-white">Topup</p>
             </div>
-            <div class="flex items-center gap-2">
+            <div class="flex items-center gap-2 hover:border-b border-yellow-600/80">
                 <img src="{{ asset('image/tk.png') }}" alt="" class="h-4.5 w-4.5">
                 <p class="text-sm font-medium text-white">Cek Transaksi</p>
             </div>
-            <div class="flex items-center gap-2">
+            <div class="flex items-center gap-2 hover:border-b border-yellow-600/80">
                 <img src="{{ asset('image/ld.png') }}" alt="" class="h-4.5 w-4.5">
                 <p class="text-sm font-medium text-white">Leaderboard</p>
             </div>
-            <div class="flex items-center gap-2">
+            <div class="flex items-center gap-2 hover:border-b border-yellow-600/80">
                 <img src="{{ asset('image/tb.png') }}" alt="" class="h-4.5 w-4.5">
                 <p class="text-sm font-medium text-white">Kalkulator</p>
             </div>
