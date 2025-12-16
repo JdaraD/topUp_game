@@ -3,7 +3,7 @@
         <img src="{{ asset('image/jd.png') }}" alt="" class="h-full py-0.5 w-auto">
         <div name="search-bar" class="flex grow bg-[#52595d] w-263.75 h-9 rounded-lg border border-white/10 shadow-amber-50 items-center px-2 hover:cursor-text gap-2">
             <x-jam-search class="h-5 fill-white/60" />
-            <input type="text" class="w-full text-white border-0 focus:outline-none focus:ring-0 font-sans" placeholder="Cari Game atau Voucher">
+            <input type="text" class="w-full text-white border-0 focus:outline-none focus:ring-0" placeholder="Cari Game atau Voucher">
         </div>
         <div class="flex flex-none bg-transparent h-9 w-26 items-center rounded-md border border-white/20 px-2 gap-1">
             <div class="flex">
@@ -16,10 +16,23 @@
     </div>
     <div class="flex justify-between items-center w-[82%] h-10">
         <div class="flex order-1 gap-2 bg-(image)">
-            <p>test1</p>
-            <p>test2</p>
-            <p>test3</p>
-            <p>test4</p>
+            <div class="flex items-center gap-2 hover:border-b border-yellow-600/80">
+                <img src="{{ asset('image/bag.png') }}" alt="" class="h-4.5 w-4.5">
+                <p class="text-sm font-medium text-white">Topup</p>
+            </div>
+            <div class="flex items-center gap-2">
+                <img src="{{ asset('image/tk.png') }}" alt="" class="h-4.5 w-4.5">
+                <p class="text-sm font-medium text-white">Cek Transaksi</p>
+            </div>
+            <div class="flex items-center gap-2">
+                <img src="{{ asset('image/ld.png') }}" alt="" class="h-4.5 w-4.5">
+                <p class="text-sm font-medium text-white">Leaderboard</p>
+            </div>
+            <div class="flex items-center gap-2">
+                <img src="{{ asset('image/tb.png') }}" alt="" class="h-4.5 w-4.5">
+                <p class="text-sm font-medium text-white">Kalkulator</p>
+            </div>
+            
         </div>
         <div class="flex order-2">
             <p>test</p>

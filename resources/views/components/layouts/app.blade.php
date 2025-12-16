@@ -12,7 +12,7 @@
     @livewireStyles
     @vite('resources/css/app.css')
 </head>
-<body>
+<body class="font-sans">
     @livewireScripts
     <div class="relative z-50">
         @if (!request()->routeIs('filament.admin.auth.login'))
