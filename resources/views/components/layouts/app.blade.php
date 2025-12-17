@@ -12,24 +12,21 @@
     @livewireStyles
     @vite('resources/css/app.css')
 </head>
-<body class="font-sans">
+<body class="flex flex-col min-h-screen font-sans">
     @livewireScripts
-    <div class="relative z-50">
-        @if (!request()->routeIs('filament.admin.auth.login'))
-            @livewire('layouts.header') <!-- Menampilkan komponen header -->
-            {{-- @livewire('navbar') <!-- Menampilkan komponen navbar --> --}}
-        @endif
-    </div>
 
-    <div class="relative z-10">
+    @if (!request()->routeIs('filament.admin.auth.login'))
+        @livewire('layouts.header') <!-- Menampilkan komponen header -->
+        {{-- @livewire('navbar') <!-- Menampilkan komponen navbar --> --}}
+    @endif
+
+    {{-- <main class="grow"> --}}
         {{ $slot }}
-    </div>
+    {{-- </main> --}}
 
-    <div>
-        @if (!request()->routeIs('filament.admin.auth.login'))
-            @livewire('layouts.footer')
-        @endif
-    </div>
+    @if (!request()->routeIs('filament.admin.auth.login'))
+        @livewire('layouts.footer')
+    @endif
 
     @yield('content')
 
