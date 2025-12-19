@@ -9,3 +9,16 @@
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
+
+.swiper-button-next,
+.swiper-button-prev {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgb(160, 159, 159, 0.5) ;
+    border-radius: 100%;
+    padding: 12px 12px 12px 12px;
+    color: rgb(253, 253, 253, 0.5) !important;
+}

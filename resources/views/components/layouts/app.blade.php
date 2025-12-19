@@ -6,11 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{ session('title', 'Page Title') }}</title>
 
-    @livewireStyles
+    {{-- @livewireStyles --}}
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-        <script src="{{ mix('js/app.js') }}" defer></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
     @livewireStyles
-    @vite('resources/css/app.css')
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    {{-- @vite('resources/css/app.css') --}}
 </head>
 <body class="flex flex-col min-h-screen font-sans">
     {{-- @livewireScripts --}}
