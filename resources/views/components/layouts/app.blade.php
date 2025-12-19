@@ -13,7 +13,7 @@
     @vite('resources/css/app.css')
 </head>
 <body class="flex flex-col min-h-screen font-sans">
-    @livewireScripts
+    {{-- @livewireScripts --}}
 
     @if (!request()->routeIs('filament.admin.auth.login'))
         @livewire('layouts.header') <!-- Menampilkan komponen header -->
@@ -30,6 +30,7 @@
 
     @yield('content')
 
+    @vite('resources/js/home.js')
     @livewireScripts
 </body>
 </html>
