@@ -10,7 +10,8 @@
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
     @livewireStyles
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/js/home.js'])
+
     {{-- @vite('resources/css/app.css') --}}
 </head>
 <body class="flex flex-col bg-[#262727] min-h-screen font-sans">

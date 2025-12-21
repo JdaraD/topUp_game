@@ -39,13 +39,26 @@
             <li class="flex rounded-md bg-[#373b3f] py-2 px-2 active:bg-[#a58c6f] text-white text-xs cursor-pointer">Entertaiment</li>
             <li class="flex rounded-md bg-[#373b3f] py-2 px-2 active:bg-[#a58c6f] text-white text-xs cursor-pointer">Tagihan</li>
         </div>
-        <div class="grid grid-cols-6 gap-6">
+        <div class="grid grid-cols-6 h-auto items-center gap-6 w-full">
             @for ($i = 0; $i < 12; $i++)
-                <div class="flex h-70.5 w-47 rounded-md hover:border hover:border-[#a58c6f]/90 transition delay-50 duration-100 ease-in hover:scale-105 cursor-pointer">
+                <div class="relative group h-70.5 w-47 rounded-md hover:border-2 hover:border-[#a58c6f]/90 transition delay-50 duration-100 ease-in hover:scale-105 cursor-pointer">
                     <img src="{{ asset('image/pubg.jpg') }}" alt="" class="w-full h-full object-cover rounded-md">
+
+                    <div class="absolute group-hover:opacity-100 transition-opacity duration-300 top-0 left-0 right-0 w-full h-full opacity-0 rounded-md bg-gray-900/60">
+                        <div class="absolute flex flex-col gap-0.5 bottom-2 left-3 right-0 py-1">
+                            <p class="text-white text-md">PUBG Mobile</p>
+                            <p class="text-white text-xs">Tencent Games</p>
+                        </div>
+
+                    </div>
                 </div>
                 
             @endfor
+            <div class="col-span-full flex w-full h-full justify-center items-center">
+                <button wire:click="" id="btnMore" class="border border-white/20 bg-[#262727] py-2 px-2 rounded-md hover:bg-amber-50/10 transition delay-75 cursor-pointer">
+                    <p class="text-white text-xs">Tampilkan Lainya....</p>
+                </button>
+            </div>
 
         </div>
     </div>
