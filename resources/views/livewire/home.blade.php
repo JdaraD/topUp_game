@@ -28,8 +28,8 @@
     <div class="">
         <p class="h-full">populer game</p>
     </div>
-    <div class="felex flex-col justify-center items-center gap-4 w-[80%] h-auto">
-        <ul class="flex gap-4">
+    <div class="flex flex-col justify-center gap-8 w-[80%] h-auto">
+        <div class="flex gap-4">
             <li class="flex rounded-md bg-[#373b3f] py-2 px-2 active:bg-[#a58c6f] text-white text-xs cursor-pointer">Top Up Games</li>
             <li class="flex rounded-md bg-[#373b3f] py-2 px-2 active:bg-[#a58c6f] text-white text-xs cursor-pointer">Joki MLBB</li>
             <li class="flex rounded-md bg-[#373b3f] py-2 px-2 active:bg-[#a58c6f] text-white text-xs cursor-pointer">Joki HOK</li>
@@ -38,8 +38,14 @@
             <li class="flex rounded-md bg-[#373b3f] py-2 px-2 active:bg-[#a58c6f] text-white text-xs cursor-pointer">Voucher</li>
             <li class="flex rounded-md bg-[#373b3f] py-2 px-2 active:bg-[#a58c6f] text-white text-xs cursor-pointer">Entertaiment</li>
             <li class="flex rounded-md bg-[#373b3f] py-2 px-2 active:bg-[#a58c6f] text-white text-xs cursor-pointer">Tagihan</li>
-        </ul>
-        <div>
+        </div>
+        <div class="grid grid-cols-6 gap-6">
+            @for ($i = 0; $i < 12; $i++)
+                <div class="flex h-70.5 w-47 rounded-md hover:border hover:border-[#a58c6f]/90 transition delay-50 duration-100 ease-in hover:scale-105 cursor-pointer">
+                    <img src="{{ asset('image/pubg.jpg') }}" alt="" class="w-full h-full object-cover rounded-md">
+                </div>
+                
+            @endfor
 
         </div>
     </div>
