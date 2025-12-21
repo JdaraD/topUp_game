@@ -13,7 +13,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     {{-- @vite('resources/css/app.css') --}}
 </head>
-<body class="flex flex-col min-h-screen font-sans">
+<body class="flex flex-col bg-[#262727] min-h-screen font-sans">
     {{-- @livewireScripts --}}
 
     @if (!request()->routeIs('filament.admin.auth.login'))
