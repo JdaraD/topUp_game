@@ -62,8 +62,13 @@
 
         </div>
     </div>
-    <div class="">
-        <p class="h-full">container slider iklan</p>
+    <div class="flex w-full h-70">
+        @if (file_exists(public_path('image/bgS1.png')))
+            <img src="{{ asset('image/bgS.png') }}" alt="" class="w-full h-full object-cover">  
+            
+        @else
+            <div class="w-full h-full animate-pulse bg-gray-200/20"></div>
+        @endif
     </div>
 
 </div>

@@ -1,4 +1,4 @@
-<div class="flex flex-col py-12 items-center justify-center bottom-0 gap-12 bg-[#212121] w-full h-auto">
+<div class="flex flex-col py-12 items-center justify-center bottom-0 gap-12 bg-[#262727] w-full h-auto">
     <div class="flex flex-col w-[80%]">
         <div>
             <img src="{{ asset('image/jd.png') }}" alt="" class="h-14 py-0.5 w-14">
