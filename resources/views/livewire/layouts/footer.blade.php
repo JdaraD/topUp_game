@@ -6,7 +6,7 @@
         </div>
         <div class="flex gap-8">
             <div class="flex flex-col w-[40%] gap-4">
-                <p class="text-white text-justify">OURA STORE adalah tempat top up games yang aman, murah dan terpercaya. Proses cepat 1-3 Detik. Open 24 jam. Payment terlengkap. Jika ada kendala silahkan klik logo CS pada kanan bawah di website ini.</p>
+                <p class="text-white text-justify">J Gaming STORE adalah tempat top up games yang aman, murah dan terpercaya. Proses cepat 1-3 Detik. Open 24 jam. Payment terlengkap. Jika ada kendala silahkan klik logo CS pada kanan bawah di website ini.</p>
                 <div class="flex gap-2">
                     <a href="#">
                         <img src="{{ asset('image/ig.png') }}" alt="" class="h-10 w-10">
