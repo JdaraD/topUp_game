@@ -1,4 +1,4 @@
-<div class="flex relative z-50 flex-col items-center w-full bg-[#222222]">
+<div id="header" class="flex fixed z-50 flex-col items-center w-full bg-[#222222]/70 backdrop-blur-md transition-all duration-300 ease-out">
     <div class="flex w-[82%] h-16 justify-center items-center gap-4 mb-1">
         <img src="{{ asset('image/jd.png') }}" alt="" class="h-full py-0.5 w-auto">
         <div name="search-bar" class="flex grow bg-[#52595d] w-263.75 h-9 rounded-lg border border-white/10 shadow-amber-50 items-center px-2 hover:cursor-text gap-2">
@@ -47,3 +47,20 @@
         </div>
     </div>
 </div>
+
+{{-- <script>
+    const header = document.getElementById('header');
+
+    window.addEventListener("scroll", () => {
+
+        if (window.scrollY > 20) {
+            header.classList.add('fixed', 'top-0', 'left-0', 'w-full', 'bg-[#222222]/70', 'shadow-md');
+            header.classList.remove('relative');
+        } else {
+            header.classList.remove('fixed', 'top-0', 'left-0', 'w-full', 'bg-[#222222]/70', 'shadow-md');
+            header.classList.add('relative');
+        }
+
+    })
+
+</script> --}}

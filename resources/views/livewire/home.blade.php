@@ -1,7 +1,7 @@
-<div class="flex flex-col grow gap-4 justify-center items-center h-full select-none">
+<div class="flex flex-col grow gap-4 justify-center items-center h-full pt-27.25 select-none">
     <div class="flex justify-center items-center bg-blue-800 h-138.5 w-full">
         <img src="{{ asset('image/bg.gif') }}" alt="" class="w-full h-full">
-        <div class="flex flex-col gap-1 absolute justify-center items-center h-[64%] w-[80%] rounded-2xl z-60">
+        <div class="flex flex-col gap-1 absolute justify-center items-center h-[64%] w-[80%] rounded-2xl z-30">
             @if(file_exists(public_path('image/bg1.gif'))) 
                 <div class="swiper w-full h-full border border-white/20 rounded-2xl">
                     <div class="swiper-wrapper">
@@ -63,7 +63,7 @@
         </div>
     </div>
     <div class="flex w-full h-70">
-        @if (file_exists(public_path('image/bgS1.png')))
+        @if (file_exists(public_path('image/bgS.png')))
             <img src="{{ asset('image/bgS.png') }}" alt="" class="w-full h-full object-cover">  
             
         @else
