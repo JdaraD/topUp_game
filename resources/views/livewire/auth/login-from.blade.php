@@ -35,7 +35,7 @@
                 </button>
             </form>
 
-            <p class="flex w-full h-full justify-center items-center text-sm text-white gap-1">Belum punya akun?<a href="{{ route('register') }}" class="text-[#a58c66] text-sm hover:underline">Daftar</a></p>
+            <p class="flex w-full h-full justify-center items-center text-sm text-white gap-1">Belum punya akun?<a href="{{ route('register') }}" class="text-[#a58c66] text-sm">Daftar</a></p>
             
         </div>
     </div>
