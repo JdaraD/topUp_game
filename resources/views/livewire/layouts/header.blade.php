@@ -38,7 +38,7 @@
         <div class="flex order-2 gap-4">
             <div class="flex items-center gap-2 hover:border-b border-yellow-600/80">
                 <img src="{{ asset('image/enter.png') }}" alt="" class="h-4.5 w-4.5">
-                <p class="text-sm font-medium text-white">Masuk</p>
+                <a href="{{ route('login') }}" class="text-sm font-medium text-white">Masuk</a>
             </div>
             <div class="flex items-center gap-2 hover:border-b border-yellow-600/80">
                 <img src="{{ asset('image/user.png') }}" alt="" class="h-4.5 w-4.5">

@@ -14,10 +14,10 @@
 
     {{-- @vite('resources/css/app.css') --}}
 </head>
-<body class="flex flex-col bg-[#262727] min-h-screen font-sans">
+<body class="flex flex-col bg-[#262727] h-screen font-sans">
     {{-- @livewireScripts --}}
 
-    @if (!request()->routeIs('filament.admin.auth.login'))
+    @if (!request()->routeIs('filament.admin.auth.login') && !request()->routeIs('login'))
         @livewire('layouts.header') <!-- Menampilkan komponen header -->
         {{-- @livewire('navbar') <!-- Menampilkan komponen navbar --> --}}
     @endif
@@ -26,7 +26,7 @@
         {{ $slot }}
     {{-- </main> --}}
 
-    @if (!request()->routeIs('filament.admin.auth.login'))
+    @if (!request()->routeIs('filament.admin.auth.login') && !request()->routeIs('login'))
         @livewire('layouts.footer')
     @endif
 
