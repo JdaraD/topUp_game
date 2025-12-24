@@ -1,4 +1,4 @@
-<div class="flex flex-col grow gap-4 justify-center items-center w-full h-full pt-27.25 lg:pt-28 select-none">
+<div class="flex flex-col grow gap-4 justify-center items-center w-full h-full mt-27.5 select-none">
     <div class="relative flex justify-center items-center bg-gray-200/20 h-138.5 w-full object-cover">
         <img src="{{ asset('image/bg.gif') }}" alt="" class="w-full h-full">
         <div class="flex flex-col gap-1 absolute justify-center items-center h-[88%] w-[64%] md:w-304 lg:w-304.75 rounded-2xl">

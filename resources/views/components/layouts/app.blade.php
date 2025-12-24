@@ -14,7 +14,7 @@
 
     {{-- @vite('resources/css/app.css') --}}
 </head>
-<body class="flex flex-col bg-[#262727] h-screen font-sans">
+<body class="flex flex-col bg-[#262727] h-full font-sans">
     {{-- @livewireScripts --}}
 
     @if (!request()->routeIs('filament.admin.auth.login') && !request()->routeIs('login') && !request()->routeIs('register'))
