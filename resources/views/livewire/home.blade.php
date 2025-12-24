@@ -32,7 +32,7 @@
         </div>
         <div class="grid grid-cols-3 gap-4">
             @for ($f = 0; $f < 7; $f++)
-                <div class="flex group bg-[#76b4d9]/60 h-24 w-99 rounded-md cursor-pointer border-2 border-transparent hover:border-[#a58c6f]/90 overflow-hidden">
+                <a href="" class="flex group bg-[#76b4d9]/60 h-24 w-99 rounded-md cursor-pointer border-2 border-transparent hover:border-[#a58c6f]/90 overflow-hidden">
                     <div class="flex flex-row p-2 gap-2 justify-center items-center">
                         <img src="{{ asset('image/cover.png') }}" alt="" class="group-hover:scale-105 delay-50 ease-in duration-100 h-20 w-20 rounded-md object-cover transition-transform">
                         <div class="flex flex-col gap-1">
@@ -40,7 +40,7 @@
                             <p class="text-white text-xs">Tencent Games</p>
                         </div>
                     </div>
-                </div>
+                </a>
             @endfor
         </div>
     </div>
@@ -57,7 +57,7 @@
         </div>
         <div class="grid grid-cols-6 h-auto items-center gap-6 w-full">
             @for ($i = 0; $i < 12; $i++)
-                <div class="relative group h-70.5 w-47 rounded-md hover:border-2 hover:border-[#a58c6f]/90 transition delay-50 duration-100 ease-in hover:scale-105 cursor-pointer">
+                <a href="{{ route('top-up') }}" class="relative group h-70.5 w-47 rounded-md hover:border-2 hover:border-[#a58c6f]/90 transition delay-50 duration-100 ease-in hover:scale-105 cursor-pointer">
                     <img src="{{ asset('image/pubg.jpg') }}" alt="" class="w-full h-full object-cover rounded-md">
 
                     <div class="absolute group-hover:opacity-100 transition-opacity duration-300 top-0 left-0 right-0 w-full h-full opacity-0 rounded-md bg-gray-900/60">
@@ -67,7 +67,7 @@
                         </div>
 
                     </div>
-                </div>
+                </a>
                 
             @endfor
             <div class="col-span-full flex w-full h-full justify-center">
