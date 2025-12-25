@@ -13,7 +13,27 @@
 
                 <div class="flex relative gap-1 bg-yellow-400 h-full w-40"></div>
             </div>
-            
+        </div>
+        <div class="grid grid-cols-3 relative mt-8 gap-8 h-full w-[80%]">
+            <div class="flex flex-col col-span-2 h-40 w-full">
+                <div class="flex h-10 gap-2.5 w-full items-center bg-[#5f666d] rounded-t-lg">
+                    <div class="flex h-full w-10 justify-center items-center bg-[#a58c6f] rounded-tl-lg">
+                        <p class="text-md text-white">1</p>
+                    </div>
+                    <p class="text-sm text-white">Masukkan Data Akun</p>
+                </div>
+                <div class="h-full w-full bg-[#434649] rounded-b-lg"></div>
+            </div>
+            <div class="bg-blue-400 h-40"></div>
+            <div class="flex flex-col col-span-2 h-40 w-full">
+                <div class="flex h-10 gap-2.5 w-full items-center bg-[#5f666d] rounded-t-lg">
+                    <div class="flex h-full w-10 justify-center items-center bg-[#a58c6f] rounded-tl-lg">
+                        <p class="text-md text-white">2</p>
+                    </div>
+                    <p class="text-sm text-white">Pilih Nominal</p>
+                </div>
+                <div class="h-full w-full bg-[#434649] rounded-b-lg"></div>
+            </div>
         </div>
     </div>
 </div>
