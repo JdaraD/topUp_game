@@ -14,26 +14,79 @@
                 <div class="flex relative gap-1 bg-yellow-400 h-full w-40"></div>
             </div>
         </div>
-        <div class="grid grid-cols-3 relative mt-8 gap-8 h-full w-[80%]">
-            <div class="flex flex-col col-span-2 h-40 w-full">
-                <div class="flex h-10 gap-2.5 w-full items-center bg-[#5f666d] rounded-t-lg">
+        <div class="grid grid-cols-3 relative mt-8 gap-8 h-auto bg-[#1882ec] w-[80%]">
+            <div class="flex flex-col h-auto w-full col-span-2">
+                <div class="flex h-10 w-full items-center bg-[#5f666d] rounded-t-lg">
                     <div class="flex h-full w-10 justify-center items-center bg-[#a58c6f] rounded-tl-lg">
                         <p class="text-md text-white">1</p>
                     </div>
-                    <p class="text-sm text-white">Masukkan Data Akun</p>
+                    <p class="text-sm text-white pl-4">Masukkan Data Akun</p>
                 </div>
-                <div class="h-full w-full bg-[#434649] rounded-b-lg"></div>
+                <div class="flex flex-col h-full w-full bg-[#434649] rounded-b-lg">
+                    <div class="flex flex-col h-full w-full pb-3">
+                        <p class="text-sm text-white px-4 py-3">Special Items✨</p>
+                        
+                        <div class="grid grid-cols-3 px-4 gap-4">
+
+                            <div class="flex flex-col rounded-lg w-56 h-28 bg-[#5f666d] cursor-pointer">
+                                <div class="w-full h-full"></div>
+                                <div class="w-full h-9 bg-linear-to-b from-[#3c4044] to-[#4a5056] rounded-b-lg"></div>
+                            </div>
+                            <div class="flex flex-col rounded-lg w-56 h-28 bg-[#5f666d] cursor-pointer">
+                                <div class="w-full h-full"></div>
+                                <div class="w-full h-9 bg-linear-to-b from-[#3c4044] to-[#4a5056] rounded-b-lg"></div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="bg-blue-400 h-40"></div>
-            <div class="flex flex-col col-span-2 h-40 w-full">
-                <div class="flex h-10 gap-2.5 w-full items-center bg-[#5f666d] rounded-t-lg">
+            <div class="bg-blue-400 h-40">
+                <p>test</p>
+            </div>
+            <div class="flex flex-col h-auto w-full col-span-2">
+                <div class="flex h-10 w-full items-center bg-[#5f666d] rounded-t-lg">
                     <div class="flex h-full w-10 justify-center items-center bg-[#a58c6f] rounded-tl-lg">
                         <p class="text-md text-white">2</p>
                     </div>
-                    <p class="text-sm text-white">Pilih Nominal</p>
+                    <p class="text-sm text-white pl-4">Pilih Nominal</p>
                 </div>
-                <div class="h-full w-full bg-[#434649] rounded-b-lg"></div>
+                <div class="flex flex-col h-full w-full bg-[#434649] rounded-b-lg">
+                    <div class="flex flex-col h-full w-full">
+                        <p class="text-sm text-white px-4 py-3">Special Items✨</p>
+                        
+                        <div class="grid grid-cols-3 px-4 gap-4">
+                            @for ($i = 0; $i < 2; $i++)
+                                <div class="flex flex-col rounded-lg w-56 h-28 bg-[#5f666d] cursor-pointer">
+                                    <div class="w-full h-full"></div>
+                                    <div class="w-full h-9 bg-linear-to-b from-[#3c4044] to-[#4a5056] rounded-b-lg"></div>
+                                </div>
+                            @endfor
+
+                        </div>
+                    </div>
+                    <div class="flex flex-col h-full pb-3 bg-amber-200 w-full">
+                        <p class="text-sm text-white px-4 py-4.5">Murah Meriah !!✨</p>
+                        
+                        <div class="grid grid-cols-3 px-4">
+                            @for ($j = 0; $j < 3; $j++)
+                                <div class="flex flex-col rounded-lg w-56 h-28 bg-[#5f666d] cursor-pointer">
+                                    <div class="w-full h-full"></div>
+                                    <div class="w-full h-9 bg-linear-to-b from-[#3c4044] to-[#4a5056] rounded-b-lg"></div>
+                                </div>
+                            @endfor
+
+                        </div>
+                    </div>
+                </div>
             </div>
+
+            {{-- <div class="flex flex-col col-span-2 h-40 w-full bg-[#434649]">
+                
+
+            </div>
+            <div class="bg-blue-400 h-40"></div> --}}
+
         </div>
     </div>
 </div>
