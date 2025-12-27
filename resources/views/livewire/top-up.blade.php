@@ -182,9 +182,17 @@
                 </div>
             </div>
             
-            <div class="flex flex-col bg-blue-400 h-40 w-full col-span-1">
-                <p>container bergerak</p>
+            <div class="col-span-1">
+                <div class="sticky top-32">
+                    <div class="flex flex-col bg-blue-400 space-y-3 rounded-lg p-4">
+                        <p class="text-white font-semibold">Container Bergerak</p>
+                        <p class="text-sm text-white/80">
+                            Ringkasan / rating / checkout
+                        </p>
+                    </div>
+                </div>
             </div>
+
 
             <div class="flex flex-col h-auto w-full col-span-3">
                 <div class="flex h-10 w-full items-center bg-[#5f666d] rounded-t-lg">
