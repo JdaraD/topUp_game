@@ -32,7 +32,6 @@
 
     @yield('content')
 
-    @vite('resources/js/home.js')
     @livewireScripts
 </body>
 </html>
