@@ -11,7 +11,33 @@
                     </div>
                 </div>
 
-                <div class="flex relative gap-1 bg-yellow-400 h-full w-40"></div>
+                <div class="flex flex-col relative justify-center gap-5 h-full w-fit">
+                    <div class="flex flex-col gap-2">
+                        <p class="text-white text-lg">PUBG MOBILE</p>
+                        <p class="text-white text-sm">Tencent Games</p>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="flex gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="icon text-[#fade57] icon-tabler icons-tabler-filled icon-tabler-bolt">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <path d="M13 2l.018 .001l.016 .001l.083 .005l.011 .002h.011l.038 .009l.052 .008l.016 .006l.011 .001l.029 .011l.052 .014l.019 .009l.015 .004l.028 .014l.04 .017l.021 .012l.022 .01l.023 .015l.031 .017l.034 .024l.018 .011l.013 .012l.024 .017l.038 .034l.022 .017l.008 .01l.014 .012l.036 .041l.026 .027l.006 .009c.12 .147 .196 .322 .218 .513l.001 .012l.002 .041l.004 .064v6h5a1 1 0 0 1 .868 1.497l-.06 .091l-8 11c-.568 .783 -1.808 .38 -1.808 -.588v-6h-5a1 1 0 0 1 -.868 -1.497l.06 -.091l8 -11l.01 -.013l.018 -.024l.033 -.038l.018 -.022l.009 -.008l.013 -.014l.04 -.036l.028 -.026l.008 -.006a1 1 0 0 1 .402 -.199l.011 -.001l.027 -.005l.074 -.013l.011 -.001l.041 -.002z" />
+                            </svg>
+                            <p class="text-white text-sm">Proses Cepat</p>
+                        </div>
+                        <div class="flex gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="icon text-[#6266f0] icon-tabler icons-tabler-filled icon-tabler-message">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18 3a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-4.724l-4.762 2.857a1 1 0 0 1 -1.508 -.743l-.006 -.114v-2h-1a4 4 0 0 1 -3.995 -3.8l-.005 -.2v-8a4 4 0 0 1 4 -4zm-4 9h-6a1 1 0 0 0 0 2h6a1 1 0 0 0 0 -2m2 -4h-8a1 1 0 1 0 0 2h8a1 1 0 0 0 0 -2" />
+                            </svg>
+                            <p class="text-white text-sm">Layanan Chat 24/7</p>
+                        </div>
+                        <div class="flex gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="icon text-[#6266f0] icon-tabler icons-tabler-filled icon-tabler-circle-check">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M17 3.34a10 10 0 1 1 -14.995 8.984l-.005 -.324l.005 -.324a10 10 0 0 1 14.995 -8.336zm-1.293 5.953a1 1 0 0 0 -1.32 -.083l-.094 .083l-3.293 3.292l-1.293 -1.292l-.094 -.083a1 1 0 0 0 -1.403 1.403l.083 .094l2 2l.094 .083a1 1 0 0 0 1.226 0l.094 -.083l4 -4l.083 -.094a1 1 0 0 0 -.083 -1.32z" />
+                            </svg>
+                            <p class="text-white text-sm">Pembayaran Aman!</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="grid grid-cols-3 relative mt-8 gap-8 h-auto w-[80%]">
