@@ -175,11 +175,11 @@
                         </div>
                         <p class="text-sm text-white pl-4">Masukkan Jumlah Pembelian</p>
                     </div>
-                    <div class="flex flex-col h-full w-full bg-[#434649] rounded-b-lg">
+                    <div class="flex flex-col h-fit w-full bg-[#434649] rounded-b-lg">
             
-                        <div class="flex justify-center items-center gap-4 mt-3.5 h-fit w-full bg-[#434649] rounded-b-lg">
+                        <div class="flex justify-center items-center gap-4 my-4 h-fit w-full bg-[#434649] rounded-b-lg">
                             <div class="flex justify-center items-center">
-                                <input type="text" id="Mid" class="w-172 h-9 bg-[#5f666d] rounded-md px-3.5 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" value="1">
+                                <input type="text" id="Mid" class="w-2xl h-9 bg-[#5f666d] rounded-md px-3.5 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" value="1">
                             </div>
                             <div class="flex justify-center items-center gap-2">
                                 <button class="flex justify-center items-center bg-[#a58c6f] h-9 w-9 rounded-md">
@@ -201,21 +201,35 @@
                         <p class="text-sm text-white pl-4">Pilih Pembayaran</p>
                     </div>
                     <div class="flex flex-col h-full w-full bg-[#434649] rounded-b-lg">
-                        <div class="flex flex-col h-full w-full pb-3">
-                            <p class="text-sm text-white px-4 py-3">Special Items✨</p>
-                            
-                            <div class="flex flex-wrap items-center px-4 gap-4">
-
-                                <div class="flex flex-col rounded-lg w-61 h-28 bg-[#5f666d] cursor-pointer">
-                                    <div class="w-full h-full"></div>
-                                    <div class="w-full h-9 bg-linear-to-b from-[#3c4044] to-[#4a5056] rounded-b-lg"></div>
+                        <div class="flex flex-col justify-center items-center my-4 h-full w-full gap-4">
+                            @for ($k = 0; $k < 2; $k++)
+                                <div class="flex bg-[#62696f] w-[96%] h-18 px-2 gap-2 rounded-md shadow-lg cursor-pointer">
+                                    <div class="flex justify-center items-center">
+                                        <img src="{{ asset('image/gopay.png') }}" alt="" class="w-10 h-10 object-contain">
+                                    </div>
+                                    <p class="text-white text-sm self-center">GoPay</p>
                                 </div>
-                                <div class="flex flex-col rounded-lg w-61 h-28 bg-[#5f666d] cursor-pointer">
-                                    <div class="w-full h-full"></div>
-                                    <div class="w-full h-9 bg-linear-to-b from-[#3c4044] to-[#4a5056] rounded-b-lg"></div>
-                                </div>
+                            @endfor
 
-                            </div>
+                            @for ($l = 0; $l < 4; $l++)
+                                <div class="flex flex-col w-[96%] h-fit cursor-pointer">
+                                    <div class="flex bg-[#373b3f] justify-between items-center px-2 h-11 w-full shadow-lg rounded-t-md">
+                                        <p class="text-white text-sm self-center">QRIS</p>
+                                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> 
+                                            <path d="M5.70711 9.71069C5.31658 10.1012 5.31658 10.7344 5.70711 11.1249L10.5993 16.0123C11.3805 16.7927 12.6463 16.7924 13.4271 16.0117L18.3174 11.1213C18.708 10.7308 18.708 10.0976 18.3174 9.70708C17.9269 9.31655 17.2937 9.31655 16.9032 9.70708L12.7176 13.8927C12.3271 14.2833 11.6939 14.2832 11.3034 13.8927L7.12132 9.71069C6.7308 9.32016 6.09763 9.32016 5.70711 9.71069Z" fill="#ffffff"></path> 
+                                            </g>
+                                        </svg>
+                                    </div>
+                                    <div class="flex items-center justify-end bg-[#62696f] h-9 w-full rounded-b-md">
+                                        @for ($m = 0; $m < 6; $m++)
+                                            <div class="bg-white w-13.5 h-4 rounded-sm mx-2">
+
+                                            </div>
+                                        @endfor
+                                    </div>
+                                </div>
+                            @endfor
+
                         </div>
                     </div>
                 </div>
