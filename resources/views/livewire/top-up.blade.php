@@ -243,7 +243,7 @@
                     </div>
                     <div class="flex flex-col h-full w-full bg-[#434649] rounded-b-lg">
                         <div class="flex flex-col h-full w-full pb-3">
-                            <p class="text-sm text-white px-4 py-3">Special Items✨</p>
+                            <p class="text-sm text-white px-4 py-3">✨</p>
                             
                             <div class="flex flex-wrap items-center px-4 gap-4">
 
