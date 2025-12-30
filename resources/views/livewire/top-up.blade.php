@@ -65,8 +65,8 @@
                 </div>
 
                 <div class="flex flex-col h-auto w-full col-span-2">
-                    <div class="flex h-10 w-full items-center bg-[#5f666d] rounded-t-lg">
-                        <div class="flex h-full w-10 justify-center items-center bg-[#a58c6f] rounded-tl-lg">
+                    <div class="flex h-10 min-h-10 shrink-0 w-full items-center bg-[#5f666d] rounded-t-lg">
+                        <div class="flex h-full w-10 shrink-0 justify-center items-center bg-[#a58c6f] rounded-tl-lg">
                             <p class="text-md text-white">2</p>
                         </div>
                         <p class="text-sm text-white pl-4">Pilih Nominal</p>
@@ -169,8 +169,8 @@
                 </div>
 
                 <div class="flex flex-col h-auto w-full col-span-2">
-                    <div class="flex h-10 w-full items-center bg-[#5f666d] rounded-t-lg">
-                        <div class="flex h-full w-10 justify-center items-center bg-[#a58c6f] rounded-tl-lg">
+                    <div class="flex h-10 min-h-10 shrink-0 w-full items-center bg-[#5f666d] rounded-t-lg">
+                        <div class="flex h-full w-10 shrink-0 justify-center items-center bg-[#a58c6f] rounded-tl-lg">
                             <p class="text-md text-white">3</p>
                         </div>
                         <p class="text-sm text-white pl-4">Masukkan Jumlah Pembelian</p>
@@ -194,8 +194,8 @@
                 </div>
 
                 <div class="flex flex-col h-auto w-full col-span-2">
-                    <div class="flex h-10 w-full items-center bg-[#5f666d] rounded-t-lg">
-                        <div class="flex h-full w-10 justify-center items-center bg-[#a58c6f] rounded-tl-lg">
+                    <div class="flex h-10 min-h-10 shrink-0 w-full items-center bg-[#5f666d] rounded-t-lg">
+                        <div class="flex h-full w-10 shrink-0 justify-center items-center bg-[#a58c6f] rounded-tl-lg">
                             <p class="text-md text-white">4</p>
                         </div>
                         <p class="text-sm text-white pl-4">Pilih Pembayaran</p>
@@ -235,8 +235,8 @@
                 </div>
 
                 <div class="flex flex-col h-auto w-full col-span-2">
-                    <div class="flex h-10 w-full items-center bg-[#5f666d] rounded-t-lg">
-                        <div class="flex h-full w-10 justify-center items-center bg-[#a58c6f] rounded-tl-lg">
+                    <div class="flex h-10 min-h-10 shrink-0 w-full items-center bg-[#5f666d] rounded-t-lg">
+                        <div class="flex h-full w-10 shrink-0 justify-center items-center bg-[#a58c6f] rounded-tl-lg">
                             <p class="text-md text-white">5</p>
                         </div>
                         <p class="text-sm text-white pl-4">Detail Kontak</p>
@@ -267,27 +267,23 @@
                 </div>
 
                 <div class="flex flex-col h-auto w-full col-span-2">
-                    <div class="flex h-10 w-full items-center bg-[#5f666d] rounded-t-lg">
-                        <div class="flex h-full w-10 justify-center items-center bg-[#a58c6f] rounded-tl-lg">
-                            <p class="text-md text-white">6</p>
+                    <div class="flex h-10 min-h-10 shrink-0 w-full items-center bg-[#5f666d] rounded-t-lg">
+                        <div class="flex h-full w-10 shrink-0 items-center justify-center bg-[#a58c6f] rounded-tl-lg">
+                            <p class="text-md leading-none text-white">6</p>
                         </div>
-                        <p class="text-sm text-white pl-4">Kode Promo</p>
+                        <p class="text-sm leading-none text-white pl-4">Kode Promo</p>
                     </div>
                     <div class="flex flex-col h-full w-full bg-[#434649] rounded-b-lg">
-                        <div class="flex flex-col h-full w-full pb-3">
-                            <p class="text-sm text-white px-4 py-3">Special Items✨</p>
-                            
-                            <div class="flex flex-wrap items-center px-4 gap-4">
-
-                                <div class="flex flex-col rounded-lg w-61 h-28 bg-[#5f666d] cursor-pointer">
-                                    <div class="w-full h-full"></div>
-                                    <div class="w-full h-9 bg-linear-to-b from-[#3c4044] to-[#4a5056] rounded-b-lg"></div>
-                                </div>
-                                <div class="flex flex-col rounded-lg w-61 h-28 bg-[#5f666d] cursor-pointer">
-                                    <div class="w-full h-full"></div>
-                                    <div class="w-full h-9 bg-linear-to-b from-[#3c4044] to-[#4a5056] rounded-b-lg"></div>
-                                </div>
-
+                        <div class="flex flex-col h-full w-full gap-4 py-4 px-4">
+                            <div class="flex flex-row gap-4 w-full">
+                                <input type="text" id="Email" class="flex w-full h-8.5 bg-[#5f666d] rounded-md px-3.5 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="ketik Kode Promo Kamu">
+                                <button class="flex justify-center items-center bg-[#a58c6f] w-20.75 h-8 text-sm text-white rounded-md">Gunakan</button>
+                            </div>
+                            <div class="flex justify-center items-center bg-[#a58c6f] gap-2 w-52 h-8 rounded-md ">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon text-white icon-tabler icons-tabler-outline icon-tabler-ticket">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M15 5l0 2" /><path d="M15 11l0 2" /><path d="M15 17l0 2" /><path d="M5 5h14a2 2 0 0 1 2 2v3a2 2 0 0 0 0 4v3a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-3a2 2 0 0 0 0 -4v-3a2 2 0 0 1 2 -2" />
+                                </svg>
+                                <p class="text-xs text-white">Pakai Promo Yang Tersedia</p>
                             </div>
                         </div>
                     </div>
