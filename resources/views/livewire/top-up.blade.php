@@ -304,28 +304,25 @@
 
 
             <div class="flex flex-col h-auto w-full col-span-3">
-                <div class="flex h-10 w-full items-center bg-[#5f666d] rounded-t-lg">
-                    <div class="flex h-full w-10 justify-center items-center bg-[#a58c6f] rounded-tl-lg">
+                <div class="flex h-10 min-h-10 shrink-0 w-full items-center bg-[#5f666d] rounded-t-lg">
+                    <div class="flex h-full w-10 shrink-0 justify-center items-center bg-[#a58c6f] rounded-tl-lg"> 
                         <p class="text-md text-white"></p>
                     </div>
-                    <p class="text-sm text-white pl-4">Deskripsi Mobile Legends Paket Irit</p>
+                    <p class="text-sm text-white pl-4">Deskripsi PUBG Mobile</p>
                 </div>
                 <div class="flex flex-col h-full w-full bg-[#434649] rounded-b-lg">
-                    <div class="flex flex-col h-full w-full pb-3">
-                        <p class="text-sm text-white px-4 py-3">Special Items✨</p>
-                        
-                        <div class="flex flex-wrap items-center px-4 gap-4">
-
-                            <div class="flex flex-col rounded-lg w-61 h-28 bg-[#5f666d] cursor-pointer">
-                                <div class="w-full h-full"></div>
-                                <div class="w-full h-9 bg-linear-to-b from-[#3c4044] to-[#4a5056] rounded-b-lg"></div>
-                            </div>
-                            <div class="flex flex-col rounded-lg w-61 h-28 bg-[#5f666d] cursor-pointer">
-                                <div class="w-full h-full"></div>
-                                <div class="w-full h-9 bg-linear-to-b from-[#3c4044] to-[#4a5056] rounded-b-lg"></div>
-                            </div>
-
-                        </div>
+                    <div class="flex flex-col h-full w-full py-4 px-4 gap-1">
+                        <p class="text-sm text-white">Top up Diamond PUBG Mobile harga paling murah. Cara topup :</p>
+                        <ol>
+                            <li class="relative pl-6 before:absolute before:left-0 before:content-[counter(list-item)_').'] text-sm text-white">Masukkan Data Akun</li>
+                            <li class="relative pl-6 before:absolute before:left-0 before:content-[counter(list-item)_').'] text-sm text-white">Pilih Nominal</li>
+                            <li class="relative pl-6 before:absolute before:left-0 before:content-[counter(list-item)_').'] text-sm text-white">Masukkan jumlah</li>
+                            <li class="relative pl-6 before:absolute before:left-0 before:content-[counter(list-item)_').'] text-sm text-white">Pilih Pembayaran</li>
+                            <li class="relative pl-6 before:absolute before:left-0 before:content-[counter(list-item)_').'] text-sm text-white">Tulis Kode Promo (jika ada)</li>
+                            <li class="relative pl-6 before:absolute before:left-0 before:content-[counter(list-item)_').'] text-sm text-white">Masukkan No WhatsApp</li>
+                            <li class="relative pl-6 before:absolute before:left-0 before:content-[counter(list-item)_').'] text-sm text-white">Klik Order Now & lakukan Pembayaran</li>
+                            <li class="relative pl-6 before:absolute before:left-0 before:content-[counter(list-item)_').'] text-sm text-white">Produk otomatis masuk ke akun game anda</li>
+                        </ol>
                     </div>
                 </div>
             </div>
