@@ -242,20 +242,25 @@
                         <p class="text-sm text-white pl-4">Detail Kontak</p>
                     </div>
                     <div class="flex flex-col h-full w-full bg-[#434649] rounded-b-lg">
-                        <div class="flex flex-col h-full w-full pb-3">
-                            <p class="text-sm text-white px-4 py-3">✨</p>
-                            
-                            <div class="flex flex-wrap items-center px-4 gap-4">
+                        <div class="flex flex-col h-full w-full py-3 px-4 gap-3">
+                            <div class="flex flex-col gap-1 w-full">
+                                <label for="Email" class="text-sm text-white">Email</label>
+                                <input type="text" id="Email" class="flex w-full h-8.5 bg-[#5f666d] rounded-md px-3.5 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="example@gmail.com">
+                            </div>
 
-                                <div class="flex flex-col rounded-lg w-61 h-28 bg-[#5f666d] cursor-pointer">
-                                    <div class="w-full h-full"></div>
-                                    <div class="w-full h-9 bg-linear-to-b from-[#3c4044] to-[#4a5056] rounded-b-lg"></div>
-                                </div>
-                                <div class="flex flex-col rounded-lg w-61 h-28 bg-[#5f666d] cursor-pointer">
-                                    <div class="w-full h-full"></div>
-                                    <div class="w-full h-9 bg-linear-to-b from-[#3c4044] to-[#4a5056] rounded-b-lg"></div>
-                                </div>
+                            <div class="flex flex-col gap-1 w-full">
+                                <label for="NoWa" class="text-sm text-white">No. WhatsApp</label>
+                                <input type="text" id="NoWa" inputmode="numeric" pattern="[0-9+]*" oninput="this.value = this.value.replace(/[^0-9+]/g, '')" class="w-full h-8.5 bg-[#5f666d] rounded-md px-3.5 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="+62">
+                            </div>
 
+                            <div class="flex flex-col gap-1 w-full">
+                                <label for="NoWa" class="text-xs text-white italic">**Nomor ini akan dihubungi jika terjadi masalah</label>
+                                <div class="flex items-center bg-[#5f666d] rounded-md w-full h-11 gap-1 px-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon text-white icon-tabler icons-tabler-outline icon-tabler-info-circle">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" /><path d="M12 9h.01" /><path d="M11 12h1v4h1" />
+                                    </svg>
+                                    <p class="text-xs text-white">Jika ada kendala, kami akan menghubungi nomor WA kamu diatas</p>
+                                </div>
                             </div>
                         </div>
                     </div>
