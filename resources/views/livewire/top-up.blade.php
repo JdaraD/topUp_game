@@ -292,12 +292,27 @@
             </div>
             
             <div class="col-span-1">
-                <div class="sticky top-32">
-                    <div class="flex flex-col bg-blue-400 space-y-3 rounded-lg p-4">
+                <div class="sticky flex flex-col gap-4 top-32">
+                    <div class="flex flex-col bg-[#444444] h-32 w-full rounded-lg p-4">
                         <p class="text-white font-semibold">Container Bergerak</p>
                         <p class="text-sm text-white/80">
                             Ringkasan / rating / checkout
                         </p>
+                    </div>
+                    <div class="flex flex-col bg-[#444444] h-17.75 w-full rounded-lg p-4">
+                        <p class="text-white font-semibold">Container Bergerak</p>
+                        <p class="text-sm text-white/80">
+                            Ringkasan / rating / checkout
+                        </p>
+                    </div>
+                    <div class="flex flex-col bg-[#444444] h-24.75 w-full rounded-lg p-4">
+                        <p class="text-white font-semibold">Container Bergerak</p>
+                        <p class="text-sm text-white/80">
+                            Ringkasan / rating / checkout
+                        </p>
+                    </div>
+                    <div class="flex flex-col bg-[#444444] h-8 w-full rounded-lg p-4">
+                        <p class="text-white font-semibold">Container Bergerak</p>
                     </div>
                 </div>
             </div>
