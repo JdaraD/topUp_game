@@ -42,7 +42,7 @@
             </div>
         </div>
 
-        <div class="grid grid-cols-3 relative mt-8 gap-8 h-auto w-[80%]">
+        <div class="grid grid-cols-3 relative my-8 gap-8 h-auto w-[80%]">
             <div class="col-span-2 gap-8 flex flex-col h-auto w-full">
 
                 <div class="flex flex-col h-auto w-full col-span-2 shadow-lg">
@@ -370,9 +370,10 @@
                         </svg>
                     </button>
                     <div id="hs-basic-with-arrow-collapse-one" class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300" role="region" aria-labelledby="hs-basic-with-arrow-heading-one">
-                    <p class="text-gray-800 dark:text-neutral-200">
-                        <em>This is the second item's accordion body.</em> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions.
-                    </p>
+                        <ul class="flex flex-col gap-0.5 pt-2 text-white text-xs">
+                            <li>- desain</li>
+                            <li>- baju</li>
+                        </ul>
                     </div>
                 </div>
 
@@ -387,7 +388,7 @@
                         </svg>
                     </button>
                     <div id="hs-basic-with-arrow-collapse-two" class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300" role="region" aria-labelledby="hs-basic-with-arrow-heading-two">
-                    <p class="text-gray-800 dark:text-neutral-200">
+                    <p class="text-gray-800 dark:text-neutral-200 pt-2">
                         <em>This is the second item's accordion body.</em> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions.
                     </p>
                     </div>
@@ -404,7 +405,7 @@
                         </svg>
                     </button>
                     <div id="hs-basic-with-arrow-collapse-three" class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300" role="region" aria-labelledby="hs-basic-with-arrow-heading-three">
-                    <p class="text-gray-800 dark:text-neutral-200">
+                    <p class="text-gray-800 dark:text-neutral-200 pt-2">
                         <em>This is the second item's accordion body.</em> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions.
                     </p>
                     </div>
@@ -421,7 +422,7 @@
                         </svg>
                     </button>
                     <div id="hs-basic-with-arrow-collapse-four" class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300" role="region" aria-labelledby="hs-basic-with-arrow-heading-four">
-                    <p class="text-gray-800 dark:text-neutral-200">
+                    <p class="text-gray-800 dark:text-neutral-200 pt-2">
                         <em>This is the second item's accordion body.</em> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions.
                     </p>
                     </div>
@@ -438,7 +439,7 @@
                         </svg>
                     </button>
                     <div id="hs-basic-with-arrow-collapse-five" class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300" role="region" aria-labelledby="hs-basic-with-arrow-heading-five">
-                    <p class="text-gray-800 dark:text-neutral-200">
+                    <p class="text-gray-800 dark:text-neutral-200 pt-2">
                         <em>This is the second item's accordion body.</em> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions.
                     </p>
                     </div>
@@ -455,7 +456,7 @@
                         </svg>
                     </button>
                     <div id="hs-basic-with-arrow-collapse-six" class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300" role="region" aria-labelledby="hs-basic-with-arrow-heading-six">
-                    <p class="text-gray-800 dark:text-neutral-200">
+                    <p class="text-gray-800 dark:text-neutral-200 pt-2">
                         <em>This is the second item's accordion body.</em> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions.
                     </p>
                     </div>
@@ -472,7 +473,7 @@
                         </svg>
                     </button>
                     <div id="hs-basic-with-arrow-collapse-seven" class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300" role="region" aria-labelledby="hs-basic-with-arrow-heading-seven">
-                    <p class="text-gray-800 dark:text-neutral-200">
+                    <p class="text-gray-800 dark:text-neutral-200 pt-2">
                         <em>This is the second item's accordion body.</em> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions.
                     </p>
                     </div>
@@ -489,7 +490,7 @@
                         </svg>
                     </button>
                     <div id="hs-basic-with-arrow-collapse-eight" class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300" role="region" aria-labelledby="hs-basic-with-arrow-heading-eight">
-                    <p class="text-gray-800 dark:text-neutral-200">
+                    <p class="text-gray-800 dark:text-neutral-200 pt-2">
                         <em>This is the second item's accordion body.</em> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions.
                     </p>
                     </div>
@@ -506,7 +507,7 @@
                         </svg>
                     </button>
                     <div id="hs-basic-with-arrow-collapse-nine" class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300" role="region" aria-labelledby="hs-basic-with-arrow-heading-nine">
-                    <p class="text-gray-800 dark:text-neutral-200">
+                    <p class="text-gray-800 dark:text-neutral-200 pt-2">
                         <em>This is the second item's accordion body.</em> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions.
                     </p>
                     </div>
@@ -523,7 +524,7 @@
                         </svg>
                     </button>
                     <div id="hs-basic-with-arrow-collapse-ten" class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300" role="region" aria-labelledby="hs-basic-with-arrow-heading-ten">
-                    <p class="text-gray-800 dark:text-neutral-200">
+                    <p class="text-gray-800 dark:text-neutral-200 pt-2">
                         <em>This is the second item's accordion body.</em> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions.
                     </p>
                     </div>
@@ -540,7 +541,7 @@
                         </svg>
                     </button>
                     <div id="hs-basic-with-arrow-collapse-eleven" class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300" role="region" aria-labelledby="hs-basic-with-arrow-heading-eleven">
-                    <p class="text-gray-800 dark:text-neutral-200">
+                    <p class="text-gray-800 dark:text-neutral-200 pt-2">
                         <em>This is the second item's accordion body.</em> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions.
                     </p>
                     </div>
@@ -548,6 +549,15 @@
 
             </div>
 
+        </div>
+
+        <div class="flex w-full h-70">
+            @if (file_exists(public_path('image/bgS.png')))
+                <img src="{{ asset('image/bgS.png') }}" alt="" class="w-full h-full object-cover">  
+                
+            @else
+                <div class="w-full h-full animate-pulse bg-gray-200/20"></div>
+            @endif
         </div>
     </div>
 </div>
