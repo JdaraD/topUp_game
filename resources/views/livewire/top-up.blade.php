@@ -45,26 +45,26 @@
         <div class="grid grid-cols-3 relative mt-8 gap-8 h-auto w-[80%]">
             <div class="col-span-2 gap-8 flex flex-col h-auto w-full">
 
-                <div class="flex flex-col h-auto w-full col-span-2">
+                <div class="flex flex-col h-auto w-full col-span-2 shadow-lg">
                     <div class="flex h-10 w-full items-center bg-[#5f666d] rounded-t-lg">
                         <div class="flex h-full w-10 justify-center items-center bg-[#a58c6f] rounded-tl-lg">
                             <p class="text-md text-white">1</p>
                         </div>
                         <p class="text-sm text-white pl-4">Masukkan Data Akun</p>
                     </div>
-                    <div class="flex flex-row justify-center items-center px-5 pb-4 pt-5 gap-4 h-fit w-full bg-[#434649] rounded-b-lg">
-                        <div>
+                    <div class="flex flex-row justify-center items-center px-4 pb-4 pt-5 gap-4 h-fit w-full bg-[#434649] rounded-b-lg">
+                        <div class="flex flex-col w-full">
                             <label for="Mid" class="text-white text-sm">ID</label>
-                            <input type="text" id="Mid" class="w-95 h-8.5 bg-[#5f666d] rounded-md mt-2.5 px-3.5 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Masukkan ID Akun Anda">
+                            <input type="text" id="Mid" class="w-full h-8.5 bg-[#5f666d] rounded-md mt-2.5 px-3.5 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Masukkan ID Akun Anda">
                         </div>
-                        <div>
+                        <div class="flex flex-col w-full">
                             <label for="server" class="text-white text-sm">server</label>
-                            <input type="text" id="server" class="w-95 h-8.5 bg-[#5f666d] rounded-md mt-2.5 px-3.5 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Masukkan server">
+                            <input type="text" id="server" class="w-full h-8.5 bg-[#5f666d] rounded-md mt-2.5 px-3.5 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Masukkan server">
                         </div>
                     </div>
                 </div>
 
-                <div class="flex flex-col h-auto w-full col-span-2">
+                <div class="flex flex-col h-auto w-full col-span-2 shadow-lg">
                     <div class="flex h-10 min-h-10 shrink-0 w-full items-center bg-[#5f666d] rounded-t-lg">
                         <div class="flex h-full w-10 shrink-0 justify-center items-center bg-[#a58c6f] rounded-tl-lg">
                             <p class="text-md text-white">2</p>
@@ -168,7 +168,7 @@
                     </div>
                 </div>
 
-                <div class="flex flex-col h-auto w-full col-span-2">
+                <div class="flex flex-col h-auto w-full col-span-2 shadow-lg">
                     <div class="flex h-10 min-h-10 shrink-0 w-full items-center bg-[#5f666d] rounded-t-lg">
                         <div class="flex h-full w-10 shrink-0 justify-center items-center bg-[#a58c6f] rounded-tl-lg">
                             <p class="text-md text-white">3</p>
@@ -193,7 +193,7 @@
                     </div>
                 </div>
 
-                <div class="flex flex-col h-auto w-full col-span-2">
+                <div class="flex flex-col h-auto w-full col-span-2 shadow-lg">
                     <div class="flex h-10 min-h-10 shrink-0 w-full items-center bg-[#5f666d] rounded-t-lg">
                         <div class="flex h-full w-10 shrink-0 justify-center items-center bg-[#a58c6f] rounded-tl-lg">
                             <p class="text-md text-white">4</p>
@@ -234,7 +234,7 @@
                     </div>
                 </div>
 
-                <div class="flex flex-col h-auto w-full col-span-2">
+                <div class="flex flex-col h-auto w-full col-span-2 shadow-lg">
                     <div class="flex h-10 min-h-10 shrink-0 w-full items-center bg-[#5f666d] rounded-t-lg">
                         <div class="flex h-full w-10 shrink-0 justify-center items-center bg-[#a58c6f] rounded-tl-lg">
                             <p class="text-md text-white">5</p>
@@ -266,7 +266,7 @@
                     </div>
                 </div>
 
-                <div class="flex flex-col h-auto w-full col-span-2">
+                <div class="flex flex-col h-auto w-full col-span-2 shadow-lg">
                     <div class="flex h-10 min-h-10 shrink-0 w-full items-center bg-[#5f666d] rounded-t-lg">
                         <div class="flex h-full w-10 shrink-0 items-center justify-center bg-[#a58c6f] rounded-tl-lg">
                             <p class="text-md leading-none text-white">6</p>
@@ -304,7 +304,7 @@
 
 
             <div class="flex flex-col h-auto w-full col-span-3">
-                <div class="flex h-10 min-h-10 shrink-0 w-full items-center bg-[#5f666d] rounded-t-lg">
+                <div class="flex h-10 min-h-10 shrink-0 w-full items-center bg-[#5f666d] rounded-t-lg shadow-lg">
                     <div class="flex h-full w-10 shrink-0 justify-center items-center bg-[#a58c6f] rounded-tl-lg"> 
                         <p class="text-md text-white"></p>
                     </div>
@@ -325,6 +325,198 @@
                         </ol>
                     </div>
                 </div>
+            </div>
+                
+            <div class="flex flex-col hs-accordion-group w-full col-span-3 gap-2">
+                <p class="text-md text-white">Kamu Punya Pertanyaan?</p>
+
+                <div class="hs-accordion bg-[#2f3133] px-4 py-3 rounded-md flex flex-col justify-center" id="hs-basic-with-arrow-heading-one">
+                    <button class="flex justify-between hs-accordion-toggle items-center gap-x-3 w-full font-semibold text-start text-gray-800 hover:text-gray-500 focus:outline-hidden focus:text-gray-500 rounded-lg disabled:opacity-50 disabled:pointer-events-none dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400" aria-expanded="false" aria-controls="hs-basic-with-arrow-collapse-one">
+                        <p class="text-sm text-white">Bagaimana cara top up di Oura Store?</p>
+                        <svg class="hs-accordion-active:hidden block size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m6 9 6 6 6-6"></path>
+                        </svg>
+                        <svg class="hs-accordion-active:block hidden size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m18 15-6-6-6 6"></path>
+                        </svg>
+                    </button>
+                    <div id="hs-basic-with-arrow-collapse-one" class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300" role="region" aria-labelledby="hs-basic-with-arrow-heading-one">
+                    <p class="text-gray-800 dark:text-neutral-200">
+                        <em>This is the second item's accordion body.</em> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions.
+                    </p>
+                    </div>
+                </div>
+
+                <div class="hs-accordion bg-[#2f3133] px-4 py-3 rounded-md flex flex-col justify-center" id="hs-basic-with-arrow-heading-two">
+                    <button class="flex justify-between hs-accordion-toggle items-center gap-x-3 w-full font-semibold text-start text-gray-800 hover:text-gray-500 focus:outline-hidden focus:text-gray-500 rounded-lg disabled:opacity-50 disabled:pointer-events-none dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400" aria-expanded="false" aria-controls="hs-basic-with-arrow-collapse-two">
+                        <p class="text-sm text-white">Metode pembayaran apa saja yang ada di Oura Store?</p>
+                        <svg class="hs-accordion-active:hidden block size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m6 9 6 6 6-6"></path>
+                        </svg>
+                        <svg class="hs-accordion-active:block hidden size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m18 15-6-6-6 6"></path>
+                        </svg>
+                    </button>
+                    <div id="hs-basic-with-arrow-collapse-two" class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300" role="region" aria-labelledby="hs-basic-with-arrow-heading-two">
+                    <p class="text-gray-800 dark:text-neutral-200">
+                        <em>This is the second item's accordion body.</em> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions.
+                    </p>
+                    </div>
+                </div>
+
+                <div class="hs-accordion bg-[#2f3133] px-4 py-3 rounded-md flex flex-col justify-center" id="hs-basic-with-arrow-heading-three">
+                    <button class="flex justify-between hs-accordion-toggle items-center gap-x-3 w-full font-semibold text-start text-gray-800 hover:text-gray-500 focus:outline-hidden focus:text-gray-500 rounded-lg disabled:opacity-50 disabled:pointer-events-none dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400" aria-expanded="false" aria-controls="hs-basic-with-arrow-collapse-three">
+                        <p class="text-sm text-white">Mengapa harus top up di Oura Store?</p>
+                        <svg class="hs-accordion-active:hidden block size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m6 9 6 6 6-6"></path>
+                        </svg>
+                        <svg class="hs-accordion-active:block hidden size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m18 15-6-6-6 6"></path>
+                        </svg>
+                    </button>
+                    <div id="hs-basic-with-arrow-collapse-three" class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300" role="region" aria-labelledby="hs-basic-with-arrow-heading-three">
+                    <p class="text-gray-800 dark:text-neutral-200">
+                        <em>This is the second item's accordion body.</em> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions.
+                    </p>
+                    </div>
+                </div>
+
+                <div class="hs-accordion bg-[#2f3133] px-4 py-3 rounded-md flex flex-col justify-center" id="hs-basic-with-arrow-heading-four">
+                    <button class="flex justify-between hs-accordion-toggle items-center gap-x-3 w-full font-semibold text-start text-gray-800 hover:text-gray-500 focus:outline-hidden focus:text-gray-500 rounded-lg disabled:opacity-50 disabled:pointer-events-none dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400" aria-expanded="false" aria-controls="hs-basic-with-arrow-collapse-four">
+                        <p class="text-sm text-white">Berapa lama proses top up di Oura Store?</p>
+                        <svg class="hs-accordion-active:hidden block size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m6 9 6 6 6-6"></path>
+                        </svg>
+                        <svg class="hs-accordion-active:block hidden size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m18 15-6-6-6 6"></path>
+                        </svg>
+                    </button>
+                    <div id="hs-basic-with-arrow-collapse-four" class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300" role="region" aria-labelledby="hs-basic-with-arrow-heading-four">
+                    <p class="text-gray-800 dark:text-neutral-200">
+                        <em>This is the second item's accordion body.</em> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions.
+                    </p>
+                    </div>
+                </div>
+
+                <div class="hs-accordion bg-[#2f3133] px-4 py-3 rounded-md flex flex-col justify-center" id="hs-basic-with-arrow-heading-five">
+                    <button class="flex justify-between hs-accordion-toggle items-center gap-x-3 w-full font-semibold text-start text-gray-800 hover:text-gray-500 focus:outline-hidden focus:text-gray-500 rounded-lg disabled:opacity-50 disabled:pointer-events-none dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400" aria-expanded="false" aria-controls="hs-basic-with-arrow-collapse-five">
+                        <p class="text-sm text-white">Apakah top up di Oura Store aman?</p>
+                        <svg class="hs-accordion-active:hidden block size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m6 9 6 6 6-6"></path>
+                        </svg>
+                        <svg class="hs-accordion-active:block hidden size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m18 15-6-6-6 6"></path>
+                        </svg>
+                    </button>
+                    <div id="hs-basic-with-arrow-collapse-five" class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300" role="region" aria-labelledby="hs-basic-with-arrow-heading-five">
+                    <p class="text-gray-800 dark:text-neutral-200">
+                        <em>This is the second item's accordion body.</em> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions.
+                    </p>
+                    </div>
+                </div>
+
+                <div class="hs-accordion bg-[#2f3133] px-4 py-3 rounded-md flex flex-col justify-center" id="hs-basic-with-arrow-heading-six">
+                    <button class="flex justify-between hs-accordion-toggle items-center gap-x-3 w-full font-semibold text-start text-gray-800 hover:text-gray-500 focus:outline-hidden focus:text-gray-500 rounded-lg disabled:opacity-50 disabled:pointer-events-none dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400" aria-expanded="false" aria-controls="hs-basic-with-arrow-collapse-six">
+                        <p class="text-sm text-white">Bagaimana cara cek transaksi di Oura Store?</p>
+                        <svg class="hs-accordion-active:hidden block size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m6 9 6 6 6-6"></path>
+                        </svg>
+                        <svg class="hs-accordion-active:block hidden size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m18 15-6-6-6 6"></path>
+                        </svg>
+                    </button>
+                    <div id="hs-basic-with-arrow-collapse-six" class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300" role="region" aria-labelledby="hs-basic-with-arrow-heading-six">
+                    <p class="text-gray-800 dark:text-neutral-200">
+                        <em>This is the second item's accordion body.</em> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions.
+                    </p>
+                    </div>
+                </div>
+
+                <div class="hs-accordion bg-[#2f3133] px-4 py-3 rounded-md flex flex-col justify-center" id="hs-basic-with-arrow-heading-seven">
+                    <button class="flex justify-between hs-accordion-toggle items-center gap-x-3 w-full font-semibold text-start text-gray-800 hover:text-gray-500 focus:outline-hidden focus:text-gray-500 rounded-lg disabled:opacity-50 disabled:pointer-events-none dark:hs-accordion-active:text-blue-500 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400" aria-expanded="false" aria-controls="hs-basic-with-arrow-collapse-seven">
+                        <p class="text-sm text-white">Apakah ada promo di Oura Store?</p>
+                        <svg class="hs-accordion-active:hidden block size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m6 9 6 6 6-6"></path>
+                        </svg>
+                        <svg class="hs-accordion-active:block hidden size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m18 15-6-6-6 6"></path>
+                        </svg>
+                    </button>
+                    <div id="hs-basic-with-arrow-collapse-seven" class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300" role="region" aria-labelledby="hs-basic-with-arrow-heading-seven">
+                    <p class="text-gray-800 dark:text-neutral-200">
+                        <em>This is the second item's accordion body.</em> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions.
+                    </p>
+                    </div>
+                </div>
+
+                <div class="hs-accordion bg-[#2f3133] px-4 py-3 rounded-md flex flex-col justify-center" id="hs-basic-with-arrow-heading-eight">
+                    <button class="flex justify-between hs-accordion-toggle items-center gap-x-3 w-full font-semibold text-start text-gray-800 hover:text-gray-500 focus:outline-hidden focus:text-gray-500 rounded-lg disabled:opacity-50 disabled:pointer-events-none dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400" aria-expanded="false" aria-controls="hs-basic-with-arrow-collapse-eight">
+                        <p class="text-sm text-white">Jika ada kendala bagaimana cara chat Costumer Service Oura Store?</p>
+                        <svg class="hs-accordion-active:hidden block size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m6 9 6 6 6-6"></path>
+                        </svg>
+                        <svg class="hs-accordion-active:block hidden size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m18 15-6-6-6 6"></path>
+                        </svg>
+                    </button>
+                    <div id="hs-basic-with-arrow-collapse-eight" class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300" role="region" aria-labelledby="hs-basic-with-arrow-heading-eight">
+                    <p class="text-gray-800 dark:text-neutral-200">
+                        <em>This is the second item's accordion body.</em> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions.
+                    </p>
+                    </div>
+                </div>
+
+                <div class="hs-accordion bg-[#2f3133] px-4 py-3 rounded-md flex flex-col justify-center" id="hs-basic-with-arrow-heading-nine">
+                    <button class="flex justify-between hs-accordion-toggle items-center gap-x-3 w-full font-semibold text-start text-gray-800 hover:text-gray-500 focus:outline-hidden focus:text-gray-500 rounded-lg disabled:opacity-50 disabled:pointer-events-none dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400" aria-expanded="false" aria-controls="hs-basic-with-arrow-collapse-nine">
+                        <p class="text-sm text-white">Berapa batas pembelian weekly diamond pass?</p>
+                        <svg class="hs-accordion-active:hidden block size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m6 9 6 6 6-6"></path>
+                        </svg>
+                        <svg class="hs-accordion-active:block hidden size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m18 15-6-6-6 6"></path>
+                        </svg>
+                    </button>
+                    <div id="hs-basic-with-arrow-collapse-nine" class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300" role="region" aria-labelledby="hs-basic-with-arrow-heading-nine">
+                    <p class="text-gray-800 dark:text-neutral-200">
+                        <em>This is the second item's accordion body.</em> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions.
+                    </p>
+                    </div>
+                </div>
+
+                <div class="hs-accordion bg-[#2f3133] px-4 py-3 rounded-md flex flex-col justify-center" id="hs-basic-with-arrow-heading-ten">
+                    <button class="flex justify-between hs-accordion-toggle items-center gap-x-3 w-full font-semibold text-start text-gray-800 hover:text-gray-500 focus:outline-hidden focus:text-gray-500 rounded-lg disabled:opacity-50 disabled:pointer-events-none dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400" aria-expanded="false" aria-controls="hs-basic-with-arrow-collapse-ten">
+                        <p class="text-sm text-white">Apa penjelasan diamond yang dalam kurung misalnya: 277 (250+27) Diamonds?</p>
+                        <svg class="hs-accordion-active:hidden block size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m6 9 6 6 6-6"></path>
+                        </svg>
+                        <svg class="hs-accordion-active:block hidden size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m18 15-6-6-6 6"></path>
+                        </svg>
+                    </button>
+                    <div id="hs-basic-with-arrow-collapse-ten" class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300" role="region" aria-labelledby="hs-basic-with-arrow-heading-ten">
+                    <p class="text-gray-800 dark:text-neutral-200">
+                        <em>This is the second item's accordion body.</em> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions.
+                    </p>
+                    </div>
+                </div>
+
+                <div class="hs-accordion bg-[#2f3133] px-4 py-3 rounded-md flex flex-col justify-center" id="hs-basic-with-arrow-heading-eleven">
+                    <button class="flex justify-between hs-accordion-toggle items-center gap-x-3 w-full font-semibold text-start text-gray-800 hover:text-gray-500 focus:outline-hidden focus:text-gray-500 rounded-lg disabled:opacity-50 disabled:pointer-events-none dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400" aria-expanded="false" aria-controls="hs-basic-with-arrow-collapse-eleven">
+                        <p class="text-sm text-white">Bagaimana cara menyelesaikan misi event minimal top up 250 diamond?</p>
+                        <svg class="hs-accordion-active:hidden block size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m6 9 6 6 6-6"></path>
+                        </svg>
+                        <svg class="hs-accordion-active:block hidden size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m18 15-6-6-6 6"></path>
+                        </svg>
+                    </button>
+                    <div id="hs-basic-with-arrow-collapse-eleven" class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300" role="region" aria-labelledby="hs-basic-with-arrow-heading-eleven">
+                    <p class="text-gray-800 dark:text-neutral-200">
+                        <em>This is the second item's accordion body.</em> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions.
+                    </p>
+                    </div>
+                </div>
+
             </div>
 
         </div>

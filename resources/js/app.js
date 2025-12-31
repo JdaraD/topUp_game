@@ -1,4 +1,7 @@
 import './bootstrap';
+// index.js
+import 'preline'
+
 import Swiper from 'swiper';
 import { Autoplay, Navigation, Pagination, Scrollbar } from 'swiper/modules';
 
