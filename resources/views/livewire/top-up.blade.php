@@ -293,27 +293,41 @@
             
             <div class="col-span-1">
                 <div class="sticky flex flex-col gap-4 top-32">
-                    <div class="flex flex-col bg-[#444444] h-32 w-full rounded-lg p-4">
-                        <p class="text-white font-semibold">Container Bergerak</p>
+                    <div class="flex flex-col bg-[#444444] gap-2 h-32 w-full rounded-lg p-4">
+                        <p class="text-white font-semibold">Ulasan dan rating</p>
+                        <div class="flex gap-0.5">
+                            <p class="text-6xl text-white font-bold">4.99</p>
+                            <div class="flex flex-col gap-1">
+                                <div class="flex gap-0.5">
+                                    @for ($z = 1; $z <= 5; $z++)
+                                        <svg class="w-10 h-10 text-yellow-400 fill-current" viewBox="0 0 24 24">
+                                            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                                        </svg>
+                                    @endfor
+                                </div>
+
+                                <p class="text-xs text-white font-bold">Berdasarkan total 6.96jt rating</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex bg-[#444444] h-17.75 w-full rounded-lg p-4 gap-2 items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon text-white icon-tabler icons-tabler-outline icon-tabler-headphones">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 13m0 2a2 2 0 0 1 2 -2h1a2 2 0 0 1 2 2v3a2 2 0 0 1 -2 2h-1a2 2 0 0 1 -2 -2z" /><path d="M15 13m0 2a2 2 0 0 1 2 -2h1a2 2 0 0 1 2 2v3a2 2 0 0 1 -2 2h-1a2 2 0 0 1 -2 -2z" /><path d="M4 15v-3a8 8 0 0 1 16 0v3" />
+                        </svg>
+                        <div class="flex flex-col gap-0.5">
+                            <p class="text-white text-sm font-semibold">Butuh Bantuan?</p>
+                            <p class="text-xs text-white/80">Kamu bisa hubungi admin disini.</p>
+                        </div>
+                    </div>
+                    <div class="flex justify-center items-center border border-dashed border-white/30 bg-[#212121] h-24.75 w-full rounded-lg p-4">
                         <p class="text-sm text-white/80">
-                            Ringkasan / rating / checkout
+                            Belum ada item produk yang dipilih.
                         </p>
                     </div>
-                    <div class="flex flex-col bg-[#444444] h-17.75 w-full rounded-lg p-4">
-                        <p class="text-white font-semibold">Container Bergerak</p>
-                        <p class="text-sm text-white/80">
-                            Ringkasan / rating / checkout
-                        </p>
-                    </div>
-                    <div class="flex flex-col bg-[#444444] h-24.75 w-full rounded-lg p-4">
-                        <p class="text-white font-semibold">Container Bergerak</p>
-                        <p class="text-sm text-white/80">
-                            Ringkasan / rating / checkout
-                        </p>
-                    </div>
-                    <div class="flex flex-col bg-[#444444] h-8 w-full rounded-lg p-4">
-                        <p class="text-white font-semibold">Container Bergerak</p>
-                    </div>
+                    <button class="flex gap-1 bg-[#a58c6f] hover:bg-[#8d7861] h-8 w-full rounded-lg justify-center items-center">
+                        <img src="{{ asset('image/bag.png') }}" alt="" class="h-4.5 w-4.5">
+                        <p class="text-white font-semibold">Pesan Sekarang!</p>
+                    </button>
                 </div>
             </div>
 
