@@ -29,7 +29,7 @@
                 <ul class="flex flex-col gap-1 capitalize text-white">
                     <li>beranda</li>
                     <li>cek transaksi</li>
-                    <li>hubungi kami</li>
+                    <li><a href="{{ route('contact-us') }}">hubungi kami</a></li>
                     <li><a href="{{ route('reviews') }}">ulasan</a></li>
                 </ul>
             </div>
