@@ -30,7 +30,7 @@
                     <li>beranda</li>
                     <li>cek transaksi</li>
                     <li>hubungi kami</li>
-                    <li>ulasan</li>
+                    <li><a href="{{ route('reviews') }}">ulasan</a></li>
                 </ul>
             </div>
             <div class="flex flex-col w-[10%] gap-4">
