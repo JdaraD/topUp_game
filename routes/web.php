@@ -17,3 +17,4 @@ route::get('/top-up', TopUp::class)->name('top-up');
 route::get('/reviews', \App\Livewire\Reviews::class)->name('reviews');
 route::get('/contact-us', \App\Livewire\ContactUs::class)->name('contact-us');
 route::get('/privacy-policy', \App\Livewire\PrivacyPolicy::class)->name('privacy-policy');
+route::get('/terms-and-condition', \App\Livewire\TremsAndCondition::class)->name('terms-and-conditions');

@@ -45,7 +45,7 @@
                 <h3 class="text-[#8e7a5c] capitalize">legalitas</h3>
                 <ul class="flex flex-col gap-1 capitalize text-white">
                     <li><a href="{{ route('privacy-policy') }}">kebijakan pribadi</a></li>
-                    <li>syarat & ketentuan</li>
+                    <li><a href="{{ route('terms-and-conditions') }}">syarat & ketentuan</a></li>
                 </ul>
             </div>
         </div>
