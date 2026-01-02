@@ -27,7 +27,7 @@
             <div class="flex flex-col w-[10%] gap-4">
                 <h3 class="text-[#8e7a5c] capitalize">peta situs</h3>
                 <ul class="flex flex-col gap-1 capitalize text-white">
-                    <li>beranda</li>
+                    <li><a href="{{ route('home') }}">beranda</a></li>
                     <li>cek transaksi</li>
                     <li><a href="{{ route('contact-us') }}">hubungi kami</a></li>
                     <li><a href="{{ route('reviews') }}">ulasan</a></li>
@@ -44,7 +44,7 @@
             <div class="flex flex-col w-[10%] gap-4">
                 <h3 class="text-[#8e7a5c] capitalize">legalitas</h3>
                 <ul class="flex flex-col gap-1 capitalize text-white">
-                    <li>kebijakan pribadi</li>
+                    <li><a href="{{ route('privacy-policy') }}">kebijakan pribadi</a></li>
                     <li>syarat & ketentuan</li>
                 </ul>
             </div>
