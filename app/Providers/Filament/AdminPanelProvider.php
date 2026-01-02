@@ -6,6 +6,9 @@ use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
+use Filament\Navigation\NavigationBuilder;
+use Filament\Navigation\NavigationGroup;
+use Filament\Navigation\NavigationItem;
 use Filament\Pages\Dashboard;
 use Filament\Panel;
 use Filament\PanelProvider;
@@ -52,6 +55,22 @@ class AdminPanelProvider extends PanelProvider
                 DisableBladeIconComponents::class,
                 DispatchServingFilamentEvent::class,
             ])
+            ->navigation(function (NavigationBuilder $builder) : NavigationBuilder {
+                return $builder->groups([
+                    NavigationGroup::make()
+                        ->items([
+                            NavigationItem::make('Dashboard')
+                                ->icon('heroicon-s-home')
+                                ->isActiveWhen(fn(): bool => request()->routeIs('filament.admin.pages.dashboard'))
+                                ->url(fn(): string => Dashboard::getUrl()),
+                                
+                            NavigationItem::make('profil')
+                                ->icon('heroicon-s-users')
+                                ->isActiveWhen(fn(): bool => request()->routeIs('filament.admin.pages.profil')),
+                                // ->url(fn(): string => \App\Filament\Resources\UserResource::getUrl()),
+                        ]),
+                ]);
+            })
             ->authMiddleware([
                 Authenticate::class,
             ]);
