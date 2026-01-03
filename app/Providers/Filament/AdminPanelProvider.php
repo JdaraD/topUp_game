@@ -2,6 +2,8 @@
 
 namespace App\Providers\Filament;
 
+use App\Filament\Resources\Profils\ProfilResource;
+use App\Models\profil;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -27,6 +29,7 @@ class AdminPanelProvider extends PanelProvider
     public function panel(Panel $panel): Panel
     {
         return $panel
+            ->sidebarCollapsibleOnDesktop()
             ->default()
             ->id('admin')
             ->path('admin')
@@ -55,24 +58,32 @@ class AdminPanelProvider extends PanelProvider
                 DisableBladeIconComponents::class,
                 DispatchServingFilamentEvent::class,
             ])
-            ->navigation(function (NavigationBuilder $builder) : NavigationBuilder {
-                return $builder->groups([
-                    NavigationGroup::make()
-                        ->items([
-                            NavigationItem::make('Dashboard')
-                                ->icon('heroicon-s-home')
-                                ->isActiveWhen(fn(): bool => request()->routeIs('filament.admin.pages.dashboard'))
-                                ->url(fn(): string => Dashboard::getUrl()),
-                                
-                            NavigationItem::make('profil')
-                                ->icon('heroicon-s-users')
-                                ->isActiveWhen(fn(): bool => request()->routeIs('filament.admin.pages.profil')),
-                                // ->url(fn(): string => \App\Filament\Resources\UserResource::getUrl()),
-                        ]),
-                ]);
-            })
+
+            ->navigationItems([
+                NavigationItem::make('Profil2')
+                    ->icon('heroicon-s-home')
+                    ->url(fn () : string => ProfilResource::getUrl()),
+            ])
+            
+            // ->navigation(function (NavigationBuilder $builder) : NavigationBuilder {
+            //     return $builder->groups([
+            //         NavigationGroup::make()
+            //             ->items([
+            //                 NavigationItem::make('Dashboard')
+            //                     ->icon('heroicon-s-home')
+            //                     ->isActiveWhen(fn(): bool => request()->routeIs('filament.admin.pages.dashboard'))
+            //                     ->url(fn(): string => Dashboard::getUrl()),
+
+            //                 NavigationItem::make('profil')
+            //                     ->icon('heroicon-s-users')
+            //                     ->isActiveWhen(fn(): bool => request()->routeIs('filament.admin.pages.profil')),
+            //                     // ->url(fn(): string => \App\Filament\Resources\UserResource::getUrl()),
+            //             ]),
+            //     ]);
+            // })
             ->authMiddleware([
                 Authenticate::class,
             ]);
+            
     }
 }
