@@ -2,11 +2,13 @@
 
 namespace App\Filament\Resources\Profils\Tables;
 
+use Filament\Actions\Action;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
+use Filament\Support\Exceptions\Cancel;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
@@ -58,7 +60,16 @@ class ProfilsTable
                     ->modalHeading('Hapus Data')
                     ->modalDescription('Data yang dihapus tidak dapat dikembalikan.')
                     ->action(fn ($record) => $record->delete()),
-                ViewAction::make(),
+                ViewAction::make()
+                    ->icon('heroicon-o-eye')
+                    ->label('Lihat Detail')
+                    ->modalActions([
+                        EditAction::make(), 
+                        Action::make('cancel')
+                            ->label('Tutup')
+                            ->color('gray')
+                            ->close(),
+                ]),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([

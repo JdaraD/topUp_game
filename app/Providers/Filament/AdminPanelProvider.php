@@ -70,7 +70,7 @@ class AdminPanelProvider extends PanelProvider
 
                             NavigationItem::make('profil')
                                 ->icon('heroicon-s-users')
-                                ->isActiveWhen(fn(): bool => request()->routeIs('filament.admin.resources.profils'))
+                                ->isActiveWhen(fn(): bool => request()->routeIs('filament.admin.resources.profils.*'))
                                 ->url(fn(): string => ProfilResource::getUrl()),
                         ]),
                 ]);
