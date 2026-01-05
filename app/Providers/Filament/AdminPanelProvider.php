@@ -58,29 +58,24 @@ class AdminPanelProvider extends PanelProvider
                 DisableBladeIconComponents::class,
                 DispatchServingFilamentEvent::class,
             ])
-
-            ->navigationItems([
-                NavigationItem::make('Profil2')
-                    ->icon('heroicon-s-home')
-                    ->url(fn () : string => ProfilResource::getUrl()),
-            ])
             
-            // ->navigation(function (NavigationBuilder $builder) : NavigationBuilder {
-            //     return $builder->groups([
-            //         NavigationGroup::make()
-            //             ->items([
-            //                 NavigationItem::make('Dashboard')
-            //                     ->icon('heroicon-s-home')
-            //                     ->isActiveWhen(fn(): bool => request()->routeIs('filament.admin.pages.dashboard'))
-            //                     ->url(fn(): string => Dashboard::getUrl()),
+            ->navigation(function (NavigationBuilder $builder) : NavigationBuilder {
+                return $builder->groups([
+                    NavigationGroup::make()
+                        ->items([
+                            NavigationItem::make('Dashboard')
+                                ->icon('heroicon-s-home')
+                                ->isActiveWhen(fn(): bool => request()->routeIs('filament.admin.pages.dashboard'))
+                                ->url(fn(): string => Dashboard::getUrl()),
 
-            //                 NavigationItem::make('profil')
-            //                     ->icon('heroicon-s-users')
-            //                     ->isActiveWhen(fn(): bool => request()->routeIs('filament.admin.pages.profil')),
-            //                     // ->url(fn(): string => \App\Filament\Resources\UserResource::getUrl()),
-            //             ]),
-            //     ]);
-            // })
+                            NavigationItem::make('profil')
+                                ->icon('heroicon-s-users')
+                                ->isActiveWhen(fn(): bool => request()->routeIs('filament.admin.resources.profils'))
+                                ->url(fn(): string => ProfilResource::getUrl()),
+                        ]),
+                ]);
+            })
+
             ->authMiddleware([
                 Authenticate::class,
             ]);

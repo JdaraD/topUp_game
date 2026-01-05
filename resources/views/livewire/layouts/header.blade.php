@@ -1,6 +1,6 @@
 <div id="header" class="flex fixed z-50 flex-col items-center w-full bg-[#222222]/70 backdrop-blur-md transition-all duration-300 ease-out">
     <div class="flex w-[82%] h-16 justify-center items-center gap-4 mb-1">
-        <img src="{{ asset('image/jd.png') }}" alt="" class="h-full py-0.5 w-auto">
+        <img src="{{ asset('image/jd.png') }}" alt="" class="h-16 py-0.5 w-14 object-cover">
         <div name="search-bar" class="flex grow bg-[#52595d] w-263.75 h-9 rounded-lg border border-white/10 shadow-amber-50 items-center px-2 hover:cursor-text gap-2">
             <x-jam-search class="h-5 fill-white/60" />
             <input type="text" class="w-full text-white border-0 focus:outline-none focus:ring-0" placeholder="Cari Game atau Voucher">
