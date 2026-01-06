@@ -49,6 +49,7 @@ class ProfilForm
                                 ->placeholder('Masukan Nama Perusahaan')
                                 ->required(),
                             FileUpload::make('gambar')
+                                ->disk('public')
                                 ->label('Logo atau Identitas Perusahana')
                                 ->placeholder('Upload Logo atau Identitas Perusahana')
                                 ->maxSize(2024)

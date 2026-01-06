@@ -1,12 +1,16 @@
 <div class="flex flex-col py-12 items-center justify-center bottom-0 gap-12 bg-[#262727] w-full h-auto">
     <div class="flex flex-col w-[80%]">
-        <div>
-            <img src="{{ asset('image/jd.png') }}" alt="" class="h-16 py-0.5 w-14 object-cover">
-        
-        </div>
+        @foreach ( $profil as $pro)
+            <div>
+                <img src="{{ asset('storage/' .$pro->gambar) }}" alt="" class="h-16 py-0.5 w-14 object-cover">
+                
+            </div>  
+        @endforeach
         <div class="flex gap-8">
             <div class="flex flex-col w-[40%] gap-4">
-                <p class="text-white text-justify">J Gaming STORE adalah tempat top up games yang aman, murah dan terpercaya. Proses cepat 1-3 Detik. Open 24 jam. Payment terlengkap. Jika ada kendala silahkan klik logo CS pada kanan bawah di website ini.</p>
+                @foreach ( $profil as $pro )
+                    <p class="text-white text-justify">{{ $pro->deskripsi }}</p>
+                @endforeach
                 <div class="flex gap-2">
                     <a href="#">
                         <img src="{{ asset('image/ig.png') }}" alt="" class="h-10 w-10">
