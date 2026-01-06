@@ -2,6 +2,7 @@
 
 namespace App\Providers\Filament;
 
+use App\Filament\Resources\ColorSettings\ColorSettingResource;
 use App\Filament\Resources\Profils\ProfilResource;
 use App\Models\profil;
 use Filament\Http\Middleware\Authenticate;
@@ -68,10 +69,18 @@ class AdminPanelProvider extends PanelProvider
                                 ->isActiveWhen(fn(): bool => request()->routeIs('filament.admin.pages.dashboard'))
                                 ->url(fn(): string => Dashboard::getUrl()),
 
-                            NavigationItem::make('profil')
+                            NavigationItem::make('Profil')
                                 ->icon('heroicon-s-users')
                                 ->isActiveWhen(fn(): bool => request()->routeIs('filament.admin.resources.profils.*'))
                                 ->url(fn(): string => ProfilResource::getUrl()),
+
+                        ]),
+                    NavigationGroup::make('Settings')
+                        ->items([
+                            NavigationItem::make('Color Setting')
+                            ->icon('heroicon-s-adjustments-horizontal')
+                            ->isActiveWhen(fn(): bool => request()->routeIs('filament.admin.resources.color-settings.*'))
+                            ->url(fn(): string => ColorSettingResource::getUrl()),
                         ]),
                 ]);
             })
