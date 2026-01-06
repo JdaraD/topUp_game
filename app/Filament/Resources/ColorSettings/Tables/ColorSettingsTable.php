@@ -2,11 +2,16 @@
 
 namespace App\Filament\Resources\ColorSettings\Tables;
 
+use Filament\Actions\Action;
 use Filament\Actions\BulkActionGroup;
+use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
+use Filament\Actions\ViewAction;
+use Filament\Tables\Columns\ColorColumn;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Columns\ToggleColumn;
 use Filament\Tables\Table;
 
 class ColorSettingsTable
@@ -16,17 +21,24 @@ class ColorSettingsTable
         return $table
             ->columns([
                 TextColumn::make('order')
+                    ->label('Urutan')
                     ->numeric()
+                    ->formatStateUsing( function($state, $record, $column, $rowLoop) {
+                        return $rowLoop->iteration;
+                    })
                     ->sortable(),
-                IconColumn::make('is_active')
-                    ->boolean(),
+                ToggleColumn::make('is_active')
+                    ->label('Status'),
                 TextColumn::make('name')
                     ->searchable(),
-                TextColumn::make('colorHeader')
+                ColorColumn::make('colorHeader')
+                    ->label('Color Header')
                     ->searchable(),
-                TextColumn::make('colorBody')
+                ColorColumn::make('colorBody')
+                    ->label('Color Body')
                     ->searchable(),
-                TextColumn::make('colorFooter')
+                ColorColumn::make('colorFooter')
+                    ->label('Color Footer')
                     ->searchable(),
                 TextColumn::make('created_at')
                     ->dateTime()
@@ -41,7 +53,25 @@ class ColorSettingsTable
                 //
             ])
             ->recordActions([
-                EditAction::make(),
+                EditAction::make()
+                    ->openUrlInNewTab(),
+                DeleteAction::make()
+                    ->label('Hapus Theme')
+                    ->successNotificationTitle('Data Theme Telah Di Hapus')
+                    ->requiresConfirmation()
+                    ->modalHeading('Hapus Data Theme')
+                    ->modalDescription('Data Theme yang dihapus tidak dapat dikembalikan.')
+                    ->action(fn($record) => $record->delete()),
+                ViewAction::make()
+                    ->icon('heroicon-o-eye')
+                    ->label('Lihat Detail')
+                    ->modalActions([
+                        EditAction::make(),
+                        Action::make('cancel')
+                            ->label('tutup')
+                            ->color('gray')
+                            ->close(),
+                    ]),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([
