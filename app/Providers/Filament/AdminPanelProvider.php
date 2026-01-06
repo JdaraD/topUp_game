@@ -2,6 +2,7 @@
 
 namespace App\Providers\Filament;
 
+use App\Filament\Resources\Banners\BannerResource;
 use App\Filament\Resources\ColorSettings\ColorSettingResource;
 use App\Filament\Resources\Profils\ProfilResource;
 use App\Models\profil;
@@ -73,6 +74,16 @@ class AdminPanelProvider extends PanelProvider
                                 ->icon('heroicon-s-users')
                                 ->isActiveWhen(fn(): bool => request()->routeIs('filament.admin.resources.profils.*'))
                                 ->url(fn(): string => ProfilResource::getUrl()),
+
+                            NavigationItem::make('Banner Image')
+                                ->icon('heroicon-s-photo')
+                                ->isActiveWhen(fn(): bool => request()->routeIs('filament.admin.resources.banners.*'))
+                                ->url(fn(): string => BannerResource::getUrl()),
+
+                            // NavigationItem::make('Slider Image')
+                            //     ->icon('heroicon-s-users')
+                            //     ->isActiveWhen(fn(): bool => request()->routeIs('filament.admin.resources.profils.*'))
+                            //     ->url(fn(): string => ProfilResource::getUrl()),
 
                         ]),
                     NavigationGroup::make('Settings')
