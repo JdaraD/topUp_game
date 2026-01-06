@@ -1,23 +1,24 @@
 <?php
 
-namespace App\Filament\Resources\Banners\Schemas;
+namespace App\Filament\Resources\ImageSliders\Schemas;
 
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
 
-class BannerForm
+class ImageSliderForm
 {
-    public static function getPuralModelLabel() : string
+    public static function getModelPurelLable() : string
     {
-        return 'Banner';
+        return 'Image Slide';
     }
 
     public static function getModelLabel() : string
     {
-        return 'Banner';
+        return 'Image Slide';
     }
 
     public static function configure(Schema $schema): Schema
@@ -32,27 +33,31 @@ class BannerForm
                     ->schema([
                         Toggle::make('is_active')
                             ->label('Status')
-                            ->default(true)
                             ->onColor('success')
                             ->offColor('danger')
+                            ->default(true)
                             ->required(),
                     ]),
                 Section::make()
                     ->schema([
                         TextInput::make('name')
-                            ->label('Judul Banner')
-                            ->placeholder('Masukan Judul Banner')
+                            ->label('Nama Gambar Slide')
+                            ->placeholder('Masukan Nama Gambar Banner')
                             ->required(),
+
                         FileUpload::make('gambar')
-                            ->label('Gambar Banner')
-                            ->placeholder('Masukan gambar Banner width( 100% ) & Height( 280px )')
-                            ->maxSize(2024)
-                            ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/jpg'])
-                            ->rule(['mimes:jpg,jpeg,png'])
-                            ->imageEditorViewportHeight(280)
+                            ->label('Gambar Slide')
+                            ->image()
+                            ->disk('public')
+                            ->directory('image-sliders')
+                            ->maxSize(10024)
+                            ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/jpg', 'image/gif'])
+                            ->rule(['mimes:jpg,jpeg,png,gif'])
+                            ->imageEditor()
+                            ->imageEditorViewportHeight(554)
                             ->required(),
-                    ]),
-                
+                    ])
+
             ])->columns(1);
     }
 }

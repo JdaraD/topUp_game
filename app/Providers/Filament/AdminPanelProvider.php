@@ -4,6 +4,7 @@ namespace App\Providers\Filament;
 
 use App\Filament\Resources\Banners\BannerResource;
 use App\Filament\Resources\ColorSettings\ColorSettingResource;
+use App\Filament\Resources\ImageSliders\ImageSliderResource;
 use App\Filament\Resources\Profils\ProfilResource;
 use App\Models\profil;
 use Filament\Http\Middleware\Authenticate;
@@ -70,7 +71,7 @@ class AdminPanelProvider extends PanelProvider
                                 ->isActiveWhen(fn(): bool => request()->routeIs('filament.admin.pages.dashboard'))
                                 ->url(fn(): string => Dashboard::getUrl()),
 
-                            NavigationItem::make('Profil')
+                            NavigationItem::make('Profil Perusahaan')
                                 ->icon('heroicon-s-users')
                                 ->isActiveWhen(fn(): bool => request()->routeIs('filament.admin.resources.profils.*'))
                                 ->url(fn(): string => ProfilResource::getUrl()),
@@ -80,10 +81,10 @@ class AdminPanelProvider extends PanelProvider
                                 ->isActiveWhen(fn(): bool => request()->routeIs('filament.admin.resources.banners.*'))
                                 ->url(fn(): string => BannerResource::getUrl()),
 
-                            // NavigationItem::make('Slider Image')
-                            //     ->icon('heroicon-s-users')
-                            //     ->isActiveWhen(fn(): bool => request()->routeIs('filament.admin.resources.profils.*'))
-                            //     ->url(fn(): string => ProfilResource::getUrl()),
+                            NavigationItem::make('Slider Image')
+                                ->icon('heroicon-s-photo')
+                                ->isActiveWhen(fn(): bool => request()->routeIs('filament.admin.resources.image-sliders.*'))
+                                ->url(fn(): string => ImageSliderResource::getUrl()),
 
                         ]),
                     NavigationGroup::make('Settings')
