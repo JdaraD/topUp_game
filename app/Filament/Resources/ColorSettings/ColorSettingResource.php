@@ -16,6 +16,8 @@ use Filament\Tables\Table;
 
 class ColorSettingResource extends Resource
 {
+    protected static ?string $modelLabel = 'Color Setting';
+    protected static ?string $pluralModelLabel = 'Color Setting';
     protected static ?string $model = ColorSetting::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;

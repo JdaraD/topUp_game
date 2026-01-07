@@ -4,6 +4,7 @@ namespace App\Providers\Filament;
 
 use App\Filament\Resources\Banners\BannerResource;
 use App\Filament\Resources\ColorSettings\ColorSettingResource;
+use App\Filament\Resources\Headerbanners\HeaderbannerResource;
 use App\Filament\Resources\ImageSliders\ImageSliderResource;
 use App\Filament\Resources\Profils\ProfilResource;
 use App\Models\profil;
@@ -76,17 +77,24 @@ class AdminPanelProvider extends PanelProvider
                                 ->isActiveWhen(fn(): bool => request()->routeIs('filament.admin.resources.profils.*'))
                                 ->url(fn(): string => ProfilResource::getUrl()),
 
-                            NavigationItem::make('Banner Image')
-                                ->icon('heroicon-s-photo')
-                                ->isActiveWhen(fn(): bool => request()->routeIs('filament.admin.resources.banners.*'))
-                                ->url(fn(): string => BannerResource::getUrl()),
-
                             NavigationItem::make('Slider Image')
                                 ->icon('heroicon-s-photo')
                                 ->isActiveWhen(fn(): bool => request()->routeIs('filament.admin.resources.image-sliders.*'))
                                 ->url(fn(): string => ImageSliderResource::getUrl()),
 
                         ]),
+                    NavigationGroup::make('Banner Gambar')
+                        ->items([
+                            NavigationItem::make('Banner Image Top')
+                                ->icon('heroicon-s-photo')
+                                ->isActiveWhen(fn(): bool => request()->routeIs('filament.admin.resources.headerbanners.*'))
+                                ->url(fn(): string => HeaderbannerResource::getUrl()),
+                            NavigationItem::make('Banner Image Bottom')
+                                ->icon('heroicon-s-photo')
+                                ->isActiveWhen(fn(): bool => request()->routeIs('filament.admin.resources.banners.*'))
+                                ->url(fn(): string => BannerResource::getUrl()),
+                        ]),
+                    
                     NavigationGroup::make('Settings')
                         ->items([
                             NavigationItem::make('Color Setting')

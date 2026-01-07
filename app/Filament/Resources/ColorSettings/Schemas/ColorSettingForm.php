@@ -12,15 +12,6 @@ use Filament\Schemas\Schema;
 
 class ColorSettingForm
 {
-    public static function getPluralModelLabel(): string
-    {
-        return 'Color Setting';
-    }
-
-    public static function getModelLabel(): string
-    {
-        return 'Color Setting';
-    }
     public static function configure(Schema $schema): Schema
     {
         return $schema

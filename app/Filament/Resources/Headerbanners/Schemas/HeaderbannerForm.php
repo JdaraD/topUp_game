@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Filament\Resources\Banners\Schemas;
+namespace App\Filament\Resources\Headerbanners\Schemas;
 
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\TextInput;
@@ -8,7 +8,7 @@ use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
 
-class BannerForm
+class HeaderbannerForm
 {
     public static function configure(Schema $schema): Schema
     {
@@ -17,32 +17,34 @@ class BannerForm
                 TextInput::make('order')
                     ->hidden()
                     ->numeric()
-                    ->default(0),
+                    ->default(1),
                 Section::make()
                     ->schema([
                         Toggle::make('is_active')
                             ->label('Status')
-                            ->default(true)
                             ->onColor('success')
                             ->offColor('danger')
+                            ->default(true)
                             ->required(),
                     ]),
                 Section::make()
                     ->schema([
                         TextInput::make('name')
-                            ->label('Judul Banner')
-                            ->placeholder('Masukan Judul Banner')
+                            ->label('Judul Gambar')
+                            ->placeholder('Masukan Judul Gambar')
                             ->required(),
                         FileUpload::make('gambar')
-                            ->label('Gambar Banner')
-                            ->placeholder('Masukan gambar Banner width( 100% ) & Height( 280px )')
-                            ->maxSize(2024)
-                            ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/jpg'])
-                            ->rule(['mimes:jpg,jpeg,png'])
-                            ->imageEditorViewportHeight(280)
+                            ->label('Banner Image')
+                            ->placeholder('Upload Banner width ( 100% ) & height ( 554px )')
+                            ->maxSize(2045)
+                            ->imageEditorViewportHeight(554)
+                            ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/jpg', 'image/gif'])
+                            ->rule(['mimes:jpg,jpeg,png,gif'])
+                            ->disk('public')
                             ->required(),
+                        
                     ]),
-                
+
             ])->columns(1);
     }
 }

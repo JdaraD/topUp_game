@@ -16,6 +16,8 @@ use Filament\Tables\Table;
 
 class BannerResource extends Resource
 {
+    protected static ?string $modelLabel = 'Banner';
+    protected static ?string $pluralModelLabel = 'Banner Promosi Bottom';
     protected static ?string $model = Banner::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
