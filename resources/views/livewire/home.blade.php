@@ -2,27 +2,27 @@
     <div class="relative flex justify-center items-center bg-gray-200/20 h-138.5 w-full object-cover">
         <img src="{{ asset('image/bg.gif') }}" alt="" class="w-full h-full">
         <div class="flex flex-col gap-1 absolute justify-center items-center h-[88%] w-[64%] md:w-304 lg:w-304.75 rounded-2xl">
-            @if(file_exists(public_path('image/bg1.gif'))) 
-                <div class="swiper w-full h-full border border-white/20 rounded-2xl">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <img src="{{ asset('image/bg.gif') }}" class="w-full h-full object-cover rounded-2xl">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="{{ asset('image/bg1.gif') }}" class="w-full h-full object-cover rounded-2xl">
-                        </div>
-                    </div>
+            <div class="swiper w-full h-full border border-white/20 rounded-2xl">
+                <div class="swiper-wrapper">
+                    @foreach ( $slideImage as $sie)
+                        @if(file_exists(public_path('storage/'. $sie->gambar))) 
+                            <div class="swiper-slide">
+                                <img src="{{ asset('storage/'. $sie->gambar) }}" class="w-full h-full object-cover rounded-2xl">
+                            </div>
+                        @else
+                            <div class="animate-pulse bg-gray-200 w-full h-full rounded-2xl"></div>
+                        @endif
+                            
+                    @endforeach
+                </div>
 
-                    <!-- Optional -->
+                        <!-- Optional -->
                     <div class="swiper-pagination"></div>
                     <div class="swiper-button-next"></div>
                     <div class="swiper-button-prev"></div>
 
                     <div class="swiper-scrollbar"></div>
-                </div> 
-            @else
-                <div class="animate-pulse bg-gray-200 w-full h-full rounded-2xl"></div>
-            @endif
+            </div> 
         </div>
     </div>
     <div class="flex flex-col justify-center gap-4 items-center h-auto">
