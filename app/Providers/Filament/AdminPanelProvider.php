@@ -5,6 +5,7 @@ namespace App\Providers\Filament;
 use App\Filament\Resources\Banners\BannerResource;
 use App\Filament\Resources\ColorSettings\ColorSettingResource;
 use App\Filament\Resources\Headerbanners\HeaderbannerResource;
+use App\Filament\Resources\IconsGames\IconsGamesResource;
 use App\Filament\Resources\ImageSliders\ImageSliderResource;
 use App\Filament\Resources\Profils\ProfilResource;
 use App\Models\profil;
@@ -89,10 +90,12 @@ class AdminPanelProvider extends PanelProvider
                                 ->icon('heroicon-s-photo')
                                 ->isActiveWhen(fn(): bool => request()->routeIs('filament.admin.resources.headerbanners.*'))
                                 ->url(fn(): string => HeaderbannerResource::getUrl()),
+
                             NavigationItem::make('Banner Image Bottom')
                                 ->icon('heroicon-s-photo')
                                 ->isActiveWhen(fn(): bool => request()->routeIs('filament.admin.resources.banners.*'))
                                 ->url(fn(): string => BannerResource::getUrl()),
+                                
                             NavigationItem::make('Slider Image')
                                 ->icon('heroicon-s-photo')
                                 ->isActiveWhen(fn(): bool => request()->routeIs('filament.admin.resources.image-sliders.*'))
@@ -102,12 +105,14 @@ class AdminPanelProvider extends PanelProvider
                         ->items([
                             NavigationItem::make('Asset Icons Diamons Games')
                                 ->icon('heroicon-s-sparkles')
-                                ->isActiveWhen(fn(): bool => request()->routeIs('filament.admin.resources.headerbanners.*')),
-                                // ->url(fn(): string => HeaderbannerResource::getUrl()),
+                                ->isActiveWhen(fn(): bool => request()->routeIs('filament.admin.resources.icons-games.*'))
+                                ->url(fn(): string => IconsGamesResource::getUrl()),
+
                             NavigationItem::make('Daftar Games')
                                 ->icon('heroicon-s-sparkles')
                                 ->isActiveWhen(fn(): bool => request()->routeIs('filament.admin.resources.headerbanners.*')),
                                 // ->url(fn(): string => HeaderbannerResource::getUrl()),
+
                             NavigationItem::make('Diamons Games')
                                 ->icon('heroicon-s-sparkles')
                                 ->isActiveWhen(fn(): bool => request()->routeIs('filament.admin.resources.headerbanners.*')),

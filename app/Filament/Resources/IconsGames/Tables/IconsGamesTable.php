@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Filament\Resources\Headerbanners\Tables;
+namespace App\Filament\Resources\IconsGames\Tables;
 
 use Filament\Actions\Action;
 use Filament\Actions\BulkActionGroup;
@@ -8,14 +8,12 @@ use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
-use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\ToggleColumn;
 use Filament\Tables\Table;
-use Filament\Widgets\StatsOverviewWidget\Stat;
 
-class HeaderbannersTable
+class IconsGamesTable
 {
     public static function configure(Table $table): Table
     {
@@ -31,7 +29,10 @@ class HeaderbannersTable
                 ToggleColumn::make('is_active')
                     ->label('Status'),
                 TextColumn::make('name')
-                    ->label('Nama')
+                    ->label('nama Diamons')
+                    ->searchable(),
+                TextColumn::make('games')
+                    ->label('Nama Game')
                     ->searchable(),
                 ImageColumn::make('gambar')
                     ->label('Gambar')
@@ -50,14 +51,14 @@ class HeaderbannersTable
                 //
             ])
             ->recordActions([
-                EditAction::make()
+                EditAction::make()                    
                     ->openUrlInNewTab(),
                 DeleteAction::make()
-                    ->label('Hapus Banner')
-                    ->successNotificationTitle('Data Banner Telah Di Hapus')
+                    ->label('Hapus Asset')
+                    ->successNotificationTitle('Data Asset Telah Di Hapus')
                     ->requiresConfirmation()
-                    ->modalHeading('Hapus Data Banner')
-                    ->modalDescription('Data Banner yang dihapus tidak dapat dikembalikan.')
+                    ->modalHeading('Hapus Data Asset')
+                    ->modalDescription('Data Asset yang dihapus tidak dapat dikembalikan.')
                     ->action(fn($record) => $record->delete()),
                 ViewAction::make()
                     ->label('Lihat Detail')
