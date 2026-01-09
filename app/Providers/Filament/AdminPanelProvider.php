@@ -77,10 +77,10 @@ class AdminPanelProvider extends PanelProvider
                                 ->isActiveWhen(fn(): bool => request()->routeIs('filament.admin.resources.profils.*'))
                                 ->url(fn(): string => ProfilResource::getUrl()),
 
-                            NavigationItem::make('Slider Image')
-                                ->icon('heroicon-s-photo')
-                                ->isActiveWhen(fn(): bool => request()->routeIs('filament.admin.resources.image-sliders.*'))
-                                ->url(fn(): string => ImageSliderResource::getUrl()),
+                            NavigationItem::make('Cart')
+                                ->icon('heroicon-s-shopping-cart')
+                                ->isActiveWhen(fn(): bool => request()->routeIs('filament.admin.resources.profils.*')),
+                                // ->url(fn(): string => ProfilResource::getUrl()),
 
                         ]),
                     NavigationGroup::make('Banner Gambar')
@@ -93,14 +93,38 @@ class AdminPanelProvider extends PanelProvider
                                 ->icon('heroicon-s-photo')
                                 ->isActiveWhen(fn(): bool => request()->routeIs('filament.admin.resources.banners.*'))
                                 ->url(fn(): string => BannerResource::getUrl()),
+                            NavigationItem::make('Slider Image')
+                                ->icon('heroicon-s-photo')
+                                ->isActiveWhen(fn(): bool => request()->routeIs('filament.admin.resources.image-sliders.*'))
+                                ->url(fn(): string => ImageSliderResource::getUrl()),
+                        ]),
+                    NavigationGroup::make('TopUp')
+                        ->items([
+                            NavigationItem::make('Asset Icons Diamons Games')
+                                ->icon('heroicon-s-sparkles')
+                                ->isActiveWhen(fn(): bool => request()->routeIs('filament.admin.resources.headerbanners.*')),
+                                // ->url(fn(): string => HeaderbannerResource::getUrl()),
+                            NavigationItem::make('Daftar Games')
+                                ->icon('heroicon-s-sparkles')
+                                ->isActiveWhen(fn(): bool => request()->routeIs('filament.admin.resources.headerbanners.*')),
+                                // ->url(fn(): string => HeaderbannerResource::getUrl()),
+                            NavigationItem::make('Diamons Games')
+                                ->icon('heroicon-s-sparkles')
+                                ->isActiveWhen(fn(): bool => request()->routeIs('filament.admin.resources.headerbanners.*')),
+                                // ->url(fn(): string => HeaderbannerResource::getUrl()),
                         ]),
                     
                     NavigationGroup::make('Settings')
                         ->items([
                             NavigationItem::make('Color Setting')
-                            ->icon('heroicon-s-adjustments-horizontal')
-                            ->isActiveWhen(fn(): bool => request()->routeIs('filament.admin.resources.color-settings.*'))
-                            ->url(fn(): string => ColorSettingResource::getUrl()),
+                                ->icon('heroicon-s-adjustments-horizontal')
+                                ->isActiveWhen(fn(): bool => request()->routeIs('filament.admin.resources.color-settings.*'))
+                                ->url(fn(): string => ColorSettingResource::getUrl()),
+
+                            NavigationItem::make('Akun')
+                                ->icon('heroicon-s-adjustments-horizontal')
+                                ->isActiveWhen(fn(): bool => request()->routeIs('filament.admin.resources.color-settings.*')),
+                                // ->url(fn(): string => ColorSettingResource::getUrl()),
                         ]),
                 ]);
             })
