@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\PriceGames\Schemas;
 
+use App\Models\daftarGame;
 use App\Models\iconsgame;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
@@ -30,28 +31,44 @@ class PriceGameForm
                 Section::make()
                     ->schema([
                         Select::make('daftar_game_id')
-                            ->label('Icon Game')
+                            ->label('Daftar Games')
+                            ->placeholder('Pilih Game')
                             ->searchable()
                             ->preload()
                             ->required()
+                            ->options(
+                                daftarGame::query()
+                                            ->where('is_active', true)
+                                            ->pluck('name', 'id')
+                            ),
+                        Select::make('iconsgame_id')
+                            ->label('Icon Games')
+                            ->placeholder('Pilih Icon Games')
+                            ->required()
+                            ->preload()
+                            ->searchable()
                             ->options(
                                 iconsgame::query()
                                             ->where('is_active', true)
                                             ->pluck('name', 'id')
                             ),
-                        TextInput::make('iconsgame_id')
-                            ->required()
-                            ->numeric(),
                         TextInput::make('name')
+                            ->label('Name Event')
+                            ->placeholder('Tulis Event')
                             ->required(),
                         TextInput::make('harga')
+                            ->label('Harga')
+                            ->prefix('Rp.')
                             ->required()
                             ->numeric(),
                         TextInput::make('discon')
+                            ->label('Diskon')
+                            // ->hint('%')
+                            ->suffix('%')
                             ->required()
                             ->numeric(),
                     ]),
                 
-            ]);
+            ])->columns(1);
     }
 }

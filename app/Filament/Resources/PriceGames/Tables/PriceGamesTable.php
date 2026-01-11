@@ -2,9 +2,12 @@
 
 namespace App\Filament\Resources\PriceGames\Tables;
 
+use Filament\Actions\Action;
 use Filament\Actions\BulkActionGroup;
+use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
+use Filament\Actions\ViewAction;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\ToggleColumn;
@@ -55,7 +58,25 @@ class PriceGamesTable
                 //
             ])
             ->recordActions([
-                EditAction::make(),
+                EditAction::make()
+                    ->openUrlInNewTab(),
+                DeleteAction::make()
+                    ->label('Hapus Price Game')
+                    ->successNotificationTitle('Data Price Game Telah Di Hapus')
+                    ->requiresConfirmation()
+                    ->modalHeading('Hapus Data Price Game')
+                    ->modalDescription('Data Price Game yang dihapus tidak dapat dikembalikan.')
+                    ->action(fn($record) => $record->delete()),
+                ViewAction::make()
+                    ->label('Lihat Detail')
+                    ->icon('heroicon-o-eye')
+                    ->modalActions([
+                        EditAction::make(),
+                        Action::make('cencel')
+                            ->label('Tutup')
+                            ->color('gray')
+                            ->close(),
+                    ]),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([

@@ -16,7 +16,7 @@ class priceGame extends Model
         'iconsgame_id',
         'name',
         'harga',
-        'diskon',
+        'discon',
         'created_at',
         'updated_at',
     ];

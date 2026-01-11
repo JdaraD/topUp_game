@@ -18,8 +18,8 @@ return new class extends Migration
             $table->foreignId('daftar_game_id')->constrained('daftar_games')->cascadeOnDelete();
             $table->foreignId('iconsgame_id')->constrained('iconsgames')->cascadeOnDelete();
             $table->string('name');
-            $table->decimal('harga', 12, 2);
-            $table->decimal('discon', 12, 2)->nullable(0);
+            $table->bigInteger('harga');
+            $table->integer('discon')->nullable(0);
             $table->timestamps();
 
             $table->unique(['daftar_game_id','iconsgame_id']);
