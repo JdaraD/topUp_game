@@ -14,7 +14,6 @@ class iconsgame extends Model
         'is_active',
         'daftar_game_id',
         'name',
-        'games',
         'gambar',
         'created_at',
         'updated_at'

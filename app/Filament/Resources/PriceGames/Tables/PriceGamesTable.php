@@ -1,19 +1,16 @@
 <?php
 
-namespace App\Filament\Resources\IconsGames\Tables;
+namespace App\Filament\Resources\PriceGames\Tables;
 
-use Filament\Actions\Action;
 use Filament\Actions\BulkActionGroup;
-use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
-use Filament\Actions\ViewAction;
-use Filament\Tables\Columns\ImageColumn;
+use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\ToggleColumn;
 use Filament\Tables\Table;
 
-class IconsGamesTable
+class PriceGamesTable
 {
     public static function configure(Table $table): Table
     {
@@ -30,14 +27,21 @@ class IconsGamesTable
                     ->label('Status'),
                 TextColumn::make('daftar_game_id')
                     ->label('Nama Games')
-                    ->searchable(),
+                    ->sortable(),
+                TextColumn::make('iconsgame_id')
+                    ->label('Icon Games')
+                    ->sortable(),
                 TextColumn::make('name')
-                    ->label('Nama Diamons')
+                    ->label('Nama')
                     ->searchable(),
-                ImageColumn::make('gambar')
-                    ->label('Gambar')
-                    ->disk('public')
-                    ->searchable(),
+                TextColumn::make('harga')
+                    ->label('Harga')
+                    ->numeric()
+                    ->sortable(),
+                TextColumn::make('discon')
+                    ->label('Diskon')
+                    ->numeric()
+                    ->sortable(),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
@@ -51,25 +55,7 @@ class IconsGamesTable
                 //
             ])
             ->recordActions([
-                EditAction::make()                    
-                    ->openUrlInNewTab(),
-                DeleteAction::make()
-                    ->label('Hapus Asset')
-                    ->successNotificationTitle('Data Asset Telah Di Hapus')
-                    ->requiresConfirmation()
-                    ->modalHeading('Hapus Data Asset')
-                    ->modalDescription('Data Asset yang dihapus tidak dapat dikembalikan.')
-                    ->action(fn($record) => $record->delete()),
-                ViewAction::make()
-                    ->label('Lihat Detail')
-                    ->icon('heroicon-o-eye')
-                    ->modalActions([
-                        EditAction::make(),
-                        Action::make('cencel')
-                            ->label('Tutup')
-                            ->color('gray')
-                            ->close(),
-                    ]),
+                EditAction::make(),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([

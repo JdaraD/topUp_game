@@ -8,6 +8,7 @@ use App\Filament\Resources\DaftarGames\DaftarGameResource;
 use App\Filament\Resources\Headerbanners\HeaderbannerResource;
 use App\Filament\Resources\IconsGames\IconsGamesResource;
 use App\Filament\Resources\ImageSliders\ImageSliderResource;
+use App\Filament\Resources\PriceGames\PriceGameResource;
 use App\Filament\Resources\Profils\ProfilResource;
 use App\Models\profil;
 use Filament\Http\Middleware\Authenticate;
@@ -116,8 +117,8 @@ class AdminPanelProvider extends PanelProvider
 
                             NavigationItem::make('Diamons Games')
                                 ->icon('heroicon-s-sparkles')
-                                ->isActiveWhen(fn(): bool => request()->routeIs('filament.admin.resources.headerbanners.*')),
-                                // ->url(fn(): string => HeaderbannerResource::getUrl()),
+                                ->isActiveWhen(fn(): bool => request()->routeIs('filament.admin.resources.price-games.*'))
+                                ->url(fn(): string => PriceGameResource::getUrl()),
                         ]),
                     
                     NavigationGroup::make('Settings')

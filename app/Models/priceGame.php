@@ -28,7 +28,7 @@ class priceGame extends Model
 
     public function iconsgames()
     {
-        return $this->belongsTo(iconsgame::class);
+        return $this->belongsTo(iconsgame::class, 'iconsgame_id');
     }
 
 }
