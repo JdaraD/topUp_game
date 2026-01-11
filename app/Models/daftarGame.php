@@ -5,28 +5,32 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class iconsgame extends Model
+class daftarGame extends Model
 {
     use HasFactory;
 
     protected $fillable = [
         'order',
         'is_active',
-        'daftar_game_id',
         'name',
-        'games',
+        'publisher',
         'gambar',
+        'deskripsi',
         'created_at',
         'updated_at'
     ];
 
-    public function game()
+    protected function casts() : array
     {
-        return $this->belongsTo(daftarGame::class, 'daftar_game_id');
+        return [
+            'deskripsi' => 'array',
+        ];
     }
 
     public function priceGames()
     {
-        return $this->hasMany(priceGame::class, 'iconsgame_id');
+        return $this->hasMany(priceGame::class, 'daftar_game_id');
     }
 }
+
+

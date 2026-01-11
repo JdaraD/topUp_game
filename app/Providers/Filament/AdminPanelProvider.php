@@ -4,6 +4,7 @@ namespace App\Providers\Filament;
 
 use App\Filament\Resources\Banners\BannerResource;
 use App\Filament\Resources\ColorSettings\ColorSettingResource;
+use App\Filament\Resources\DaftarGames\DaftarGameResource;
 use App\Filament\Resources\Headerbanners\HeaderbannerResource;
 use App\Filament\Resources\IconsGames\IconsGamesResource;
 use App\Filament\Resources\ImageSliders\ImageSliderResource;
@@ -110,8 +111,8 @@ class AdminPanelProvider extends PanelProvider
 
                             NavigationItem::make('Daftar Games')
                                 ->icon('heroicon-s-sparkles')
-                                ->isActiveWhen(fn(): bool => request()->routeIs('filament.admin.resources.headerbanners.*')),
-                                // ->url(fn(): string => HeaderbannerResource::getUrl()),
+                                ->isActiveWhen(fn(): bool => request()->routeIs('filament.admin.resources.daftar-games.*'))
+                                ->url(fn(): string => DaftarGameResource::getUrl()),
 
                             NavigationItem::make('Diamons Games')
                                 ->icon('heroicon-s-sparkles')

@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class iconsgame extends Model
+class priceGame extends Model
 {
     use HasFactory;
 
@@ -13,20 +13,22 @@ class iconsgame extends Model
         'order',
         'is_active',
         'daftar_game_id',
+        'iconsgame_id',
         'name',
-        'games',
-        'gambar',
+        'harga',
+        'diskon',
         'created_at',
-        'updated_at'
+        'updated_at',
     ];
 
     public function game()
     {
-        return $this->belongsTo(daftarGame::class, 'daftar_game_id');
+        return $this->belongsTo(daftarGame::class);
     }
 
-    public function priceGames()
+    public function iconsgames()
     {
-        return $this->hasMany(priceGame::class, 'iconsgame_id');
+        return $this->belongsTo(iconsgame::class);
     }
+
 }
