@@ -106,17 +106,17 @@ class AdminPanelProvider extends PanelProvider
                     NavigationGroup::make('TopUp')
                         ->items([
                             NavigationItem::make('Asset Icons Diamons Games')
-                                ->icon('heroicon-s-sparkles')
+                                ->icon('heroicon-o-photo')
                                 ->isActiveWhen(fn(): bool => request()->routeIs('filament.admin.resources.icons-games.*'))
                                 ->url(fn(): string => IconsGamesResource::getUrl()),
 
                             NavigationItem::make('Daftar Games')
-                                ->icon('heroicon-s-sparkles')
+                                ->icon('heroicon-s-list-bullet')
                                 ->isActiveWhen(fn(): bool => request()->routeIs('filament.admin.resources.daftar-games.*'))
                                 ->url(fn(): string => DaftarGameResource::getUrl()),
 
                             NavigationItem::make('Diamons Games')
-                                ->icon('heroicon-s-sparkles')
+                                ->icon('heroicon-s-banknotes')
                                 ->isActiveWhen(fn(): bool => request()->routeIs('filament.admin.resources.price-games.*'))
                                 ->url(fn(): string => PriceGameResource::getUrl()),
                         ]),
@@ -129,7 +129,7 @@ class AdminPanelProvider extends PanelProvider
                                 ->url(fn(): string => ColorSettingResource::getUrl()),
 
                             NavigationItem::make('Akun')
-                                ->icon('heroicon-s-adjustments-horizontal')
+                                ->icon('heroicon-s-user-circle')
                                 ->isActiveWhen(fn(): bool => request()->routeIs('filament.admin.resources.color-settings.*')),
                                 // ->url(fn(): string => ColorSettingResource::getUrl()),
                         ]),

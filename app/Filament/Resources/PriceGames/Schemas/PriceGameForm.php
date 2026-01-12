@@ -49,8 +49,8 @@ class PriceGameForm
                             ->searchable()
                             ->options(
                                 iconsgame::query()
-                                            ->where('is_active', true)
-                                            ->pluck('name', 'id')
+                                    ->where('is_active', true)
+                                    ->pluck('name', 'id')
                             ),
                         TextInput::make('name')
                             ->label('Name Event')
