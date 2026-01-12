@@ -9,6 +9,7 @@ use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
 use Filament\Tables\Columns\IconColumn;
+use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\ToggleColumn;
 use Filament\Tables\Table;
@@ -28,11 +29,12 @@ class PriceGamesTable
                     }),
                 ToggleColumn::make('is_active')
                     ->label('Status'),
-                TextColumn::make('daftar_game_id')
+                TextColumn::make('game.name')
                     ->label('Nama Games')
                     ->sortable(),
-                TextColumn::make('iconsgame_id')
+                ImageColumn::make('iconsgames.gambar')
                     ->label('Icon Games')
+                    ->disk('public')
                     ->sortable(),
                 TextColumn::make('name')
                     ->label('Nama')
@@ -41,7 +43,7 @@ class PriceGamesTable
                     ->label('Harga')
                     ->numeric()
                     ->sortable(),
-                TextColumn::make('discon')
+                TextColumn:: make('discon')
                     ->label('Diskon')
                     ->numeric()
                     ->sortable(),

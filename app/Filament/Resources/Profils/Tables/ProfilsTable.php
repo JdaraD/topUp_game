@@ -31,8 +31,11 @@ class ProfilsTable
                 ToggleColumn::make('is_active')
                     ->label('Status'),
                 TextColumn::make('name')
+                    ->label('Nama Perusahaan')
                     ->searchable(),
                 ImageColumn::make('gambar')
+                    ->label('Logo Perusahaan')
+                    ->disk('public')
                     ->searchable(),
                 TextColumn::make('deskripsi')
                     ->label('Deskripsi')

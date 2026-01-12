@@ -28,7 +28,7 @@ class IconsGamesTable
                     }),
                 ToggleColumn::make('is_active')
                     ->label('Status'),
-                TextColumn::make('daftar_game_id')
+                TextColumn::make('game.name')
                     ->label('Nama Games')
                     ->searchable(),
                 TextColumn::make('name')

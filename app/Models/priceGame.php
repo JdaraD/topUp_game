@@ -23,7 +23,7 @@ class priceGame extends Model
 
     public function game()
     {
-        return $this->belongsTo(daftarGame::class);
+        return $this->belongsTo(daftarGame::class,'daftar_game_id');
     }
 
     public function iconsgames()
