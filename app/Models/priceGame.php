@@ -14,6 +14,7 @@ class priceGame extends Model
         'is_active',
         'daftar_game_id',
         'iconsgame_id',
+        'value',
         'name',
         'harga',
         'discon',

@@ -36,8 +36,11 @@ class PriceGamesTable
                     ->label('Icon Games')
                     ->disk('public')
                     ->sortable(),
+                TextColumn::make('value')
+                    ->label('Money Game')
+                    ->searchable(),
                 TextColumn::make('name')
-                    ->label('Nama')
+                    ->label('Nama Event')
                     ->searchable(),
                 TextColumn::make('harga')
                     ->label('Harga')

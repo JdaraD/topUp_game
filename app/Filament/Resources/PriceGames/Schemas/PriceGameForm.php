@@ -56,6 +56,10 @@ class PriceGameForm
                             ->label('Name Event')
                             ->placeholder('Tulis Event')
                             ->required(),
+                        TextInput::make('value')
+                            ->label('Money Game')
+                            ->required()
+                            ->numeric(),
                         TextInput::make('harga')
                             ->label('Harga')
                             ->prefix('Rp.')

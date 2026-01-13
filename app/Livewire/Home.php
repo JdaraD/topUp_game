@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Models\daftarGame;
 use App\Models\headerBanner;
 use App\Models\imageSlider;
 use Livewire\Component;
@@ -10,6 +11,15 @@ class Home extends Component
 {
     public $bannerTop;
     public $slideImage = [];
+
+    public $games;
+
+    public function loadgames()
+    {
+        $this->games = daftarGame::where('is_active', 1)
+            ->latest()
+            ->get();
+    }
 
     public function loadBannerTop()
     {
@@ -28,6 +38,7 @@ class Home extends Component
 
     public function mount()
     {
+        $this->loadgames();
         $this->loadSlideImage();
         $this->loadBannerTop();
     }

@@ -6,16 +6,17 @@
 
         <div class="flex relative bg-linear-to-r from-[#1c1f22] to-[#2a2f34] justify-center items-center h-[160.8px] w-full">
             <div class="flex relative gap-4 h-[160.8px] w-[80%]">
+                    
                 <div class="relative h-full w-[211.92px] perspective-[1000px]">
                     <div class="absolute bottom-10 h-52 w-48 transform-3d transform-[rotateY(25deg)_rotateX(0deg)_translateZ(15px)] rounded-xl overflow-hidden shadow-[0_30px_60px_-15px_rgba(0,0,0,0.8)]">
-                        <img src="{{ asset('image/cover.png') }}" class="w-full h-full object-cover">
+                        <img src="{{ asset('storage/'. $games->gambar) }}" class="w-full h-full object-cover">
                     </div>
                 </div>
 
                 <div class="flex flex-col relative justify-center gap-5 h-full w-fit">
                     <div class="flex flex-col gap-2">
-                        <p class="text-white text-lg">PUBG MOBILE</p>
-                        <p class="text-white text-sm">Tencent Games</p>
+                        <p class="text-white text-lg">{{ $games->name }}</p>
+                        <p class="text-white text-sm">{{ $games->publisher }}</p>
                     </div>
                     <div class="flex items-center gap-4">
                         <div class="flex gap-2">
