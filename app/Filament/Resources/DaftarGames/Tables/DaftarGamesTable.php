@@ -37,6 +37,10 @@ class DaftarGamesTable
                     ->label('Cover Games')
                     ->disk('public')
                     ->searchable(),
+                ImageColumn::make('banner')
+                    ->label('Banner Games')
+                    ->disk('public')
+                    ->searchable(),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

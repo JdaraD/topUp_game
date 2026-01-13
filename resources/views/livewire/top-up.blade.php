@@ -1,7 +1,7 @@
 <div class="flex flex-col grow gap-4 justify-center items-center w-full h-full mt-27.5 select-none">
     <div class="flex flex-col w-full h-full justify-center items-center">
         <div class="flex justify-center items-center bg-gray-200/20 h-91 w-full object-cover">
-            <img src="{{ asset('image/bg.gif') }}" alt="" class="w-full h-full object-cover">
+            <img src="{{ asset('storage/'. $games->banner) }}" alt="" class="w-full h-full object-cover">
         </div>
 
         <div class="flex relative bg-linear-to-r from-[#1c1f22] to-[#2a2f34] justify-center items-center h-[160.8px] w-full">
@@ -332,28 +332,42 @@
                 </div>
             </div>
 
+            @php
+                $content = $games->deskripsi['content'] ?? [];
+            @endphp
 
             <div class="flex flex-col h-auto w-full col-span-3">
-                <div class="flex h-10 min-h-10 shrink-0 w-full items-center bg-[#5f666d] rounded-t-lg shadow-lg">
-                    <div class="flex h-full w-10 shrink-0 justify-center items-center bg-[#a58c6f] rounded-tl-lg"> 
-                        <p class="text-md text-white"></p>
-                    </div>
-                    <p class="text-sm text-white pl-4">Deskripsi PUBG Mobile</p>
+                <div class="flex h-10 min-h-10 items-center bg-[#5f666d] rounded-t-lg shadow-lg">
+                    <div class="flex h-full w-10 justify-center items-center bg-[#a58c6f] rounded-tl-lg"></div>
+                    <p class="text-sm text-white pl-4">
+                        Deskripsi {{ $games->name }}
+                    </p>
                 </div>
-                <div class="flex flex-col h-full w-full bg-[#434649] rounded-b-lg">
-                    <div class="flex flex-col h-full w-full py-4 px-4 gap-1">
-                        <p class="text-sm text-white">Top up Diamond PUBG Mobile harga paling murah. Cara topup :</p>
-                        <ol>
-                            <li class="relative pl-6 before:absolute before:left-0 before:content-[counter(list-item)_').'] text-sm text-white">Masukkan Data Akun</li>
-                            <li class="relative pl-6 before:absolute before:left-0 before:content-[counter(list-item)_').'] text-sm text-white">Pilih Nominal</li>
-                            <li class="relative pl-6 before:absolute before:left-0 before:content-[counter(list-item)_').'] text-sm text-white">Masukkan jumlah</li>
-                            <li class="relative pl-6 before:absolute before:left-0 before:content-[counter(list-item)_').'] text-sm text-white">Pilih Pembayaran</li>
-                            <li class="relative pl-6 before:absolute before:left-0 before:content-[counter(list-item)_').'] text-sm text-white">Tulis Kode Promo (jika ada)</li>
-                            <li class="relative pl-6 before:absolute before:left-0 before:content-[counter(list-item)_').'] text-sm text-white">Masukkan No WhatsApp</li>
-                            <li class="relative pl-6 before:absolute before:left-0 before:content-[counter(list-item)_').'] text-sm text-white">Klik Order Now & lakukan Pembayaran</li>
-                            <li class="relative pl-6 before:absolute before:left-0 before:content-[counter(list-item)_').'] text-sm text-white">Produk otomatis masuk ke akun game anda</li>
-                        </ol>
-                    </div>
+
+                <div class="flex flex-col bg-[#434649] rounded-b-lg px-4 py-4 gap-3">
+
+                    @foreach ($content as $block)
+
+                        {{-- PARAGRAPH --}}
+                        @if ($block['type'] === 'paragraph')
+                            <p class="text-sm text-white">
+                                {{ $block['content'][0]['text'] ?? '' }}
+                            </p>
+                        @endif
+
+                        {{-- ORDERED LIST --}}
+                        @if ($block['type'] === 'orderedList')
+                            <ol class="list-decimal list-inside space-y-2 text-sm text-white">
+                                @foreach ($block['content'] as $item)
+                                    <li>
+                                        {{ $item['content'][0]['content'][0]['text'] ?? '' }}
+                                    </li>
+                                @endforeach
+                            </ol>
+                        @endif
+
+                    @endforeach
+
                 </div>
             </div>
                 

@@ -50,6 +50,16 @@ class DaftarGameForm
                             ->disk('public')
                             ->directory('CoverGames')
                             ->required(),
+                        FileUpload::make('banner')
+                            ->label('Banner Game')
+                            ->placeholder('Upload Banner Game width width( 100% ) & Height( 280px )')
+                            ->maxSize(10045)
+                            ->imageEditorViewportHeight(280)
+                            ->acceptedFileTypes(['image/jpg', 'image/jpeg', 'image/png', 'image/gif'])
+                            ->rule(['mimes:jpeg,jpg,png,gif'])
+                            ->disk('public')
+                            ->directory('BannerGames')
+                            ->required(),
                         RichEditor::make('deskripsi')
                             ->label('Deskripsi')
                             ->required()

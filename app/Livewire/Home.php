@@ -17,7 +17,8 @@ class Home extends Component
     public function loadgames()
     {
         $this->games = daftarGame::where('is_active', 1)
-            ->latest()
+            // ->orderBy('order','asc')
+            ->first()
             ->get();
     }
 

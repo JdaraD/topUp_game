@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('publisher');
             $table->string('gambar');
+            $table->string('banner');
             $table->longText('deskripsi');
             $table->timestamps();
         });

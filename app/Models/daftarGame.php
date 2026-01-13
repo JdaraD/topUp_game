@@ -15,6 +15,7 @@ class daftarGame extends Model
         'name',
         'publisher',
         'gambar',
+        'banner',
         'deskripsi',
         'created_at',
         'updated_at'
