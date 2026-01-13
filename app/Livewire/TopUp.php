@@ -11,7 +11,8 @@ class TopUp extends Component
 
     public function mount($id)
     {
-        $this->games = daftarGame::findOrFail($id);
+        $this->games = daftarGame::with('priceGames.iconsgames')
+            ->findOrFail($id);
     }
 
     public function render()

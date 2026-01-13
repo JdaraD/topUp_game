@@ -73,20 +73,21 @@
                         <p class="text-sm text-white pl-4">Pilih Nominal</p>
                     </div>
 
-                    <div class="flex flex-col h-full w-full bg-[#434649] rounded-b-lg">
-                        <div class="flex flex-col h-full w-full">
-                            <p class="text-sm text-white px-4 py-3">Special Items✨</p>
+                    <div class="flex flex-col h-full w-full py-4 gap-2 bg-[#434649] rounded-b-lg">
+                        @foreach ( $games->priceGames as $price)
+                            
+                        <div class="flex flex-col h-full w-full gap-2">
+                            <p class="text-sm text-white px-4">{{ $price->name }}✨</p>
                             
                             <div class="flex flex-wrap items-center px-4 gap-4">
-                                @for ($i = 0; $i < 2; $i++)
-                                    <div class="flex flex-col rounded-lg w-61 h-28 bg-[#5f666d] shadow-lg cursor-pointer">
+                                    <div class="flex flex-col rounded-lg w-61 h-full bg-[#5f666d] shadow-lg cursor-pointer">
                                         <div class="flex flex-col justify-center w-full h-full px-2 gap-1">
-                                            <p class="text-sm text-white">Weekly Diamond Pass</p>
+                                            <p class="text-sm text-white">{{ $price->value }} {{ $price->iconsgames->name }}</p>
                                             <div class="flex gap-2 items-center">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="icon text-white icon-tabler icons-tabler-filled icon-tabler-diamond">
-                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18 4a1 1 0 0 1 .783 .378l.074 .108l3 5a1 1 0 0 1 -.032 1.078l-.08 .103l-8.53 9.533a1.7 1.7 0 0 1 -1.215 .51c-.4 0 -.785 -.14 -1.11 -.417l-.135 -.126l-8.5 -9.5a1 1 0 0 1 -.172 -1.067l.06 -.115l3.013 -5.022l.064 -.09a.982 .982 0 0 1 .155 -.154l.089 -.064l.088 -.05l.05 -.023l.06 -.025l.109 -.032l.112 -.02l.117 -.005h12zm-8.886 3.943a1 1 0 0 0 -1.371 .343l-.6 1l-.06 .116a1 1 0 0 0 .177 1.07l2 2.2l.09 .088a1 1 0 0 0 1.323 -.02l.087 -.09a1 1 0 0 0 -.02 -1.323l-1.501 -1.65l.218 -.363l.055 -.103a1 1 0 0 0 -.398 -1.268z" />
-                                                </svg>
-                                                <p class="text-sm text-white">Rp 29.584</p>
+                                                @if( $price->iconsgames)
+                                                    <img src="{{ asset('storage/'.$price->iconsgames->gambar) }}" alt="" class="h-10 w-10 object-cover">
+                                                @endif
+                                                <p class="text-sm text-white">Rp {{ number_format($price->harga, 0, ',','.') }}</p>
                                             </div>
                                             <div class="flex w-full justify-end">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon text-white icon-tabler icons-tabler-outline icon-tabler-info-circle">
@@ -100,72 +101,10 @@
                                             </div>
                                         </div>
                                     </div>
-                                @endfor
-
                             </div>
                         </div>
+                        @endforeach
 
-                        <div class="flex flex-col h-full w-full">
-                            <p class="text-sm text-white px-4 py-3">Diskon Weekly✨</p>
-                            
-                            <div class="flex flex-wrap items-center px-4 gap-4">
-                                @for ($i = 0; $i < 6; $i++)
-                                    <div class="flex flex-col rounded-lg w-61 h-28 bg-[#5f666d] shadow-lg cursor-pointer">
-                                        <div class="flex flex-col justify-center w-full h-full px-2 gap-1">
-                                            <p class="text-sm text-white">Weekly Diamond Pass</p>
-                                            <div class="flex gap-2 items-center">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="icon text-white icon-tabler icons-tabler-filled icon-tabler-diamond">
-                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18 4a1 1 0 0 1 .783 .378l.074 .108l3 5a1 1 0 0 1 -.032 1.078l-.08 .103l-8.53 9.533a1.7 1.7 0 0 1 -1.215 .51c-.4 0 -.785 -.14 -1.11 -.417l-.135 -.126l-8.5 -9.5a1 1 0 0 1 -.172 -1.067l.06 -.115l3.013 -5.022l.064 -.09a.982 .982 0 0 1 .155 -.154l.089 -.064l.088 -.05l.05 -.023l.06 -.025l.109 -.032l.112 -.02l.117 -.005h12zm-8.886 3.943a1 1 0 0 0 -1.371 .343l-.6 1l-.06 .116a1 1 0 0 0 .177 1.07l2 2.2l.09 .088a1 1 0 0 0 1.323 -.02l.087 -.09a1 1 0 0 0 -.02 -1.323l-1.501 -1.65l.218 -.363l.055 -.103a1 1 0 0 0 -.398 -1.268z" />
-                                                </svg>
-                                                <p class="text-sm text-white">Rp 29.584</p>
-                                            </div>
-                                            <div class="flex w-full justify-end">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon text-white icon-tabler icons-tabler-outline icon-tabler-info-circle">
-                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" /><path d="M12 9h.01" /><path d="M11 12h1v4h1" />
-                                                </svg>
-                                            </div>
-                                        </div>
-                                        <div class="flex justify-end items-center w-full h-9 bg-linear-to-b from-[#3c4044] to-[#4a5056] rounded-b-lg">
-                                            <div class="bg-white w-13.5 h-4 rounded-sm mx-2">
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                @endfor
-
-                            </div>
-                        </div>
-                        
-                        <div class="flex flex-col h-full pb-4 w-auto">
-                            <p class="text-sm text-white px-4 py-4.5">Murah Meriah !!✨</p>
-                            
-                            <div class="flex flex-wrap items-center px-4 gap-4">
-                                @for ($j = 0; $j < 24; $j++)
-                                    <div class="flex flex-col rounded-lg w-61 h-28 bg-[#5f666d] shadow-lg cursor-pointer">
-                                        <div class="flex flex-col justify-center w-full h-full px-2 gap-1">
-                                            <p class="text-sm text-white">Weekly Diamond Pass</p>
-                                            <div class="flex gap-2 items-center">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="icon text-white icon-tabler icons-tabler-filled icon-tabler-diamond">
-                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18 4a1 1 0 0 1 .783 .378l.074 .108l3 5a1 1 0 0 1 -.032 1.078l-.08 .103l-8.53 9.533a1.7 1.7 0 0 1 -1.215 .51c-.4 0 -.785 -.14 -1.11 -.417l-.135 -.126l-8.5 -9.5a1 1 0 0 1 -.172 -1.067l.06 -.115l3.013 -5.022l.064 -.09a.982 .982 0 0 1 .155 -.154l.089 -.064l.088 -.05l.05 -.023l.06 -.025l.109 -.032l.112 -.02l.117 -.005h12zm-8.886 3.943a1 1 0 0 0 -1.371 .343l-.6 1l-.06 .116a1 1 0 0 0 .177 1.07l2 2.2l.09 .088a1 1 0 0 0 1.323 -.02l.087 -.09a1 1 0 0 0 -.02 -1.323l-1.501 -1.65l.218 -.363l.055 -.103a1 1 0 0 0 -.398 -1.268z" />
-                                                </svg>
-                                                <p class="text-sm text-white">Rp 29.584</p>
-                                            </div>
-                                            <div class="flex w-full justify-end">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon text-white icon-tabler icons-tabler-outline icon-tabler-info-circle">
-                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" /><path d="M12 9h.01" /><path d="M11 12h1v4h1" />
-                                                </svg>
-                                            </div>
-                                        </div>
-                                        <div class="flex justify-end items-center w-full h-9 bg-linear-to-b from-[#3c4044] to-[#4a5056] rounded-b-lg">
-                                            <div class="bg-white w-13.5 h-4 rounded-sm mx-2">
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                @endfor
-
-                            </div>
-                        </div>
                     </div>
                 </div>
 

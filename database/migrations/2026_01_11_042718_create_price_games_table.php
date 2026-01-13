@@ -22,8 +22,6 @@ return new class extends Migration
             $table->bigInteger('harga');
             $table->integer('discon')->nullable(0);
             $table->timestamps();
-
-            $table->unique(['daftar_game_id','iconsgame_id']);
         });
     }
 
