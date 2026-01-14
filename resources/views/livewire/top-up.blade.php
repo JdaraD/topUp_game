@@ -44,232 +44,235 @@
         </div>
 
         <div class="grid grid-cols-3 relative my-8 gap-8 h-auto w-[80%]">
-            <div class="col-span-2 gap-8 flex flex-col h-auto w-full">
+            <form wire:submit.prevent="submit" class="col-span-3 grid grid-cols-3 relative my-8 gap-8 h-auto w-full">
+                <div class="col-span-2 gap-8 flex flex-col h-auto w-full">
 
-                <div class="flex flex-col h-auto w-full col-span-2 shadow-lg">
-                    <div class="flex h-10 w-full items-center bg-[#5f666d] rounded-t-lg">
-                        <div class="flex h-full w-10 justify-center items-center bg-[#a58c6f] rounded-tl-lg">
-                            <p class="text-md text-white">1</p>
+                    <div class="flex flex-col h-auto w-full col-span-2 shadow-lg">
+                        <div class="flex h-10 w-full items-center bg-[#5f666d] rounded-t-lg">
+                            <div class="flex h-full w-10 justify-center items-center bg-[#a58c6f] rounded-tl-lg">
+                                <p class="text-md text-white">1</p>
+                            </div>
+                            <p class="text-sm text-white pl-4">Masukkan Data Akun</p>
                         </div>
-                        <p class="text-sm text-white pl-4">Masukkan Data Akun</p>
-                    </div>
-                    <div class="flex flex-row justify-center items-center px-4 pb-4 pt-5 gap-4 h-fit w-full bg-[#434649] rounded-b-lg">
-                        <div class="flex flex-col w-full">
-                            <label for="Mid" class="text-white text-sm">ID</label>
-                            <input type="text" id="Mid" class="w-full h-8.5 bg-[#5f666d] rounded-md mt-2.5 px-3.5 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Masukkan ID Akun Anda">
+                        <div class="flex flex-row justify-center items-center px-4 pb-4 pt-5 gap-4 h-fit w-full bg-[#434649] rounded-b-lg">
+                            <div class="flex flex-col w-full">
+                                <label for="Mid" class="text-white text-sm">ID</label>
+                                <input type="text" wire:model="Mid" id="Mid" class="w-full h-8.5 bg-[#5f666d] rounded-md mt-2.5 px-3.5 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Masukkan ID Akun Anda">
+                            </div>
+                            <div class="flex flex-col w-full">
+                                <label for="server" class="text-white text-sm">server</label>
+                                <input type="text" wire:model="" id="server" class="w-full h-8.5 bg-[#5f666d] rounded-md mt-2.5 px-3.5 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Masukkan server">
+                            </div>
                         </div>
-                        <div class="flex flex-col w-full">
-                            <label for="server" class="text-white text-sm">server</label>
-                            <input type="text" id="server" class="w-full h-8.5 bg-[#5f666d] rounded-md mt-2.5 px-3.5 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Masukkan server">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="flex flex-col h-auto w-full col-span-2 shadow-lg">
-                    <div class="flex h-10 min-h-10 shrink-0 w-full items-center bg-[#5f666d] rounded-t-lg">
-                        <div class="flex h-full w-10 shrink-0 justify-center items-center bg-[#a58c6f] rounded-tl-lg">
-                            <p class="text-md text-white">2</p>
-                        </div>
-                        <p class="text-sm text-white pl-4">Pilih Nominal</p>
                     </div>
 
-                    <div class="flex flex-col h-full w-full py-4 gap-2 bg-[#434649] rounded-b-lg">
-                        @foreach ( $games->priceGames as $price)
-                            
-                        <div class="flex flex-col h-full w-full gap-2">
-                            <p class="text-sm text-white px-4">{{ $price->name }}✨</p>
-                            
-                            <div class="flex flex-wrap items-center px-4 gap-4">
-                                    <div class="flex flex-col rounded-lg w-61 h-full bg-[#5f666d] shadow-lg cursor-pointer">
-                                        <div class="flex flex-col justify-center w-full h-full px-2 gap-1">
-                                            <p class="text-sm text-white">{{ $price->value }} {{ $price->iconsgames->name }}</p>
-                                            <div class="flex gap-2 items-center">
-                                                @if( $price->iconsgames)
-                                                    <img src="{{ asset('storage/'.$price->iconsgames->gambar) }}" alt="" class="h-10 w-10 object-cover">
-                                                @endif
-                                                <p class="text-sm text-white">Rp {{ number_format($price->harga, 0, ',','.') }}</p>
+                    <div class="flex flex-col h-auto w-full col-span-2 shadow-lg">
+                        <div class="flex h-10 min-h-10 shrink-0 w-full items-center bg-[#5f666d] rounded-t-lg">
+                            <div class="flex h-full w-10 shrink-0 justify-center items-center bg-[#a58c6f] rounded-tl-lg">
+                                <p class="text-md text-white">2</p>
+                            </div>
+                            <p class="text-sm text-white pl-4">Pilih Nominal</p>
+                        </div>
+
+                        <div class="flex flex-col h-full w-full py-4 gap-2 bg-[#434649] rounded-b-lg">
+                            @foreach ( $games->priceGames as $price)
+                                
+                            <div class="flex flex-col h-full w-full gap-2">
+                                <p class="text-sm text-white px-4">{{ $price->name }}✨</p>
+                                
+                                <div class="flex flex-wrap items-center px-4 gap-4">
+                                        <div class="flex flex-col rounded-lg w-61 h-full bg-[#5f666d] shadow-lg cursor-pointer">
+                                            <div class="flex flex-col justify-center w-full h-full px-2 gap-1">
+                                                <p class="text-sm text-white">{{ $price->value }} {{ $price->iconsgames->name }}</p>
+                                                <div class="flex gap-2 items-center">
+                                                    @if( $price->iconsgames)
+                                                        <img src="{{ asset('storage/'.$price->iconsgames->gambar) }}" alt="" class="h-10 w-10 object-cover">
+                                                    @endif
+                                                    <p class="text-sm text-white">Rp {{ number_format($price->harga, 0, ',','.') }}</p>
+                                                </div>
+                                                <div class="flex w-full justify-end">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon text-white icon-tabler icons-tabler-outline icon-tabler-info-circle">
+                                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" /><path d="M12 9h.01" /><path d="M11 12h1v4h1" />
+                                                    </svg>
+                                                </div>
                                             </div>
-                                            <div class="flex w-full justify-end">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon text-white icon-tabler icons-tabler-outline icon-tabler-info-circle">
-                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" /><path d="M12 9h.01" /><path d="M11 12h1v4h1" />
-                                                </svg>
+                                            <div class="flex justify-end items-center w-full h-9 bg-linear-to-b from-[#3c4044] to-[#4a5056] rounded-b-lg">
+                                                <div class="bg-white w-13.5 h-4 rounded-sm mx-2">
+
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="flex justify-end items-center w-full h-9 bg-linear-to-b from-[#3c4044] to-[#4a5056] rounded-b-lg">
-                                            <div class="bg-white w-13.5 h-4 rounded-sm mx-2">
-
-                                            </div>
-                                        </div>
-                                    </div>
-                            </div>
-                        </div>
-                        @endforeach
-
-                    </div>
-                </div>
-
-                <div class="flex flex-col h-auto w-full col-span-2 shadow-lg">
-                    <div class="flex h-10 min-h-10 shrink-0 w-full items-center bg-[#5f666d] rounded-t-lg">
-                        <div class="flex h-full w-10 shrink-0 justify-center items-center bg-[#a58c6f] rounded-tl-lg">
-                            <p class="text-md text-white">3</p>
-                        </div>
-                        <p class="text-sm text-white pl-4">Masukkan Jumlah Pembelian</p>
-                    </div>
-                    <div class="flex flex-col h-fit w-full bg-[#434649] rounded-b-lg">
-            
-                        <div class="flex justify-center items-center gap-4 my-4 h-fit w-full bg-[#434649] rounded-b-lg">
-                            <div class="flex justify-center items-center">
-                                <input type="text" id="Mid" class="w-2xl h-9 bg-[#5f666d] rounded-md px-3.5 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" value="1">
-                            </div>
-                            <div class="flex justify-center items-center gap-2">
-                                <button class="flex justify-center items-center bg-[#a58c6f] h-9 w-9 rounded-md">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-plus"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 5l0 14" /><path d="M5 12l14 0" /></svg>
-                                </button>
-                                <button class="flex justify-center items-center bg-[#746a5d] h-9 w-9 rounded-md">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-minus"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l14 0" /></svg>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="flex flex-col h-auto w-full col-span-2 shadow-lg">
-                    <div class="flex h-10 min-h-10 shrink-0 w-full items-center bg-[#5f666d] rounded-t-lg">
-                        <div class="flex h-full w-10 shrink-0 justify-center items-center bg-[#a58c6f] rounded-tl-lg">
-                            <p class="text-md text-white">4</p>
-                        </div>
-                        <p class="text-sm text-white pl-4">Pilih Pembayaran</p>
-                    </div>
-                    <div class="flex flex-col h-full w-full bg-[#434649] rounded-b-lg">
-                        <div class="flex flex-col justify-center items-center my-4 h-full w-full gap-4">
-                            @for ($k = 0; $k < 2; $k++)
-                                <div class="flex bg-[#62696f] w-[96%] h-18 px-2 gap-2 rounded-md shadow-lg cursor-pointer">
-                                    <div class="flex justify-center items-center">
-                                        <img src="{{ asset('image/gopay.png') }}" alt="" class="w-10 h-10 object-contain">
-                                    </div>
-                                    <p class="text-white text-sm self-center">GoPay</p>
                                 </div>
-                            @endfor
+                            </div>
+                            @endforeach
 
-                            @for ($l = 0; $l < 4; $l++)
-                                <div class="flex flex-col w-[96%] h-fit cursor-pointer">
-                                    <div class="flex bg-[#373b3f] justify-between items-center px-2 h-11 w-full shadow-lg rounded-t-md">
-                                        <p class="text-white text-sm self-center">QRIS</p>
-                                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> 
-                                            <path d="M5.70711 9.71069C5.31658 10.1012 5.31658 10.7344 5.70711 11.1249L10.5993 16.0123C11.3805 16.7927 12.6463 16.7924 13.4271 16.0117L18.3174 11.1213C18.708 10.7308 18.708 10.0976 18.3174 9.70708C17.9269 9.31655 17.2937 9.31655 16.9032 9.70708L12.7176 13.8927C12.3271 14.2833 11.6939 14.2832 11.3034 13.8927L7.12132 9.71069C6.7308 9.32016 6.09763 9.32016 5.70711 9.71069Z" fill="#ffffff"></path> 
-                                            </g>
-                                        </svg>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col h-auto w-full col-span-2 shadow-lg">
+                        <div class="flex h-10 min-h-10 shrink-0 w-full items-center bg-[#5f666d] rounded-t-lg">
+                            <div class="flex h-full w-10 shrink-0 justify-center items-center bg-[#a58c6f] rounded-tl-lg">
+                                <p class="text-md text-white">3</p>
+                            </div>
+                            <p class="text-sm text-white pl-4">Masukkan Jumlah Pembelian</p>
+                        </div>
+                        <div class="flex flex-col h-fit w-full bg-[#434649] rounded-b-lg">
+                
+                            <div class="flex justify-center items-center px-4 gap-4 my-4 h-fit w-full bg-[#434649] rounded-b-lg">
+                                <div class="flex justify-center w-full items-center">
+                                    <input type="text" id="Mid" class="w-full h-9 bg-[#5f666d] rounded-md px-3.5 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" value="1">
+                                </div>
+                                <div class="flex justify-center items-center gap-2">
+                                    <button class="flex justify-center items-center bg-[#a58c6f] h-9 w-9 rounded-md">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-plus"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 5l0 14" /><path d="M5 12l14 0" /></svg>
+                                    </button>
+                                    <button class="flex justify-center items-center bg-[#746a5d] h-9 w-9 rounded-md">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-minus"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l14 0" /></svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col h-auto w-full col-span-2 shadow-lg">
+                        <div class="flex h-10 min-h-10 shrink-0 w-full items-center bg-[#5f666d] rounded-t-lg">
+                            <div class="flex h-full w-10 shrink-0 justify-center items-center bg-[#a58c6f] rounded-tl-lg">
+                                <p class="text-md text-white">4</p>
+                            </div>
+                            <p class="text-sm text-white pl-4">Pilih Pembayaran</p>
+                        </div>
+                        <div class="flex flex-col h-full w-full bg-[#434649] rounded-b-lg">
+                            <div class="flex flex-col justify-center items-center my-4 h-full w-full gap-4">
+                                @for ($k = 0; $k < 2; $k++)
+                                    <div class="flex bg-[#62696f] w-[96%] h-18 px-2 gap-2 rounded-md shadow-lg cursor-pointer">
+                                        <div class="flex justify-center items-center">
+                                            <img src="{{ asset('image/gopay.png') }}" alt="" class="w-10 h-10 object-contain">
+                                        </div>
+                                        <p class="text-white text-sm self-center">GoPay</p>
                                     </div>
-                                    <div class="flex items-center justify-end bg-[#62696f] h-9 w-full rounded-b-md">
-                                        @for ($m = 0; $m < 6; $m++)
-                                            <div class="bg-white w-13.5 h-4 rounded-sm mx-2">
+                                @endfor
 
-                                            </div>
+                                @for ($l = 0; $l < 4; $l++)
+                                    <div class="flex flex-col w-[96%] h-fit cursor-pointer">
+                                        <div class="flex bg-[#373b3f] justify-between items-center px-2 h-11 w-full shadow-lg rounded-t-md">
+                                            <p class="text-white text-sm self-center">QRIS</p>
+                                            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> 
+                                                <path d="M5.70711 9.71069C5.31658 10.1012 5.31658 10.7344 5.70711 11.1249L10.5993 16.0123C11.3805 16.7927 12.6463 16.7924 13.4271 16.0117L18.3174 11.1213C18.708 10.7308 18.708 10.0976 18.3174 9.70708C17.9269 9.31655 17.2937 9.31655 16.9032 9.70708L12.7176 13.8927C12.3271 14.2833 11.6939 14.2832 11.3034 13.8927L7.12132 9.71069C6.7308 9.32016 6.09763 9.32016 5.70711 9.71069Z" fill="#ffffff"></path> 
+                                                </g>
+                                            </svg>
+                                        </div>
+                                        <div class="flex items-center justify-end bg-[#62696f] h-9 w-full rounded-b-md">
+                                            @for ($m = 0; $m < 6; $m++)
+                                                <div class="bg-white w-13.5 h-4 rounded-sm mx-2">
+
+                                                </div>
+                                            @endfor
+                                        </div>
+                                    </div>
+                                @endfor
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col h-auto w-full col-span-2 shadow-lg">
+                        <div class="flex h-10 min-h-10 shrink-0 w-full items-center bg-[#5f666d] rounded-t-lg">
+                            <div class="flex h-full w-10 shrink-0 justify-center items-center bg-[#a58c6f] rounded-tl-lg">
+                                <p class="text-md text-white">5</p>
+                            </div>
+                            <p class="text-sm text-white pl-4">Detail Kontak</p>
+                        </div>
+                        <div class="flex flex-col h-full w-full bg-[#434649] rounded-b-lg">
+                            <div class="flex flex-col h-full w-full py-3 px-4 gap-3">
+                                <div class="flex flex-col gap-1 w-full">
+                                    <label for="Email" class="text-sm text-white">Email</label>
+                                    <input type="text" id="Email" class="flex w-full h-8.5 bg-[#5f666d] rounded-md px-3.5 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="example@gmail.com">
+                                </div>
+
+                                <div class="flex flex-col gap-1 w-full">
+                                    <label for="NoWa" class="text-sm text-white">No. WhatsApp</label>
+                                    <input type="text" id="NoWa" inputmode="numeric" pattern="[0-9+]*" oninput="this.value = this.value.replace(/[^0-9+]/g, '')" class="w-full h-8.5 bg-[#5f666d] rounded-md px-3.5 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="+62">
+                                </div>
+
+                                <div class="flex flex-col gap-1 w-full">
+                                    <label for="NoWa" class="text-xs text-white italic">**Nomor ini akan dihubungi jika terjadi masalah</label>
+                                    <div class="flex items-center bg-[#5f666d] rounded-md w-full h-11 gap-1 px-4">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon text-white icon-tabler icons-tabler-outline icon-tabler-info-circle">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" /><path d="M12 9h.01" /><path d="M11 12h1v4h1" />
+                                        </svg>
+                                        <p class="text-xs text-white">Jika ada kendala, kami akan menghubungi nomor WA kamu diatas</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col h-auto w-full col-span-2 shadow-lg">
+                        <div class="flex h-10 min-h-10 shrink-0 w-full items-center bg-[#5f666d] rounded-t-lg">
+                            <div class="flex h-full w-10 shrink-0 items-center justify-center bg-[#a58c6f] rounded-tl-lg">
+                                <p class="text-md leading-none text-white">6</p>
+                            </div>
+                            <p class="text-sm leading-none text-white pl-4">Kode Promo</p>
+                        </div>
+                        <div class="flex flex-col h-full w-full bg-[#434649] rounded-b-lg">
+                            <div class="flex flex-col h-full w-full gap-4 py-4 px-4">
+                                <div class="flex flex-row gap-4 w-full">
+                                    <input type="text" id="Email" class="flex w-full h-8.5 bg-[#5f666d] rounded-md px-3.5 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="ketik Kode Promo Kamu">
+                                    <button class="flex justify-center items-center bg-[#a58c6f] w-20.75 h-8 text-sm text-white rounded-md">Gunakan</button>
+                                </div>
+                                <div class="flex justify-center items-center bg-[#a58c6f] gap-2 w-52 h-8 rounded-md ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon text-white icon-tabler icons-tabler-outline icon-tabler-ticket">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M15 5l0 2" /><path d="M15 11l0 2" /><path d="M15 17l0 2" /><path d="M5 5h14a2 2 0 0 1 2 2v3a2 2 0 0 0 0 4v3a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-3a2 2 0 0 0 0 -4v-3a2 2 0 0 1 2 -2" />
+                                    </svg>
+                                    <p class="text-xs text-white">Pakai Promo Yang Tersedia</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                
+                <div class="col-span-1">
+                    <div class="sticky flex flex-col gap-4 top-32">
+                        <div class="flex flex-col bg-[#444444] gap-2 h-32 w-full rounded-lg p-4">
+                            <p class="text-white font-semibold">Ulasan dan rating</p>
+                            <div class="flex gap-0.5">
+                                <p class="text-6xl text-white font-bold">4.99</p>
+                                <div class="flex flex-col gap-1">
+                                    <div class="flex gap-0.5">
+                                        @for ($z = 1; $z <= 5; $z++)
+                                            <svg class="w-10 h-10 text-yellow-400 fill-current" viewBox="0 0 24 24">
+                                                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                                            </svg>
                                         @endfor
                                     </div>
-                                </div>
-                            @endfor
 
-                        </div>
-                    </div>
-                </div>
-
-                <div class="flex flex-col h-auto w-full col-span-2 shadow-lg">
-                    <div class="flex h-10 min-h-10 shrink-0 w-full items-center bg-[#5f666d] rounded-t-lg">
-                        <div class="flex h-full w-10 shrink-0 justify-center items-center bg-[#a58c6f] rounded-tl-lg">
-                            <p class="text-md text-white">5</p>
-                        </div>
-                        <p class="text-sm text-white pl-4">Detail Kontak</p>
-                    </div>
-                    <div class="flex flex-col h-full w-full bg-[#434649] rounded-b-lg">
-                        <div class="flex flex-col h-full w-full py-3 px-4 gap-3">
-                            <div class="flex flex-col gap-1 w-full">
-                                <label for="Email" class="text-sm text-white">Email</label>
-                                <input type="text" id="Email" class="flex w-full h-8.5 bg-[#5f666d] rounded-md px-3.5 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="example@gmail.com">
-                            </div>
-
-                            <div class="flex flex-col gap-1 w-full">
-                                <label for="NoWa" class="text-sm text-white">No. WhatsApp</label>
-                                <input type="text" id="NoWa" inputmode="numeric" pattern="[0-9+]*" oninput="this.value = this.value.replace(/[^0-9+]/g, '')" class="w-full h-8.5 bg-[#5f666d] rounded-md px-3.5 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="+62">
-                            </div>
-
-                            <div class="flex flex-col gap-1 w-full">
-                                <label for="NoWa" class="text-xs text-white italic">**Nomor ini akan dihubungi jika terjadi masalah</label>
-                                <div class="flex items-center bg-[#5f666d] rounded-md w-full h-11 gap-1 px-4">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon text-white icon-tabler icons-tabler-outline icon-tabler-info-circle">
-                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" /><path d="M12 9h.01" /><path d="M11 12h1v4h1" />
-                                    </svg>
-                                    <p class="text-xs text-white">Jika ada kendala, kami akan menghubungi nomor WA kamu diatas</p>
+                                    <p class="text-xs text-white font-bold">Berdasarkan total 6.96jt rating</p>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-
-                <div class="flex flex-col h-auto w-full col-span-2 shadow-lg">
-                    <div class="flex h-10 min-h-10 shrink-0 w-full items-center bg-[#5f666d] rounded-t-lg">
-                        <div class="flex h-full w-10 shrink-0 items-center justify-center bg-[#a58c6f] rounded-tl-lg">
-                            <p class="text-md leading-none text-white">6</p>
-                        </div>
-                        <p class="text-sm leading-none text-white pl-4">Kode Promo</p>
-                    </div>
-                    <div class="flex flex-col h-full w-full bg-[#434649] rounded-b-lg">
-                        <div class="flex flex-col h-full w-full gap-4 py-4 px-4">
-                            <div class="flex flex-row gap-4 w-full">
-                                <input type="text" id="Email" class="flex w-full h-8.5 bg-[#5f666d] rounded-md px-3.5 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="ketik Kode Promo Kamu">
-                                <button class="flex justify-center items-center bg-[#a58c6f] w-20.75 h-8 text-sm text-white rounded-md">Gunakan</button>
-                            </div>
-                            <div class="flex justify-center items-center bg-[#a58c6f] gap-2 w-52 h-8 rounded-md ">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon text-white icon-tabler icons-tabler-outline icon-tabler-ticket">
-                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M15 5l0 2" /><path d="M15 11l0 2" /><path d="M15 17l0 2" /><path d="M5 5h14a2 2 0 0 1 2 2v3a2 2 0 0 0 0 4v3a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-3a2 2 0 0 0 0 -4v-3a2 2 0 0 1 2 -2" />
-                                </svg>
-                                <p class="text-xs text-white">Pakai Promo Yang Tersedia</p>
+                        <div class="flex bg-[#444444] h-17.75 w-full rounded-lg p-4 gap-2 items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon text-white icon-tabler icons-tabler-outline icon-tabler-headphones">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 13m0 2a2 2 0 0 1 2 -2h1a2 2 0 0 1 2 2v3a2 2 0 0 1 -2 2h-1a2 2 0 0 1 -2 -2z" /><path d="M15 13m0 2a2 2 0 0 1 2 -2h1a2 2 0 0 1 2 2v3a2 2 0 0 1 -2 2h-1a2 2 0 0 1 -2 -2z" /><path d="M4 15v-3a8 8 0 0 1 16 0v3" />
+                            </svg>
+                            <div class="flex flex-col gap-0.5">
+                                <p class="text-white text-sm font-semibold">Butuh Bantuan?</p>
+                                <p class="text-xs text-white/80">Kamu bisa hubungi admin disini.</p>
                             </div>
                         </div>
+                        <div class="flex justify-center items-center border border-dashed border-white/30 bg-[#212121] h-24.75 w-full rounded-lg p-4">
+                            <p class="text-sm text-white/80">
+                                Belum ada item produk yang dipilih.
+                            </p>
+                        </div>
+                        <button class="flex gap-1 bg-[#a58c6f] hover:bg-[#8d7861] h-8 w-full rounded-lg justify-center items-center">
+                            <img src="{{ asset('image/bag.png') }}" alt="" class="h-4.5 w-4.5">
+                            <p class="text-white font-semibold">Pesan Sekarang!</p>
+                        </button>
                     </div>
                 </div>
+            </form>
 
-            </div>
-            
-            <div class="col-span-1">
-                <div class="sticky flex flex-col gap-4 top-32">
-                    <div class="flex flex-col bg-[#444444] gap-2 h-32 w-full rounded-lg p-4">
-                        <p class="text-white font-semibold">Ulasan dan rating</p>
-                        <div class="flex gap-0.5">
-                            <p class="text-6xl text-white font-bold">4.99</p>
-                            <div class="flex flex-col gap-1">
-                                <div class="flex gap-0.5">
-                                    @for ($z = 1; $z <= 5; $z++)
-                                        <svg class="w-10 h-10 text-yellow-400 fill-current" viewBox="0 0 24 24">
-                                            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
-                                        </svg>
-                                    @endfor
-                                </div>
-
-                                <p class="text-xs text-white font-bold">Berdasarkan total 6.96jt rating</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex bg-[#444444] h-17.75 w-full rounded-lg p-4 gap-2 items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon text-white icon-tabler icons-tabler-outline icon-tabler-headphones">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 13m0 2a2 2 0 0 1 2 -2h1a2 2 0 0 1 2 2v3a2 2 0 0 1 -2 2h-1a2 2 0 0 1 -2 -2z" /><path d="M15 13m0 2a2 2 0 0 1 2 -2h1a2 2 0 0 1 2 2v3a2 2 0 0 1 -2 2h-1a2 2 0 0 1 -2 -2z" /><path d="M4 15v-3a8 8 0 0 1 16 0v3" />
-                        </svg>
-                        <div class="flex flex-col gap-0.5">
-                            <p class="text-white text-sm font-semibold">Butuh Bantuan?</p>
-                            <p class="text-xs text-white/80">Kamu bisa hubungi admin disini.</p>
-                        </div>
-                    </div>
-                    <div class="flex justify-center items-center border border-dashed border-white/30 bg-[#212121] h-24.75 w-full rounded-lg p-4">
-                        <p class="text-sm text-white/80">
-                            Belum ada item produk yang dipilih.
-                        </p>
-                    </div>
-                    <button class="flex gap-1 bg-[#a58c6f] hover:bg-[#8d7861] h-8 w-full rounded-lg justify-center items-center">
-                        <img src="{{ asset('image/bag.png') }}" alt="" class="h-4.5 w-4.5">
-                        <p class="text-white font-semibold">Pesan Sekarang!</p>
-                    </button>
-                </div>
-            </div>
 
             @php
                 $content = $games->deskripsi['content'] ?? [];
@@ -504,6 +507,7 @@
             </div>
 
         </div>
+
 
         <div class="flex w-full h-70">
             @if (file_exists(public_path('image/bgS.png')))
