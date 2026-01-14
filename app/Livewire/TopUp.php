@@ -9,6 +9,20 @@ class TopUp extends Component
 {
     public $games;
 
+    public $qty = 1;
+
+    public function tambah()
+    {
+        $this->qty++;
+    }
+
+    public function kurang()
+    {
+        if ($this->qty > 1) {
+            $this->qty--;
+        }
+    }
+
     public function mount($id)
     {
         $this->games = daftarGame::with('priceGames.iconsgames')

@@ -44,7 +44,7 @@
         </div>
 
         <div class="grid grid-cols-3 relative my-8 gap-8 h-auto w-[80%]">
-            <form wire:submit.prevent="submit" class="col-span-3 grid grid-cols-3 relative my-8 gap-8 h-auto w-full">
+            <form wire:submit.prevent="submit" class="col-span-3 grid grid-cols-3 relative gap-4 h-auto w-full">
                 <div class="col-span-2 gap-8 flex flex-col h-auto w-full">
 
                     <div class="flex flex-col h-auto w-full col-span-2 shadow-lg">
@@ -61,7 +61,7 @@
                             </div>
                             <div class="flex flex-col w-full">
                                 <label for="server" class="text-white text-sm">server</label>
-                                <input type="text" wire:model="" id="server" class="w-full h-8.5 bg-[#5f666d] rounded-md mt-2.5 px-3.5 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Masukkan server">
+                                <input type="text" wire:model="server" id="server" class="w-full h-8.5 bg-[#5f666d] rounded-md mt-2.5 px-3.5 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Masukkan server">
                             </div>
                         </div>
                     </div>
@@ -120,15 +120,16 @@
                 
                             <div class="flex justify-center items-center px-4 gap-4 my-4 h-fit w-full bg-[#434649] rounded-b-lg">
                                 <div class="flex justify-center w-full items-center">
-                                    <input type="text" id="Mid" class="w-full h-9 bg-[#5f666d] rounded-md px-3.5 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" value="1">
+                                    <input type="text" wire:model.lazy="qty" inputmode="numeric" pattern="[0-9+]*" oninput="this.value = this.value.replace(/[^0-9+]/g, '') id="Mid" class="w-full h-9 bg-[#5f666d] rounded-md px-3.5 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" min="1">
                                 </div>
                                 <div class="flex justify-center items-center gap-2">
-                                    <button class="flex justify-center items-center bg-[#a58c6f] h-9 w-9 rounded-md">
+                                    <button type="button" wire:click="tambah" class="flex justify-center items-center bg-[#a58c6f] h-9 w-9 rounded-md cursor-pointer">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-plus"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 5l0 14" /><path d="M5 12l14 0" /></svg>
                                     </button>
-                                    <button class="flex justify-center items-center bg-[#746a5d] h-9 w-9 rounded-md">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-minus"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l14 0" /></svg>
+                                    <button type="button" wire:click="kurang" @class([ 'flex justify-center items-center h-9 w-9 rounded-md transition', 'bg-[#5f564b] cursor-not-allowed' => $qty <= 1, 'bg-[#a58c6f] hover:opacity-80 cursor-pointer' => $qty > 1,]) @disabled($qty <= 1) >
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icon-tabler-minus"> <path stroke="none" d="M0 0h24v24H0z" fill="none"/> <path d="M5 12l14 0" /></svg>
                                     </button>
+
                                 </div>
                             </div>
                         </div>
