@@ -25,8 +25,11 @@ class TopUp extends Component
 
     public function mount($id)
     {
-        $this->games = daftarGame::with('priceGames.iconsgames')
-            ->findOrFail($id);
+        $this->games = daftarGame::with([
+            'priceGames' => function ($q) {
+                $q->with('iconsgames');
+            }
+        ])->findOrFail($id);
     }
 
     public function render()

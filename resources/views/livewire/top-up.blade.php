@@ -75,18 +75,20 @@
                         </div>
 
                         <div class="flex flex-col h-full w-full py-4 gap-2 bg-[#434649] rounded-b-lg">
-                            @foreach ( $games->priceGames as $price)
-                                
+                            @foreach ( $games->priceGames->groupBy('name') as $name => $prices)
+                            
                             <div class="flex flex-col h-full w-full gap-2">
-                                <p class="text-sm text-white px-4">{{ $price->name }}✨</p>
+                                <p class="text-sm text-white px-4">{{ $name }}✨</p>
                                 
                                 <div class="flex flex-wrap items-center px-4 gap-4">
+                                    @foreach ($prices as $price )
+                                    
                                         <div class="flex flex-col rounded-lg w-61 h-full bg-[#5f666d] shadow-lg cursor-pointer">
                                             <div class="flex flex-col justify-center w-full h-full px-2 gap-1">
                                                 <p class="text-sm text-white">{{ $price->value }} {{ $price->iconsgames->name }}</p>
                                                 <div class="flex gap-2 items-center">
                                                     @if( $price->iconsgames)
-                                                        <img src="{{ asset('storage/'.$price->iconsgames->gambar) }}" alt="" class="h-10 w-10 object-cover">
+                                                    <img src="{{ asset('storage/'.$price->iconsgames->gambar) }}" alt="" class="h-10 w-10 object-cover">
                                                     @endif
                                                     <p class="text-sm text-white">Rp {{ number_format($price->harga, 0, ',','.') }}</p>
                                                 </div>
@@ -98,10 +100,11 @@
                                             </div>
                                             <div class="flex justify-end items-center w-full h-9 bg-linear-to-b from-[#3c4044] to-[#4a5056] rounded-b-lg">
                                                 <div class="bg-white w-13.5 h-4 rounded-sm mx-2">
-
+                                                    
                                                 </div>
                                             </div>
                                         </div>
+                                    @endforeach
                                 </div>
                             </div>
                             @endforeach
