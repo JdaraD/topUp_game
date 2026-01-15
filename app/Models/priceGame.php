@@ -32,4 +32,9 @@ class priceGame extends Model
         return $this->belongsTo(iconsgame::class, 'iconsgame_id');
     }
 
+    public function riwayat()
+    {
+        return $this->hasMany(riwayatPembelian::class,'price_game_id');
+    }
+
 }

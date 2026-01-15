@@ -32,6 +32,11 @@ class daftarGame extends Model
     {
         return $this->hasMany(priceGame::class, 'daftar_game_id');
     }
+
+    public function riwayat()
+    {
+        return $this->hasMany(riwayatPembelian::class,'daftar_game_id');
+    }
 }
 
 

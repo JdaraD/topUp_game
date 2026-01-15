@@ -5,32 +5,34 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class iconsgame extends Model
+class riwayatPembelian extends Model
 {
     use HasFactory;
 
     protected $fillable = [
+        'id',
         'order',
         'is_active',
         'daftar_game_id',
-        'name',
-        'gambar',
+        'icons_game_id',
+        'price_game_id',
+        'status',
         'created_at',
         'updated_at'
     ];
 
-    public function game()
+    public function games()
     {
         return $this->belongsTo(daftarGame::class, 'daftar_game_id');
     }
 
-    public function priceGames()
+    public function icons()
     {
-        return $this->hasMany(priceGame::class, 'iconsgame_id');
+        return $this->belongsTo(iconsgame::class, 'icons_game_id');
     }
 
-    public function riwayat()
+    public function price()
     {
-        return $this->hasMany(riwayatPembelian::class,'icons_game_id');
+        return $this->belongsTo(priceGame::class, 'price_game_id');
     }
 }
