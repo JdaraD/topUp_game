@@ -20,19 +20,19 @@
     </div>
     <div class="flex justify-between items-center w-[82%] h-10">
         <div class="flex order-1 gap-2 bg-(image)">
-            <a href="{{ route('home') }}" class="flex items-center gap-2 hover:border-b border-yellow-600/80">
+            <a href="{{ route('home') }}" class="flex items-center gap-2 hover:border-b border-yellow-600/80 cursor-pointer">
                 <img src="{{ asset('image/bag.png') }}" alt="" class="h-4.5 w-4.5">
                 <p class="text-sm font-medium text-white">Topup</p>
             </a>
-            <div class="flex items-center gap-2 hover:border-b border-yellow-600/80">
+            <a href="{{ route('riwayat') }}" class="flex items-center gap-2 hover:border-b border-yellow-600/80 cursor-pointer">
                 <img src="{{ asset('image/tk.png') }}" alt="" class="h-4.5 w-4.5">
                 <p class="text-sm font-medium text-white">Cek Transaksi</p>
-            </div>
-            <div class="flex items-center gap-2 hover:border-b border-yellow-600/80">
+            </a>
+            <div class="flex items-center gap-2 hover:border-b border-yellow-600/80 cursor-pointer">
                 <img src="{{ asset('image/ld.png') }}" alt="" class="h-4.5 w-4.5">
                 <p class="text-sm font-medium text-white">Leaderboard</p>
             </div>
-            <div class="flex items-center gap-2 hover:border-b border-yellow-600/80">
+            <div class="flex items-center gap-2 hover:border-b border-yellow-600/80 cursor-pointer">
                 <img src="{{ asset('image/tb.png') }}" alt="" class="h-4.5 w-4.5">
                 <p class="text-sm font-medium text-white">Kalkulator</p>
             </div>
