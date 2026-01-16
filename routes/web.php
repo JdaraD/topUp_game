@@ -4,6 +4,7 @@ use App\Livewire\Auth\LoginFrom;
 use App\Livewire\Auth\RegisterFrom;
 use App\Livewire\Home;
 use App\Livewire\PageNotifSuccess;
+use App\Livewire\Riwayat;
 use App\Livewire\TopUp;
 use Illuminate\Support\Facades\Route;
 
@@ -20,3 +21,4 @@ route::get('/contact-us', \App\Livewire\ContactUs::class)->name('contact-us');
 route::get('/privacy-policy', \App\Livewire\PrivacyPolicy::class)->name('privacy-policy');
 route::get('/terms-and-condition', \App\Livewire\TremsAndCondition::class)->name('terms-and-conditions');
 route::get('/page-notif-success', PageNotifSuccess::class)->name('PNSuccess');
+route::get('/riwayat', Riwayat::class)->name('riwayat');

@@ -16,9 +16,14 @@ class riwayatPembelian extends Model
         'daftar_game_id',
         'icons_game_id',
         'price_game_id',
+        'qty',
         'status',
         'created_at',
         'updated_at'
+    ];
+
+    protected $casts = [
+        'qty' => 'integer'
     ];
 
     public function games()

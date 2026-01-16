@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreignId('daftar_game_id')->constrained('daftar_games')->cascadeOnDelete();
             $table->foreignId('icons_game_id')->constrained('iconsgames')->cascadeOnDelete();
             $table->foreignId('price_game_id')->constrained('price_games')->cascadeOnDelete();
+            $table->unsignedInteger('qty');
             $table->enum('status',['Pending','Gagal','Berhasil'])->default('Pending');
             $table->timestamps();
         });
