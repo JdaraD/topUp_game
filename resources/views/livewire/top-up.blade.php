@@ -83,7 +83,7 @@
                                 <div class="flex flex-wrap items-center px-4 gap-4">
                                     @foreach ($prices as $price )
                                     
-                                        <div class="flex flex-col rounded-lg w-61 h-full bg-[#5f666d] shadow-lg cursor-pointer">
+                                        <div wire:click="selectPrice({{ $price->id }})" @class(['ring-2 ring-amber-400' => $selectedPrice?->id === $price->id, 'flex flex-col rounded-lg w-61 h-full bg-[#5f666d] shadow-lg cursor-pointer transition' ]) class="flex flex-col rounded-lg w-61 h-full bg-[#5f666d] shadow-lg cursor-pointer">
                                             <div class="flex flex-col justify-center w-full h-full px-2 gap-1">
                                                 <p class="text-sm text-white">{{ $price->value }} {{ $price->iconsgames->name }}</p>
                                                 <div class="flex gap-2 items-center">
@@ -123,10 +123,10 @@
                 
                             <div class="flex justify-center items-center px-4 gap-4 my-4 h-fit w-full bg-[#434649] rounded-b-lg">
                                 <div class="flex justify-center w-full items-center">
-                                    <input type="text" wire:model.lazy="qty" inputmode="numeric" pattern="[0-9+]*" oninput="this.value = this.value.replace(/[^0-9+]/g, '') id="Mid" class="w-full h-9 bg-[#5f666d] rounded-md px-3.5 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" min="1">
+                                    <input type="text" wire:model.debounce.100ms="qty" inputmode="numeric" pattern="[0-9+]*" oninput="this.value = this.value.replace(/[^0-9+]/g, '')" id="Mid" class="w-full h-9 bg-[#5f666d] rounded-md px-3.5 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" min="1">
                                 </div>
                                 <div class="flex justify-center items-center gap-2">
-                                    <button type="button" wire:click="tambah" class="flex justify-center items-center bg-[#a58c6f] h-9 w-9 rounded-md cursor-pointer">
+                                    <button type="button" wire:click="tambah" @class(['flex justify-center items-center h-9 w-9 rounded-md cursor-pointer', 'bg-[#a58c6f] hover:opacity-80 cursor-pointer' => $qty < 3, 'bg-[#5f564b] cursor-not-allowed' => $qty >= 3,]) @disabled($qty > 3) >
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-plus"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 5l0 14" /><path d="M5 12l14 0" /></svg>
                                     </button>
                                     <button type="button" wire:click="kurang" @class([ 'flex justify-center items-center h-9 w-9 rounded-md transition', 'bg-[#5f564b] cursor-not-allowed' => $qty <= 1, 'bg-[#a58c6f] hover:opacity-80 cursor-pointer' => $qty > 1,]) @disabled($qty <= 1) >
@@ -264,11 +264,47 @@
                                 <p class="text-xs text-white/80">Kamu bisa hubungi admin disini.</p>
                             </div>
                         </div>
-                        <div class="flex justify-center items-center border border-dashed border-white/30 bg-[#212121] h-24.75 w-full rounded-lg p-4">
-                            <p class="text-sm text-white/80">
-                                Belum ada item produk yang dipilih.
-                            </p>
-                        </div>
+                        @if ($selectedPrice)
+                            <div class="flex flex-col gap-2 justify-center items-center border border-dashed border-white/30 bg-[#212121] h-full w-full rounded-lg p-4">
+                                <div class="flex flex-row gap-2 w-full h-full">
+                                    <div class="flex flex-col w-full gap-1">
+                                        <p class="text-sm text-white/80 capitalize">
+                                            Game : {{ $selectedPrice->game->name }}
+                                        </p>
+                                        <p class="text-sm text-white/80 capitalize">
+                                            Event : {{ $selectedPrice->name }}
+                                        </p>
+
+                                    </div>
+                                    <div class="flex flex-col w-full gap-1">
+                                        <p class="text-sm text-white/80 capitalize">
+                                            coin : {{ $selectedPrice->value }} {{ $selectedPrice->iconsgames->name }}
+                                        </p>
+                                        <p class="text-sm text-white/80 capitalize">
+                                            harga : Rp. {{ number_format($selectedPrice->harga, 0, ',', '.') }}
+                                        </p>
+                                        
+                                        <p class="text-sm text-white/80 capitalize">
+                                            Qty : {{ $qty }}
+                                        </p>
+
+                                    </div>
+                                </div>
+                                <div class="flex justify-center items-center w-full h-full bg-[#a58c6f] rounded-md px-2">
+                                    <p class="text-sm text-white capitalize">
+                                        total = Rp. {{ number_format($this->getTotalProperty(), 0, ',', '.') }}
+                                    </p>
+                                </div>
+                            </div>
+                        @else
+                            <div class="flex justify-center items-center border border-dashed border-white/30 bg-[#212121] h-24.75 w-full rounded-lg p-4">
+                                <p class="text-sm text-white/80">
+                                    Belum ada item produk yang dipilih.
+                                </p>
+                            </div>
+                            
+                        @endif
+                        
                         <button class="flex gap-1 bg-[#a58c6f] hover:bg-[#8d7861] h-8 w-full rounded-lg justify-center items-center">
                             <img src="{{ asset('image/bag.png') }}" alt="" class="h-4.5 w-4.5">
                             <p class="text-white font-semibold">Pesan Sekarang!</p>

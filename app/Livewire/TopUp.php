@@ -8,12 +8,17 @@ use Livewire\Component;
 class TopUp extends Component
 {
     public $games;
-
+    public $selectedPrice = null;
+    public $Mid;
+    public $server;
+    public $harga = 0;
     public $qty = 1;
 
     public function tambah()
     {
-        $this->qty++;
+        if ($this->qty < 3) {
+            $this->qty++;
+        }
     }
 
     public function kurang()
@@ -27,10 +32,31 @@ class TopUp extends Component
     {
         $this->games = daftarGame::with([
             'priceGames' => function ($q) {
-                $q->with('iconsgames');
+                $q->with('iconsgames','game');
             }
         ])->findOrFail($id);
     }
+
+    public function selectPrice($priceId)
+    {
+        $this->selectedPrice = $this->games
+            ->priceGames
+            ->firstWhere('id', $priceId);
+        
+        $this->harga = $this->selectedPrice->harga ?? 0;
+    }
+
+    // hitung total
+    public function getTotalProperty()
+    {
+        return (int) $this->qty * (int) $this->harga;
+    }
+
+    // perview real time
+    protected $rules = [
+        'Mid' => 'required',
+        'server' => 'required',
+    ];
 
     public function render()
     {
