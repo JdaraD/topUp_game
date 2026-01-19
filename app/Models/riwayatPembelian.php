@@ -17,6 +17,8 @@ class riwayatPembelian extends Model
         'icons_game_id',
         'price_game_id',
         'qty',
+        'email',
+        'noWa',
         'status',
         'created_at',
         'updated_at'

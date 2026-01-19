@@ -17,7 +17,6 @@ class priceGame extends Model
         'value',
         'name',
         'harga',
-        'discon',
         'created_at',
         'updated_at',
     ];

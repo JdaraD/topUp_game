@@ -19,6 +19,8 @@ return new class extends Migration
             $table->foreignId('icons_game_id')->constrained('iconsgames')->cascadeOnDelete();
             $table->foreignId('price_game_id')->constrained('price_games')->cascadeOnDelete();
             $table->unsignedInteger('qty');
+            $table->string('email',50);
+            $table->string('noWa',20);
             $table->enum('status',['Pending','Gagal','Berhasil'])->default('Pending');
             $table->timestamps();
         });

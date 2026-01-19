@@ -11,15 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('price_games', function (Blueprint $table) {
+        Schema::create('vouchers', function (Blueprint $table) {
             $table->id();
             $table->integer('order')->default(0);
             $table->boolean('is_active')->default(0);
-            $table->foreignId('daftar_game_id')->constrained('daftar_games')->cascadeOnDelete();
-            $table->foreignId('iconsgame_id')->constrained('iconsgames')->cascadeOnDelete();
-            $table->string('value');
             $table->string('name');
-            $table->bigInteger('harga');
+            $table->string('code',8);
+            $table->integer('diskon')->nullable(0);
             $table->timestamps();
         });
     }
@@ -29,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('price_games');
+        Schema::dropIfExists('vouchers');
     }
 };

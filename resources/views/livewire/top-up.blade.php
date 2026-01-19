@@ -138,7 +138,7 @@
                         </div>
                     </div>
 
-                    <div class="flex flex-col h-auto w-full col-span-2 shadow-lg">
+                    {{-- <div class="flex flex-col h-auto w-full col-span-2 shadow-lg">
                         <div class="flex h-10 min-h-10 shrink-0 w-full items-center bg-[#5f666d] rounded-t-lg">
                             <div class="flex h-full w-10 shrink-0 justify-center items-center bg-[#a58c6f] rounded-tl-lg">
                                 <p class="text-md text-white">4</p>
@@ -177,12 +177,12 @@
 
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
 
                     <div class="flex flex-col h-auto w-full col-span-2 shadow-lg">
                         <div class="flex h-10 min-h-10 shrink-0 w-full items-center bg-[#5f666d] rounded-t-lg">
                             <div class="flex h-full w-10 shrink-0 justify-center items-center bg-[#a58c6f] rounded-tl-lg">
-                                <p class="text-md text-white">5</p>
+                                <p class="text-md text-white">4</p>
                             </div>
                             <p class="text-sm text-white pl-4">Detail Kontak</p>
                         </div>
@@ -190,12 +190,12 @@
                             <div class="flex flex-col h-full w-full py-3 px-4 gap-3">
                                 <div class="flex flex-col gap-1 w-full">
                                     <label for="Email" class="text-sm text-white">Email</label>
-                                    <input type="text" id="Email" class="flex w-full h-8.5 bg-[#5f666d] rounded-md px-3.5 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="example@gmail.com">
+                                    <input type="text" wire.model="email" id="Email" class="flex w-full h-8.5 bg-[#5f666d] rounded-md px-3.5 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="example@gmail.com">
                                 </div>
 
                                 <div class="flex flex-col gap-1 w-full">
                                     <label for="NoWa" class="text-sm text-white">No. WhatsApp</label>
-                                    <input type="text" id="NoWa" inputmode="numeric" pattern="[0-9+]*" oninput="this.value = this.value.replace(/[^0-9+]/g, '')" class="w-full h-8.5 bg-[#5f666d] rounded-md px-3.5 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="+62">
+                                    <input type="text" wire.model="noWa" id="NoWa" inputmode="numeric" pattern="[0-9+]*" oninput="this.value = this.value.replace(/[^0-9+]/g, '')" class="w-full h-8.5 bg-[#5f666d] rounded-md px-3.5 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="087xxxxxxxx">
                                 </div>
 
                                 <div class="flex flex-col gap-1 w-full">
@@ -214,7 +214,7 @@
                     <div class="flex flex-col h-auto w-full col-span-2 shadow-lg">
                         <div class="flex h-10 min-h-10 shrink-0 w-full items-center bg-[#5f666d] rounded-t-lg">
                             <div class="flex h-full w-10 shrink-0 items-center justify-center bg-[#a58c6f] rounded-tl-lg">
-                                <p class="text-md leading-none text-white">6</p>
+                                <p class="text-md leading-none text-white">5</p>
                             </div>
                             <p class="text-sm leading-none text-white pl-4">Kode Promo</p>
                         </div>
