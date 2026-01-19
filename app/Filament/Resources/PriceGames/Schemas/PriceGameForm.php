@@ -65,12 +65,6 @@ class PriceGameForm
                             ->prefix('Rp.')
                             ->required()
                             ->numeric(),
-                        TextInput::make('discon')
-                            ->label('Diskon')
-                            // ->hint('%')
-                            ->suffix('%')
-                            ->required()
-                            ->numeric(),
                     ]),
                 
             ])->columns(1);

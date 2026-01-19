@@ -10,7 +10,7 @@ use App\Filament\Resources\IconsGames\IconsGamesResource;
 use App\Filament\Resources\ImageSliders\ImageSliderResource;
 use App\Filament\Resources\PriceGames\PriceGameResource;
 use App\Filament\Resources\Profils\ProfilResource;
-use App\Models\profil;
+use App\Filament\Resources\Vouchers\VoucherResource;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -119,6 +119,11 @@ class AdminPanelProvider extends PanelProvider
                                 ->icon('heroicon-s-banknotes')
                                 ->isActiveWhen(fn(): bool => request()->routeIs('filament.admin.resources.price-games.*'))
                                 ->url(fn(): string => PriceGameResource::getUrl()),
+                            
+                            NavigationItem::make('Add Voucher Games')
+                                ->icon('heroicon-s-ticket')
+                                ->isActiveWhen(fn(): bool => request()->routeIs('filament.admin.resources.vouchers.*'))
+                                ->url(fn(): string => VoucherResource::getUrl()),
                         ]),
                     
                     NavigationGroup::make('Settings')

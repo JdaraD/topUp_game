@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Filament\Resources\PriceGames\Tables;
+namespace App\Filament\Resources\Vouchers\Tables;
 
 use Filament\Actions\Action;
 use Filament\Actions\BulkActionGroup;
@@ -9,12 +9,11 @@ use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
 use Filament\Tables\Columns\IconColumn;
-use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\ToggleColumn;
 use Filament\Tables\Table;
 
-class PriceGamesTable
+class VouchersTable
 {
     public static function configure(Table $table): Table
     {
@@ -23,27 +22,21 @@ class PriceGamesTable
                 TextColumn::make('order')
                     ->label('Urutan')
                     ->numeric()
-                    ->sortable()
-                    ->formatStateUsing(function($state, $record, $column, $rowLoop) {
+                    ->formatStateUsing( function($column, $rowLoop, $state, $record ){
                         return $rowLoop->iteration;
-                    }),
+                    })
+                    ->sortable(),
                 ToggleColumn::make('is_active')
                     ->label('Status'),
-                TextColumn::make('game.name')
-                    ->label('Nama Games')
-                    ->sortable(),
-                ImageColumn::make('iconsgames.gambar')
-                    ->label('Icon Games')
-                    ->disk('public')
-                    ->sortable(),
-                TextColumn::make('value')
-                    ->label('Money Game')
-                    ->searchable(),
                 TextColumn::make('name')
-                    ->label('Nama Event')
+                    ->label('Nama Voucher Games')
                     ->searchable(),
-                TextColumn::make('harga')
-                    ->label('Harga')
+                TextColumn::make('code')
+                    ->label('Kode Voucher Games')
+                    ->searchable(),
+                TextColumn::make('diskon')
+                    ->label('Diskon')
+                    ->suffix('%')
                     ->numeric()
                     ->sortable(),
                 TextColumn::make('created_at')
@@ -62,11 +55,11 @@ class PriceGamesTable
                 EditAction::make()
                     ->openUrlInNewTab(),
                 DeleteAction::make()
-                    ->label('Hapus Price Game')
-                    ->successNotificationTitle('Data Price Game Telah Di Hapus')
+                    ->label('Hapus Voucher Game')
+                    ->successNotificationTitle('Data Voucher Game Telah Di Hapus')
                     ->requiresConfirmation()
-                    ->modalHeading('Hapus Data Price Game')
-                    ->modalDescription('Data Price Game yang dihapus tidak dapat dikembalikan.')
+                    ->modalHeading('Hapus Data Voucher Game')
+                    ->modalDescription('Data Voucher Game yang dihapus tidak dapat dikembalikan.')
                     ->action(fn($record) => $record->delete()),
                 ViewAction::make()
                     ->label('Lihat Detail')

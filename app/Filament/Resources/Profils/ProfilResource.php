@@ -17,6 +17,9 @@ use Filament\Tables\Table;
 class ProfilResource extends Resource
 {
     protected static ?string $model = Profil::class;
+    public static ?string $pluralModelLabel = 'Profil Perusahaan';
+
+    public static ?string $modelLabel = 'Profil Perusahaan';
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
