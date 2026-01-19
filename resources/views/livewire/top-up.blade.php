@@ -221,8 +221,8 @@
                         <div class="flex flex-col h-full w-full bg-[#434649] rounded-b-lg">
                             <div class="flex flex-col h-full w-full gap-4 py-4 px-4">
                                 <div class="flex flex-row gap-4 w-full">
-                                    <input type="text" id="Email" class="flex w-full h-8.5 bg-[#5f666d] rounded-md px-3.5 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="ketik Kode Promo Kamu">
-                                    <button class="flex justify-center items-center bg-[#a58c6f] w-20.75 h-8 text-sm text-white rounded-md">Gunakan</button>
+                                    <input type="text" wire:model.defer="diskon" id="Email" class="flex w-full h-8.5 bg-[#5f666d] rounded-md px-3.5 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="ketik Kode Promo Kamu">
+                                    <button wire:click="applyDiskon" class="flex justify-center items-center bg-[#a58c6f] w-20.75 h-8 text-sm text-white rounded-md cursor-pointer">Gunakan</button>
                                 </div>
                                 <div class="flex justify-center items-center bg-[#a58c6f] gap-2 w-52 h-8 rounded-md ">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon text-white icon-tabler icons-tabler-outline icon-tabler-ticket">
@@ -273,6 +273,9 @@
                                         </p>
                                         <p class="text-sm text-white/80 capitalize">
                                             Event : {{ $selectedPrice->name }}
+                                        </p>
+                                        <p class="text-sm text-white/80 capitalize">
+                                            Diskon : {{ $diskon ?? 0 }} %
                                         </p>
 
                                     </div>

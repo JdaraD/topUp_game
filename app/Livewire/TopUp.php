@@ -7,12 +7,22 @@ use Livewire\Component;
 
 class TopUp extends Component
 {
+    public $diskon = null;
     public $games;
     public $selectedPrice = null;
     public $Mid;
     public $server;
     public $harga = 0;
     public $qty = 1;
+
+    public function applyDiskon()
+    {
+        if (is_null($this->diskon) || $this->diskon === '') {
+        return;
+    }
+
+        $this->diskon = intval($this->diskon);
+    }
 
     public function tambah()
     {
@@ -53,10 +63,16 @@ class TopUp extends Component
     }
 
     // perview real time
-    protected $rules = [
-        'Mid' => 'required',
-        'server' => 'required',
-    ];
+    // protected $rules = [
+    //     'Mid' => 'required',
+    //     'server' => 'required',
+    // ];
+
+    public function submit()
+    {
+        // logic submit
+    }
+
 
     public function render()
     {
