@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Models\daftarGame;
+use App\Models\voucher;
 use Livewire\Component;
 
 class TopUp extends Component
@@ -14,14 +15,26 @@ class TopUp extends Component
     public $server;
     public $harga = 0;
     public $qty = 1;
+    public $voucher;
 
     public function applyDiskon()
     {
-        if (is_null($this->diskon) || $this->diskon === '') {
-        return;
-    }
+        $this->resetErrorBag();
 
-        $this->diskon = intval($this->diskon);
+        $voucher = voucher::where('code', $this->diskon)
+            ->where('is_active', 1)
+            ->first();
+
+        if(! $voucher) {
+            $this->voucher = null;
+            $this->diskon = 0;
+            $this->addError('diskon', 'Kode voucher tidak ditemukan');
+            return;
+        }
+
+        $this->voucher =$voucher;
+
+        $this->diskon = $voucher->value;
     }
 
     public function tambah()
@@ -70,7 +83,9 @@ class TopUp extends Component
 
     public function submit()
     {
-        // logic submit
+        // $this->validate([
+        //     ''
+        // ]);
     }
 
 

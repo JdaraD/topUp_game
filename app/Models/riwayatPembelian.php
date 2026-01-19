@@ -19,6 +19,8 @@ class riwayatPembelian extends Model
         'qty',
         'email',
         'noWa',
+        // 'harga',
+        // 'diskon',
         'status',
         'created_at',
         'updated_at'

@@ -21,6 +21,8 @@ return new class extends Migration
             $table->unsignedInteger('qty');
             $table->string('email',50);
             $table->string('noWa',20);
+            // $table->string('harga');
+            // $table->string('diskon');
             $table->enum('status',['Pending','Gagal','Berhasil'])->default('Pending');
             $table->timestamps();
         });
