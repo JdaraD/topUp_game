@@ -8,34 +8,33 @@ use Livewire\Component;
 
 class TopUp extends Component
 {
-    public $diskon = null;
+    public $voucherCode = '';
+    public $diskon = 0;
+    public $hasVoucher = false;
     public $games;
     public $selectedPrice = null;
     public $Mid;
     public $server;
     public $harga = 0;
     public $qty = 1;
-    public $voucher;
+    public $voucher = null;
 
     public function applyDiskon()
     {
-        $this->resetErrorBag();
-
-        $voucher = voucher::where('code', $this->diskon)
+        $voucher = voucher::where('code', $this->voucherCode)
             ->where('is_active', 1)
             ->first();
 
-        if(! $voucher) {
-            $this->voucher = null;
+        if (! $voucher) {
+            $this->hasVoucher = false;
             $this->diskon = 0;
-            $this->addError('diskon', 'Kode voucher tidak ditemukan');
             return;
         }
 
-        $this->voucher =$voucher;
-
-        $this->diskon = $voucher->value;
+        $this->diskon = (int) $voucher->diskon;
+        $this->hasVoucher = true;
     }
+
 
     public function tambah()
     {
@@ -67,19 +66,22 @@ class TopUp extends Component
             ->firstWhere('id', $priceId);
         
         $this->harga = $this->selectedPrice->harga ?? 0;
+
+        $this->voucher = null;
+        $this->diskon = 0;
     }
 
     // hitung total
     public function getTotalProperty()
     {
-        return (int) $this->qty * (int) $this->harga;
-    }
+        $total = $this->qty * $this->harga;
 
-    // perview real time
-    // protected $rules = [
-    //     'Mid' => 'required',
-    //     'server' => 'required',
-    // ];
+        if ($this->hasVoucher) {
+            return (int) ($total - ($total * ($this->diskon / 100)));
+        }
+
+        return (int) $total;
+    }
 
     public function submit()
     {

@@ -41,6 +41,9 @@ class VoucherForm
                             ->required(),
                         TextInput::make('diskon')
                             ->label('Diskon')
+                            ->minValue(0)
+                            ->maxValue(100)
+                            ->placeholder('Masukkan Besaran Diskon ( 10 )')
                             ->suffix('%')
                             ->required()
                             ->numeric(),

@@ -221,7 +221,7 @@
                         <div class="flex flex-col h-full w-full bg-[#434649] rounded-b-lg">
                             <div class="flex flex-col h-full w-full gap-4 py-4 px-4">
                                 <div class="flex flex-row gap-4 w-full">
-                                    <input type="text" wire:model.defer="diskon" id="Email" class="flex w-full h-8.5 bg-[#5f666d] rounded-md px-3.5 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" @disabled(!$selectedPrice) placeholder="ketik Kode Promo Kamu">
+                                    <input type="text" wire:model.defer="voucherCode" id="Email" class="flex w-full h-8.5 bg-[#5f666d] rounded-md px-3.5 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" @disabled(!$selectedPrice) placeholder="ketik Kode Promo Kamu">
                                     <button wire:click="applyDiskon" class="flex justify-center items-center bg-[#a58c6f] w-20.75 h-8 text-sm text-white rounded-md cursor-pointer" @disabled(!$selectedPrice)>Gunakan</button>
                                 </div>
                                 <div class="flex justify-center items-center bg-[#a58c6f] gap-2 w-52 h-8 rounded-md ">
@@ -275,7 +275,7 @@
                                             Event : {{ $selectedPrice->name }}
                                         </p>
                                         <p class="text-sm text-white/80 capitalize">
-                                            Diskon : {{ $voucher->diskon ?? 0 }} %
+                                            Diskon : {{ $diskon ?? 0 }} %
                                         </p>
 
                                     </div>
@@ -295,7 +295,7 @@
                                 </div>
                                 <div class="flex justify-center items-center w-full h-full bg-[#a58c6f] rounded-md px-2">
                                     <p class="text-sm text-white capitalize">
-                                        total = Rp. {{ number_format($this->getTotalProperty(), 0, ',', '.') }}
+                                        total = Rp. {{ number_format($this->total, 0, ',', '.') }}
                                     </p>
                                 </div>
                             </div>
