@@ -14,13 +14,12 @@ class riwayatPembelian extends Model
         'order',
         'is_active',
         'daftar_game_id',
-        'icons_game_id',
         'price_game_id',
         'qty',
         'email',
         'noWa',
-        // 'harga',
-        // 'diskon',
+        'harga',
+        'diskon',
         'status',
         'created_at',
         'updated_at'
@@ -33,11 +32,6 @@ class riwayatPembelian extends Model
     public function games()
     {
         return $this->belongsTo(daftarGame::class, 'daftar_game_id');
-    }
-
-    public function icons()
-    {
-        return $this->belongsTo(iconsgame::class, 'icons_game_id');
     }
 
     public function price()

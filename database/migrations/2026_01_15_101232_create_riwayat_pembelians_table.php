@@ -16,13 +16,12 @@ return new class extends Migration
             $table->integer('order')->default(0);
             $table->boolean('is_active')->default(0);
             $table->foreignId('daftar_game_id')->constrained('daftar_games')->cascadeOnDelete();
-            $table->foreignId('icons_game_id')->constrained('iconsgames')->cascadeOnDelete();
             $table->foreignId('price_game_id')->constrained('price_games')->cascadeOnDelete();
             $table->unsignedInteger('qty');
             $table->string('email',50);
             $table->string('noWa',20);
-            // $table->string('harga');
-            // $table->string('diskon');
+            $table->string('harga');
+            $table->string('diskon');
             $table->enum('status',['Pending','Gagal','Berhasil'])->default('Pending');
             $table->timestamps();
         });

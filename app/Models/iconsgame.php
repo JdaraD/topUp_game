@@ -28,9 +28,4 @@ class iconsgame extends Model
     {
         return $this->hasMany(priceGame::class, 'iconsgame_id');
     }
-
-    public function riwayat()
-    {
-        return $this->hasMany(riwayatPembelian::class,'icons_game_id');
-    }
 }

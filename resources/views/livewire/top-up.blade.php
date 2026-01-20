@@ -308,7 +308,7 @@
                             
                         @endif
                         
-                        <button class="flex gap-1 bg-[#a58c6f] hover:bg-[#8d7861] h-8 w-full rounded-lg justify-center items-center">
+                        <button wire:click="'submit" class="flex gap-1 bg-[#a58c6f] hover:bg-[#8d7861] h-8 w-full rounded-lg justify-center items-center">
                             <img src="{{ asset('image/bag.png') }}" alt="" class="h-4.5 w-4.5">
                             <p class="text-white font-semibold">Pesan Sekarang!</p>
                         </button>
