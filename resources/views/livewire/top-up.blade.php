@@ -189,17 +189,17 @@
                         <div class="flex flex-col h-full w-full bg-[#434649] rounded-b-lg">
                             <div class="flex flex-col h-full w-full py-3 px-4 gap-3">
                                 <div class="flex flex-col gap-1 w-full">
-                                    <label for="Email" class="text-sm text-white">Email</label>
-                                    <input type="text" wire.model="email" id="Email" class="flex w-full h-8.5 bg-[#5f666d] rounded-md px-3.5 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="example@gmail.com">
+                                    <label for="email" class="text-sm text-white">Email</label>
+                                    <input type="text" wire:model="email" id="email" class="flex w-full h-8.5 bg-[#5f666d] rounded-md px-3.5 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="example@gmail.com">
                                 </div>
 
                                 <div class="flex flex-col gap-1 w-full">
-                                    <label for="NoWa" class="text-sm text-white">No. WhatsApp</label>
-                                    <input type="text" wire.model="noWa" id="NoWa" inputmode="numeric" pattern="[0-9+]*" oninput="this.value = this.value.replace(/[^0-9+]/g, '')" class="w-full h-8.5 bg-[#5f666d] rounded-md px-3.5 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="087xxxxxxxx">
+                                    <label for="noWa" class="text-sm text-white">No. WhatsApp</label>
+                                    <input type="text" wire:model="noWa" id="noWa" inputmode="numeric" pattern="[0-9+]*" oninput="this.value = this.value.replace(/[^0-9+]/g, '')" class="w-full h-8.5 bg-[#5f666d] rounded-md px-3.5 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="087xxxxxxxx">
                                 </div>
 
                                 <div class="flex flex-col gap-1 w-full">
-                                    <label for="NoWa" class="text-xs text-white italic">**Nomor ini akan dihubungi jika terjadi masalah</label>
+                                    <label for="noWa" class="text-xs text-white italic">**Nomor ini akan dihubungi jika terjadi masalah</label>
                                     <div class="flex items-center bg-[#5f666d] rounded-md w-full h-11 gap-1 px-4">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon text-white icon-tabler icons-tabler-outline icon-tabler-info-circle">
                                             <path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" /><path d="M12 9h.01" /><path d="M11 12h1v4h1" />
@@ -308,7 +308,7 @@
                             
                         @endif
                         
-                        <button wire:click="'submit" class="flex gap-1 bg-[#a58c6f] hover:bg-[#8d7861] h-8 w-full rounded-lg justify-center items-center">
+                        <button wire:click="submit" class="flex gap-1 bg-[#a58c6f] hover:bg-[#8d7861] h-8 w-full rounded-lg justify-center items-center cursor-pointer transition">
                             <img src="{{ asset('image/bag.png') }}" alt="" class="h-4.5 w-4.5">
                             <p class="text-white font-semibold">Pesan Sekarang!</p>
                         </button>

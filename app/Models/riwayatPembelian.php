@@ -13,6 +13,8 @@ class riwayatPembelian extends Model
         'id',
         'order',
         'is_active',
+        'Mid',
+        'server',
         'daftar_game_id',
         'price_game_id',
         'qty',
@@ -26,7 +28,7 @@ class riwayatPembelian extends Model
     ];
 
     protected $casts = [
-        'qty' => 'integer'
+        'qty' => 'integer',
     ];
 
     public function games()

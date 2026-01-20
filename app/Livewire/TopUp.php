@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Models\daftarGame;
+use App\Models\riwayatPembelian;
 use App\Models\voucher;
 use Livewire\Component;
 
@@ -18,6 +19,8 @@ class TopUp extends Component
     public $harga = 0;
     public $qty = 1;
     public $voucher = null;
+
+    public $email, $noWa;
 
     public function applyDiskon()
     {
@@ -85,9 +88,35 @@ class TopUp extends Component
 
     public function submit()
     {
-        // $this->validate([
-        //     ''
-        // ]);
+        if(!$this->selectedPrice) {
+            $this->addError('selectedPrice', 'Silahkan pilih harga terlebih dahulu.');
+            return;
+        }
+
+        $this->validate([
+            'Mid' => 'required',
+            'server' => 'required',
+            'email' => 'required',
+            'noWa' => 'required',
+        ]);
+
+        $data = riwayatPembelian::create([
+            'Mid' => $this->Mid,
+            'server' => $this->server,
+            'daftar_game_id' => $this->games->id,
+            'price_game_id' => $this->selectedPrice->id,
+            'qty' => $this->qty,
+            'email' => $this->email,
+            'noWa' => $this->noWa,
+            'harga' => $this->getTotalProperty(),
+            'diskon' => $this->hasVoucher ? $this->diskon : 0,
+            'status' => 'pending',
+        ]);
+
+        $this->reset(['Mid', 'server', 'qty', 'harga', 'diskon', 'voucherCode', 'hasVoucher', 'selectedPrice', 'email', 'noWa']);
+
+        session()->flash('success', 'Transaksi berhasil dibuat');
+
     }
 
 
