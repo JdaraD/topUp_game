@@ -6,6 +6,7 @@ use App\Models\daftarGame;
 use App\Models\riwayatPembelian;
 use App\Models\voucher;
 use Livewire\Component;
+use Midtrans\Snap;
 
 class TopUp extends Component
 {
@@ -100,7 +101,7 @@ class TopUp extends Component
             'noWa' => 'required',
         ]);
 
-        $data = riwayatPembelian::create([
+        $order =riwayatPembelian::create([
             'Mid' => $this->Mid,
             'server' => $this->server,
             'daftar_game_id' => $this->games->id,
@@ -112,6 +113,26 @@ class TopUp extends Component
             'diskon' => $this->hasVoucher ? $this->diskon : 0,
             'status' => 'pending',
         ]);
+
+        $params = [
+            'transaction_details' => [
+                'order_id' => $order->id,
+                'gross_amount' => $this->getTotalProperty(),
+            ],
+            'customer_details' => [
+                'email' => $this->email,
+                'phone' => $this->noWa,
+            ],
+        ];
+
+        $snapToken = Snap::getSnapToken($params);
+
+        $order->update([
+            'snap_token' => $snapToken,
+        ]);
+
+        $this->dispatch('midtrans-snap', snapToken: $snapToken);
+
 
         $this->reset(['Mid', 'server', 'qty', 'harga', 'diskon', 'voucherCode', 'hasVoucher', 'selectedPrice', 'email', 'noWa']);
 

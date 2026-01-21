@@ -24,3 +24,5 @@ route::get('/terms-and-condition', \App\Livewire\TremsAndCondition::class)->name
 route::get('/page-notif-success', PageNotifSuccess::class)->name('PNSuccess');
 route::get('/riwayat', Riwayat::class)->name('riwayat');
 route::get('/voucher', VoucherPage::class)->name('voucher');
+
+route::post('/midtrans/callback', [\App\Http\Controllers\MidtransController::class, 'callback']);
