@@ -6,6 +6,7 @@ use App\Livewire\Home;
 use App\Livewire\PageNotifSuccess;
 use App\Livewire\Riwayat;
 use App\Livewire\TopUp;
+use App\Livewire\VoucherPage;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
@@ -22,3 +23,4 @@ route::get('/privacy-policy', \App\Livewire\PrivacyPolicy::class)->name('privacy
 route::get('/terms-and-condition', \App\Livewire\TremsAndCondition::class)->name('terms-and-conditions');
 route::get('/page-notif-success', PageNotifSuccess::class)->name('PNSuccess');
 route::get('/riwayat', Riwayat::class)->name('riwayat');
+route::get('/voucher', VoucherPage::class)->name('voucher');
