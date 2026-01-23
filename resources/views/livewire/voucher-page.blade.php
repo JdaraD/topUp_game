@@ -3,10 +3,7 @@
         @if ($voucher == null)
             @for ($i = 0; $i < 2; $i++)
             <div class="flex justify-center items-center w-full h-30 rounded-md bg-white/10 shadow-lg border border-white/20 gap-4 p-4 animate-pulse">
-                <div src="" alt="Logo" class="h-20 py-0.5 w-18 object-cover bg-white/10 rounded-md animate-pulse"></div>
-                <div class="flex flex-col gap-0.5 w-60 h-20 rounded-md bg-white/10 animate-pulse">
-                    
-                </div>
+
             </div>
             @endfor
         @else

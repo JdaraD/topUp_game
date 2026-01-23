@@ -183,12 +183,12 @@
                                     <input type="text" wire:model.defer="voucherCode" id="Email" class="flex w-full h-8.5 bg-[#5f666d] rounded-md px-3.5 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" @disabled(!$selectedPrice) placeholder="ketik Kode Promo Kamu">
                                     <button type="button" wire:click="applyDiskon" class="flex justify-center items-center bg-[#a58c6f] w-20.75 h-8 text-sm text-white rounded-md cursor-pointer" @disabled(!$selectedPrice)>Gunakan</button>
                                 </div>
-                                <div class="flex justify-center items-center bg-[#a58c6f] gap-2 w-52 h-8 rounded-md ">
+                                <a href="{{ route('voucher') }}" class="flex justify-center items-center bg-[#a58c6f] gap-2 w-52 h-8 rounded-md ">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon text-white icon-tabler icons-tabler-outline icon-tabler-ticket">
                                         <path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M15 5l0 2" /><path d="M15 11l0 2" /><path d="M15 17l0 2" /><path d="M5 5h14a2 2 0 0 1 2 2v3a2 2 0 0 0 0 4v3a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-3a2 2 0 0 0 0 -4v-3a2 2 0 0 1 2 -2" />
                                     </svg>
                                     <p class="text-xs text-white">Pakai Promo Yang Tersedia</p>
-                                </div>
+                                </a>
                             </div>
                         </div>
                     </div>
