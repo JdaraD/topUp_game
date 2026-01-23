@@ -102,6 +102,7 @@ class TopUp extends Component
         ]);
 
         $order =riwayatPembelian::create([
+            'order_id' => 'ORDER-' . time(),
             'Mid' => $this->Mid,
             'server' => $this->server,
             'daftar_game_id' => $this->games->id,
@@ -116,7 +117,7 @@ class TopUp extends Component
 
         $params = [
             'transaction_details' => [
-                'order_id' => $order->id,
+                'order_id' => $order->order_id,
                 'gross_amount' => $this->getTotalProperty(),
             ],
             'customer_details' => [

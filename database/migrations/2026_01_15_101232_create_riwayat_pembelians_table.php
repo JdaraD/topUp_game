@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('riwayat_pembelians', function (Blueprint $table) {
             $table->id();
+            $table->string('order_id')->unique();
             $table->integer('order')->default(0);
             $table->boolean('is_active')->default(0);
             $table->string('Mid');

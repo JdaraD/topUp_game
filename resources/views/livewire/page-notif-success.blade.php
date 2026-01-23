@@ -10,6 +10,12 @@
             Transaksi Berhasil 🎉
         </h1>
 
+        <h2 class="text-white">
+            Pesanan dengan ID <span class="font-mono font-semibold">{{ request()->get('order_id') }}</span> telah berhasil diproses.
+            <br>
+            Silakan cek email atau cek Transaksi untuk detail lebih lanjut.
+        </h2>
+
         <p class="mt-2 text-white">
             Terima kasih telah Top Up di toko kami 
         </p>

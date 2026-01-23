@@ -12,19 +12,20 @@ class MidtransController extends Controller
     {
         $notif = new Notification();
 
-        $orderId = str_replace('ORDER-', '', $notif->order_id);
-        $transactionStatus = $notif->transaction_status;
+        $order = riwayatPembelian::where('order_id', $notif->order_id)->first();
 
-        $order = riwayatPembelian::find($orderId);
-
-        if (!$order) return;
-
-        if (in_array($transactionStatus, ['settlement', 'capture'])) {
-            $order->update(['status' => 'paid']);
-        } elseif ($transactionStatus === 'pending') {
-            $order->update(['status' => 'pending']);
-        } else {
-            $order->update(['status' => 'failed']);
+        if (!$order) {
+            return response()->json(['message' => 'Order not found']);
         }
+
+        if ($notif->transaction_status == 'settlement') {
+            $order->update(['status' => 'Berhasil']);
+        } elseif ($notif->transaction_status == 'pending') {
+            $order->update(['status' => 'Pending']);
+        } else {
+            $order->update(['status' => 'Gagal']);
+        }
+
+        return response()->json(['message' => 'OK']);
     }
 }
