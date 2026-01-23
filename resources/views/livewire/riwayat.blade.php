@@ -13,8 +13,8 @@
                 </tr>
             </thead>
 
-            <tbody>
-                @for ($i = 0; $i < 6; $i++)
+            <tbody wire:poll.3s="loadRiwayat">
+                {{-- @for ($i = 0; $i < 6; $i++)
                     <tr class="hover:bg-amber-200/5">
                         <td class="px-3 py-2 text-white text-md border border-amber-200/40 text-center">{{ $i + 1 }}</td>
                         <td class="px-3 py-2 text-white text-md border border-amber-200/40">2026-01-15</td>
@@ -24,7 +24,18 @@
                         <td class="px-3 py-2 text-white text-md border border-amber-200/40 text-center">2</td>
                         <td class="px-3 py-2 text-green-400 text-md border border-amber-200/40 text-center">Success</td>
                     </tr>
-                @endfor
+                @endfor --}}
+                @foreach ($riwayatPembelian as $rp)
+                <tr class="hover:bg-amber-200/5">
+                        <td class="px-3 py-2 text-white text-md border border-amber-200/40 text-center">{{ $loop->iteration }}</td>
+                        <td class="px-3 py-2 text-white text-md border border-amber-200/40">{{ $rp->created_at->format('d-m-Y H:i') }}</td>
+                        <td class="px-3 py-2 text-white text-md border border-amber-200/40">{{ $rp->order_id }}</td>
+                        <td class="px-3 py-2 text-white text-md border border-amber-200/40">{{ $rp->games->name }}</td>
+                        <td class="px-3 py-2 text-white text-md border border-amber-200/40">{{ number_format($rp->harga) }}</td>
+                        <td class="px-3 py-2 text-white text-md border border-amber-200/40 text-center">{{ $rp->qty }}</td>
+                        <td class="px-3 py-2 text-green-400 text-md border border-amber-200/40 text-center">{{ $rp->status }}</td>
+                    </tr>
+                @endforeach
             </tbody>
         </table>
     </div>
