@@ -84,6 +84,10 @@ class AdminPanelProvider extends PanelProvider
                                 ->icon('heroicon-s-shopping-cart')
                                 ->isActiveWhen(fn(): bool => request()->routeIs('filament.admin.resources.profils.*')),
                                 // ->url(fn(): string => ProfilResource::getUrl()),
+                            NavigationItem::make('History Pembelian')
+                                ->icon('heroicon-s-shopping-cart')
+                                ->isActiveWhen(fn(): bool => request()->routeIs('filament.admin.resources.profils.*')),
+                                // ->url(fn(): string => ProfilResource::getUrl()),
 
                         ]),
                     NavigationGroup::make('Banner Gambar')
