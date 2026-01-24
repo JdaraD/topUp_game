@@ -37,7 +37,7 @@ class RiwayatPembeliansTable
                     ->label('Name Member')
                     ->searchable(),
                 TextColumn::make('server')
-                    ->label('Server game')
+                    ->label('Server Game')
                     ->searchable(),
                 TextColumn::make('games.name')
                     ->label('Nama Games')
@@ -90,6 +90,7 @@ class RiwayatPembeliansTable
                     ->icon('heroicon-o-eye')
                     ->modalActions([
                         Action::make('status')
+                            ->label('Update Status')
                             ->icon('heroicon-s-pencil')
                             ->form([
                                 Select::make('status')

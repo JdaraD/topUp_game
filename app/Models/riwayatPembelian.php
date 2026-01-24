@@ -12,7 +12,6 @@ class riwayatPembelian extends Model
     protected $fillable = [
         'id',
         'order_id',
-        'is_active',
         'Mid',
         'server',
         'daftar_game_id',

@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->string('order_id')->unique();
             $table->integer('order')->default(0);
-            $table->boolean('is_active')->default(0);
             $table->string('Mid');
             $table->string('server');
             $table->foreignId('daftar_game_id')->constrained('daftar_games')->cascadeOnDelete();

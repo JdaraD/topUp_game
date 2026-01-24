@@ -5,6 +5,7 @@ namespace App\Filament\Resources\RiwayatPembelians\Schemas;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
+use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
 
 class RiwayatPembelianForm
@@ -12,42 +13,58 @@ class RiwayatPembelianForm
     public static function configure(Schema $schema): Schema
     {
         return $schema
-            ->components([
-                TextInput::make('order_id')
-                    ->required(),
-                TextInput::make('order')
-                    ->required()
-                    ->numeric()
-                    ->default(0),
-                Toggle::make('is_active')
-                    ->required(),
-                TextInput::make('Mid')
-                    ->required(),
-                TextInput::make('server')
-                    ->required(),
-                TextInput::make('daftar_game_id')
-                    ->required()
-                    ->numeric(),
-                TextInput::make('price_game_id')
-                    ->required()
-                    ->numeric(),
-                TextInput::make('qty')
-                    ->required()
-                    ->numeric(),
-                TextInput::make('email')
-                    ->label('Email address')
-                    ->email()
-                    ->required(),
-                TextInput::make('noWa')
-                    ->required(),
-                TextInput::make('harga')
-                    ->required(),
-                TextInput::make('diskon')
-                    ->required(),
-                Select::make('status')
-                    ->options(['Pending' => 'Pending', 'Gagal' => 'Gagal', 'Berhasil' => 'Berhasil'])
-                    ->default('Pending')
-                    ->required(),
-            ]);
+            ->schema([
+                Section::make()
+                    ->schema([
+                        TextInput::make('order_id')
+                            ->label('Order ID')
+                            ->required(),
+                    ]),
+                // Section::make()
+                //     ->schema([
+                //         TextInput::make('Mid')
+                //             ->label('Name Member')
+                //             ->required(),
+                //         TextInput::make('server')
+                //             ->label('Server Game')
+                //             ->required(),
+                //         Select::make('daftar_game_id')
+                //             ->label('Nama Games')
+                //             ->relationship('games', 'name')
+                //             ->required(),
+                //         Select::make('price_game_id')
+                //             ->label('Harga Game')
+                //             ->relationship('price', 'harga')
+                //             ->required(),
+                //         TextInput::make('qty')
+                //             ->label('Jumlah Pembelian')
+                //             ->required()
+                //             ->numeric(),
+                //         TextInput::make('email')
+                //             ->label('Email address')
+                //             ->email()
+                //             ->required(),
+                //         TextInput::make('noWa')
+                //             ->label('No WhatsApp')
+                //             ->required(),
+                //         TextInput::make('harga')
+                //             ->label('Total Harga')
+                //             ->prefix('Rp. ')
+                //             ->required(),
+                //         TextInput::make('diskon')
+                //             ->label('Diskon')
+                //             ->suffix('%')
+                //             ->required(),
+                //     ]),
+                Section::make()
+                    ->schema([
+                        Select::make('status')
+                            ->label('Status Pembelian')
+                            ->options(['Pending' => 'Pending', 'Gagal' => 'Gagal', 'Berhasil' => 'Berhasil'])
+                            ->default('Pending')
+                            ->required(),
+                    ]),
+                
+            ])->columns(1);
     }
 }
