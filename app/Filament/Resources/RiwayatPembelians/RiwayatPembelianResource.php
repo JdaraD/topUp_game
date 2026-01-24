@@ -19,7 +19,6 @@ class RiwayatPembelianResource extends Resource
     protected static ?string $model = RiwayatPembelian::class;
     protected static ?string $modelLabel = 'Riwayat Pembelian';
     protected static ?string $pluralModelLabel = 'Riwayat Pembelian';
-
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
     protected static ?string $recordTitleAttribute = 'Riwayat Pembelian';
@@ -40,7 +39,7 @@ class RiwayatPembelianResource extends Resource
             //
         ];
     }
-
+    
     public static function getPages(): array
     {
         return [

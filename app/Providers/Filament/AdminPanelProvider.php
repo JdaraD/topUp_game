@@ -10,6 +10,7 @@ use App\Filament\Resources\IconsGames\IconsGamesResource;
 use App\Filament\Resources\ImageSliders\ImageSliderResource;
 use App\Filament\Resources\PriceGames\PriceGameResource;
 use App\Filament\Resources\Profils\ProfilResource;
+use App\Filament\Resources\RiwayatPembelians\RiwayatPembelianResource;
 use App\Filament\Resources\Vouchers\VoucherResource;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
@@ -84,10 +85,11 @@ class AdminPanelProvider extends PanelProvider
                                 ->icon('heroicon-s-shopping-cart')
                                 ->isActiveWhen(fn(): bool => request()->routeIs('filament.admin.resources.profils.*')),
                                 // ->url(fn(): string => ProfilResource::getUrl()),
-                            NavigationItem::make('History Pembelian')
-                                ->icon('heroicon-s-shopping-cart')
-                                ->isActiveWhen(fn(): bool => request()->routeIs('filament.admin.resources.profils.*')),
-                                // ->url(fn(): string => ProfilResource::getUrl()),
+
+                            NavigationItem::make('Riwayat Pembelian')
+                                ->icon('fas-history')
+                                ->isActiveWhen(fn(): bool => request()->routeIs('filament.admin.resources.riwayat-pembelians.*'))
+                                ->url(fn(): string => RiwayatPembelianResource::getUrl()),
 
                         ]),
                     NavigationGroup::make('Banner Gambar')
