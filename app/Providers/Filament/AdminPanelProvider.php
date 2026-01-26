@@ -82,13 +82,15 @@ class AdminPanelProvider extends PanelProvider
                                 ->isActiveWhen(fn(): bool => request()->routeIs('filament.admin.resources.profils.*'))
                                 ->url(fn(): string => ProfilResource::getUrl()),
 
-                            NavigationItem::make('Cart')
+                            NavigationItem::make('Keranjang Pesanan')
                                 ->icon('heroicon-s-shopping-cart')
+                                ->badge(fn(): ?string => KeranjangResource::getModel()::keranjang()->count() ?: null)
                                 ->isActiveWhen(fn(): bool => request()->routeIs('filament.admin.resources.keranjangs.*'))
                                 ->url(fn(): string => KeranjangResource::getUrl()),
 
                             NavigationItem::make('Riwayat Pembelian')
                                 ->icon('fas-history')
+                                ->badge(fn(): ?string => RiwayatPembelianResource::getModel()::riwayat()->count() ?: null)
                                 ->isActiveWhen(fn(): bool => request()->routeIs('filament.admin.resources.riwayat-pembelians.*'))
                                 ->url(fn(): string => RiwayatPembelianResource::getUrl()),
 

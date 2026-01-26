@@ -10,7 +10,6 @@ class riwayatPembelian extends Model
     use HasFactory;
 
     protected $fillable = [
-        'id',
         'order_id',
         'Mid',
         'server',
@@ -21,9 +20,8 @@ class riwayatPembelian extends Model
         'noWa',
         'harga',
         'diskon',
-        'status',
-        'created_at',
-        'updated_at'
+        'status'
+
     ];
 
     protected $casts = [

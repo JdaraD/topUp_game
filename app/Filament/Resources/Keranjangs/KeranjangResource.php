@@ -23,11 +23,11 @@ class KeranjangResource extends Resource
     protected static ?string $modelLabel = 'Keranjang';
     protected static ?string $navigationLabel = 'Keranjang';
     protected static ?string $pluralModelLabel = 'Keranjang';
+    protected static bool $shouldRegisterNavigation = false;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
     protected static ?string $recordTitleAttribute = 'Keranjang';
-
     public static function form(Schema $schema): Schema
     {
         return KeranjangForm::configure($schema);
