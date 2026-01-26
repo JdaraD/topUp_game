@@ -8,6 +8,7 @@ use App\Filament\Resources\DaftarGames\DaftarGameResource;
 use App\Filament\Resources\Headerbanners\HeaderbannerResource;
 use App\Filament\Resources\IconsGames\IconsGamesResource;
 use App\Filament\Resources\ImageSliders\ImageSliderResource;
+use App\Filament\Resources\Keranjangs\KeranjangResource;
 use App\Filament\Resources\PriceGames\PriceGameResource;
 use App\Filament\Resources\Profils\ProfilResource;
 use App\Filament\Resources\RiwayatPembelians\RiwayatPembelianResource;
@@ -83,8 +84,8 @@ class AdminPanelProvider extends PanelProvider
 
                             NavigationItem::make('Cart')
                                 ->icon('heroicon-s-shopping-cart')
-                                ->isActiveWhen(fn(): bool => request()->routeIs('filament.admin.resources.profils.*')),
-                                // ->url(fn(): string => ProfilResource::getUrl()),
+                                ->isActiveWhen(fn(): bool => request()->routeIs('filament.admin.resources.keranjangs.*'))
+                                ->url(fn(): string => KeranjangResource::getUrl()),
 
                             NavigationItem::make('Riwayat Pembelian')
                                 ->icon('fas-history')

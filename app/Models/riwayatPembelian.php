@@ -39,4 +39,16 @@ class riwayatPembelian extends Model
     {
         return $this->belongsTo(priceGame::class, 'price_game_id');
     }
+
+    // keranjang scope
+    public function scopeKeranjang($query)
+    {
+        return $query->where('status', 'Pending');  
+    }
+
+    // riwayat pembelian scope
+    public function scopeRiwayat($query)
+    {
+        return $query->whereIn('status', ['Berhasil', 'Gagal']);
+    }
 }
