@@ -1,10 +1,10 @@
-<div class="flex flex-col grow gap-4 justify-center items-center w-full h-full mt-27.5 select-none">
-    <div class="relative flex justify-center items-center bg-gray-200/20 lg:h-138.5 md:h-96 h-80 w-full object-cover">
+<div class="flex flex-col grow gap-4 justify-center items-center w-full h-full lg:mt-27.5 md:mt-27.5 mt-17.5 select-none">
+    <div class="relative flex justify-center items-center bg-gray-200/20 lg:h-138.5 md:h-96 h-60 w-full object-cover">
         @foreach ( $bannerTop as $bt )
             <img src="{{ asset('storage/'.$bt->gambar) }}" alt="" class="w-full h-full">
             
         @endforeach
-        <div class="flex flex-col gap-1 absolute justify-center items-center h-[88%] w-[64%] md:w-304 lg:w-304.75 rounded-2xl">
+        <div class="flex flex-col gap-1 absolute justify-center items-center lg:h-[88%] md:h-[88%] h-[78%] lg:w-304.75 md:w-304 w-[80%] rounded-2xl">
             <div class="swiper w-full h-full border border-white/20 rounded-2xl">
                 <div class="swiper-wrapper">
                     @foreach ( $slideImage as $sie)
