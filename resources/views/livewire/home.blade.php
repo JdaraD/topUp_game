@@ -28,19 +28,19 @@
             </div> 
         </div>
     </div>
-    <div class="flex flex-col justify-center gap-4 items-center h-auto">
+    <div class="flex flex-col justify-center gap-4 lg:mx-0 md:mx-0 mx-2 items-center h-auto">
         <div class="col-span-full flex flex-col gap-0.5 w-full h-full justify-start">
-            <p class="text-white text-md font-semibold">🔥POPULER SEKARANG!</p>
-            <p class="pl-4 text-white text-xs">Berikut adalah beberapa produk yang paling populer saat ini.</p>
+            <p class="text-white lg:text-md md:text-md text-sm font-semibold">🔥POPULER SEKARANG!</p>
+            <p class="pl-4 text-white lg:text-xs md:text-xs text-[10px]">Berikut adalah beberapa produk yang paling populer saat ini.</p>
         </div>
-        <div class="grid grid-cols-3 gap-4">
+        <div class="grid lg:grid-cols-3 md:grid-cols-3 grid-cols-2 lg:gap-4 md:gap-4 gap-2">
             @for ($f = 0; $f < 7; $f++)
-                <a href="" class="flex group bg-[#76b4d9]/60 h-24 w-99 rounded-md cursor-pointer border-2 border-transparent hover:border-[#a58c6f]/90 overflow-hidden">
+                <a href="#" class="flex group bg-[#76b4d9]/60 lg:h-24 md:h-24 h-20.5 lg:w-99 md:w-99 w-44.5 rounded-md cursor-pointer border-2 border-transparent hover:border-[#a58c6f]/90 overflow-hidden">
                     <div class="flex flex-row p-2 gap-2 justify-center items-center">
-                        <img src="{{ asset('image/cover.png') }}" alt="" class="group-hover:scale-105 delay-50 ease-in duration-100 h-20 w-20 rounded-md object-cover transition-transform">
+                        <img src="{{ asset('image/cover.png') }}" alt="Icon Game" class="group-hover:scale-105 delay-50 ease-in duration-100 lg:h-20 md:h-20 h-17 lg:w-20 md:w-20 w-17 rounded-md object-cover transition-transform">
                         <div class="flex flex-col gap-1">
-                            <p class="text-white text-md">PUBG Mobile</p>
-                            <p class="text-white text-xs">Tencent Games</p>
+                            <p class="text-white lg:text-md md:text-md text-sm">PUBG Mobile</p>
+                            <p class="text-white lg:text-xs md:text-xs text-[10px]">Tencent Games</p>
                         </div>
                     </div>
                 </a>
