@@ -47,17 +47,19 @@
             @endfor
         </div>
     </div>
-    <div class="flex flex-col justify-center gap-8 items-center h-auto">
-        <div class="col-span-full flex gap-4 w-full h-full justify-start">
-            <li class="flex rounded-md bg-[#373b3f] py-2 px-2 active:bg-[#a58c6f] text-white text-xs cursor-pointer">Top Up Games</li>
-            <li class="flex rounded-md bg-[#373b3f] py-2 px-2 active:bg-[#a58c6f] text-white text-xs cursor-pointer">Joki MLBB</li>
-            <li class="flex rounded-md bg-[#373b3f] py-2 px-2 active:bg-[#a58c6f] text-white text-xs cursor-pointer">Joki HOK</li>
-            <li class="flex rounded-md bg-[#373b3f] py-2 px-2 active:bg-[#a58c6f] text-white text-xs cursor-pointer">Top Up via LINK</li>
-            <li class="flex rounded-md bg-[#373b3f] py-2 px-2 active:bg-[#a58c6f] text-white text-xs cursor-pointer">Pulsa & Data</li>
-            <li class="flex rounded-md bg-[#373b3f] py-2 px-2 active:bg-[#a58c6f] text-white text-xs cursor-pointer">Voucher</li>
-            <li class="flex rounded-md bg-[#373b3f] py-2 px-2 active:bg-[#a58c6f] text-white text-xs cursor-pointer">Entertaiment</li>
-            <li class="flex rounded-md bg-[#373b3f] py-2 px-2 active:bg-[#a58c6f] text-white text-xs cursor-pointer">Tagihan</li>
-        </div>
+    <div class="flex flex-col justify-center gap-8 items-center h-auto lg:mx-0 md:mx-0 mx-2">
+
+        <ul class="col-span-full flex flex-wrap lg:gap-4 md:gap-4 gap-2 w-full h-full justify-start">
+            <li class="flex rounded-md bg-[#373b3f] py-2 px-2 active:bg-[#a58c6f] text-white lg:text-xs md:text-xs text-[10px] cursor-pointer">Top Up Games</li>
+            <li class="flex rounded-md bg-[#373b3f] py-2 px-2 active:bg-[#a58c6f] text-white lg:text-xs md:text-xs text-[10px] cursor-pointer">Joki MLBB</li>
+            <li class="flex rounded-md bg-[#373b3f] py-2 px-2 active:bg-[#a58c6f] text-white lg:text-xs md:text-xs text-[10px] cursor-pointer">Joki HOK</li>
+            <li class="flex rounded-md bg-[#373b3f] py-2 px-2 active:bg-[#a58c6f] text-white lg:text-xs md:text-xs text-[10px] cursor-pointer">Top Up via LINK</li>
+            <li class="flex rounded-md bg-[#373b3f] py-2 px-2 active:bg-[#a58c6f] text-white lg:text-xs md:text-xs text-[10px] cursor-pointer">Pulsa & Data</li>
+            <li class="flex rounded-md bg-[#373b3f] py-2 px-2 active:bg-[#a58c6f] text-white lg:text-xs md:text-xs text-[10px] cursor-pointer">Voucher</li>
+            <li class="flex rounded-md bg-[#373b3f] py-2 px-2 active:bg-[#a58c6f] text-white lg:text-xs md:text-xs text-[10px] cursor-pointer">Entertaiment</li>
+            <li class="flex rounded-md bg-[#373b3f] py-2 px-2 active:bg-[#a58c6f] text-white lg:text-xs md:text-xs text-[10px] cursor-pointer">Tagihan</li>
+        </ul>
+
         <div class="grid grid-cols-6 h-auto items-center gap-6 w-full">
             @foreach ( $games as $game )
                 
@@ -82,7 +84,7 @@
 
         </div>
     </div>
-    <div class="flex w-full h-70">
+    <div class="flex w-full lg:h-70 md:h-52 h-16">
         @if (file_exists(public_path('image/bgS.png')))
             <img src="{{ asset('image/bgS.png') }}" alt="" class="w-full h-full object-cover">  
             
