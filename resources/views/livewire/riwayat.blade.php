@@ -1,5 +1,5 @@
 <div class="flex flex-col grow gap-4 justify-center items-center w-full h-full lg:mt-27.5 md:mt-27.5 mt-20 select-none">
-    <h1 class="text-white lg:text-xl md:text-xl text-md font-bold mt-2">Riwayat Pembelian</h1>
+    <h1 class="text-white lg:text-xl md:text-xl text-md font-bold lg:mt-4 md:mt-4 mt-2">Riwayat Pembelian</h1>
 
     <div class="flex h-full lg:w-[80%] md:w-[80%] w-[96%] lg:my-8 md:my-8 my-4">
         <table class="w-full border border-amber-200/40 rounded-lg overflow-hidden">
