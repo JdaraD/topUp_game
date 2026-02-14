@@ -60,10 +60,11 @@
             <li class="flex rounded-md bg-[#373b3f] py-2 px-2 active:bg-[#a58c6f] text-white lg:text-xs md:text-xs text-[10px] cursor-pointer">Tagihan</li>
         </ul>
 
-        <div class="grid grid-cols-6 h-auto items-center gap-6 w-full">
+        <div class="grid lg:grid-cols-6 md:grid-cols-4 grid-cols-3 h-auto items-center lg:gap-6 md:gap-4 gap-2 w-full">
+                
             @foreach ( $games as $game )
                 
-                <a href="{{ route('top-up', $game->id) }}" class="relative group h-70.5 w-47 rounded-md hover:border-2 hover:border-[#a58c6f]/90 transition delay-50 duration-100 ease-in hover:scale-105 cursor-pointer">
+                <a href="{{ route('top-up', $game->id) }}" class="relative group lg:h-70.5 md:h-70.5 h-40 lg:w-47 md:w-47 w-28 rounded-md hover:border-2 hover:border-[#a58c6f]/90 transition delay-50 duration-100 ease-in hover:scale-105 cursor-pointer">
                     <img src="{{ asset('storage/' .$game->gambar) }}" alt="" class="w-full h-full object-cover rounded-md">
 
                     <div class="absolute group-hover:opacity-100 transition-opacity duration-300 top-0 left-0 right-0 w-full h-full opacity-0 rounded-md bg-gray-900/60">
