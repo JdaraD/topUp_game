@@ -1,4 +1,4 @@
-<div class="flex flex-col grow gap-4 justify-center items-center w-full h-full lg:mt-27.5 md:mt-27.5 mt-20 select-none">
+<div class="flex flex-col grow gap-4 justify-center items-center w-full h-full lg:mt-27.5 md:mt-27.5 mt-17 select-none">
     <div class="relative flex justify-center items-center bg-gray-200/20 lg:h-138.5 md:h-96 h-60 w-full object-cover">
         @foreach ( $bannerTop as $bt )
             <img src="{{ asset('storage/'.$bt->gambar) }}" alt="" class="w-full h-full">

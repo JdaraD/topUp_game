@@ -19,9 +19,10 @@
             </div>
         </div>
             {{-- Mobile navbar --}}
-        <div class="bg-amber-300 h-9 w-14 block lg:hidden md:hidden rounded-md">
-            <p class="text-black">test</p>
-        </div>
+        <button name="Hamburger" onclick="openHamburger()" class="border-[#8e7a5c]/10 hover:bg-amber-50/10 transition h-9 w-14 block lg:hidden md:hidden border rounded-md cursor-pointer">
+            <span id="icon-open" class="text-white">☰</span>
+            <span id="icon-close" class="hidden text-white">✕</span>
+        </button>
     </div>
 
     <div class="border-b border-white/10 w-full">
@@ -59,6 +60,31 @@
                     <a href="{{ route('register') }}" class="lg:text-sm md:text-sm text-xs font-medium text-white">Daftar</a>
                 </div>
             </div>
+        </div>
+    </div>
+
+    {{-- mobile menu --}}
+    <div id="Hamburger" class="hidden w-full h-full">
+        <div class="relative flex justify-center items-center w-full h-full">
+            <div class="flex flex-col w-[90%] my-2.5 gap-1">
+                <a href="{{ route('home') }}" class="flex items-center gap-2 cursor-pointer px-2.5 py-2.5 hover:border border-yellow-600/80 w-full h-full rounded-md">
+                    <img src="{{ asset('image/bag.png') }}" alt="" class="lg:h-4.5 md:h-4 h-3.5 lg:w-4.5 md:w-4 w-3.5">
+                    <p class="lg:text-sm md:text-sm text-xs font-medium text-white">Topup</p>
+                </a>
+                <a href="{{ route('riwayat') }}" class="flex items-center gap-2 cursor-pointer px-2.5 py-2.5 hover:border border-yellow-600/80 w-full h-full rounded-md">
+                    <img src="{{ asset('image/tk.png') }}" alt="" class="lg:h-4.5 md:h-4 h-3.5 lg:w-4.5 md:w-4 w-3.5">
+                    <p class="lg:text-sm md:text-sm text-xs font-medium text-white">Cek Transaksi</p>
+                </a>
+                <div class="flex items-center gap-2 cursor-pointer px-2.5 py-2.5 hover:border border-yellow-600/80 w-full h-full rounded-md">
+                    <img src="{{ asset('image/ld.png') }}" alt="" class="lg:h-4.5 md:h-4 h-3.5 lg:w-4.5 md:w-4 w-3.5">
+                    <p class="lg:text-sm md:text-sm text-xs font-medium text-white">Leaderboard</p>
+                </div>
+                <div class="flex items-center gap-2 cursor-pointer px-2.5 py-2.5 hover:border border-yellow-600/80 w-full h-full rounded-md">
+                    <img src="{{ asset('image/tb.png') }}" alt="" class="lg:h-4.5 md:h-4 h-3.5 lg:w-4.5 md:w-4 w-3.5">
+                    <p class="lg:text-sm md:text-sm text-xs font-medium text-white">Kalkulator</p>
+                </div>
+            </div>
+
         </div>
     </div>
 
