@@ -13,7 +13,7 @@
                     </div>
                 </div>
 
-                <div class="flex flex-col relative justify-center gap-5 h-full w-fit">
+                <div class="flex flex-col relative justify-center lg:gap-5 md:gap-5 gap-3 h-full w-fit">
                     <div class="flex flex-col gap-2">
                         <p class="text-white lg:text-lg md:text-lg text-sm">{{ $games->name }}</p>
                         <p class="text-white lg:text-sm md:text-sm text-xs">{{ $games->publisher }}</p>
@@ -66,7 +66,7 @@
                         </div>
                     </div>
 
-                    <div class="flex flex-col h-auto w-full lg:col-span-2 md:col-span-2 col-span-3 shadow-lg">
+                    <div class="flex flex-col h-full w-full lg:col-span-2 md:col-span-2 col-span-3 shadow-lg">
                         <div class="flex h-10 min-h-10 shrink-0 w-full items-center bg-[#5f666d] rounded-t-lg">
                             <div class="flex h-full w-10 shrink-0 justify-center items-center bg-[#a58c6f] rounded-tl-lg">
                                 <p class="lg:text-base md:text-base text-xs text-white">2</p>
@@ -80,11 +80,11 @@
                             <div class="flex flex-col h-full w-full gap-2">
                                 <p class="text-sm text-white px-4">{{ $name }}✨</p>
                                 
-                                <div class="flex flex-wrap items-center px-4 gap-4">
+                                <div class="flex flex-wrap h-full w-full items-center px-4 lg:gap-4 md:gap-4 gap-2">
                                     @foreach ($prices as $price )
                                     
-                                        <div wire:click="selectPrice({{ $price->id }})" @class(['ring-2 ring-amber-400' => $selectedPrice?->id === $price->id, 'flex flex-col rounded-lg w-61 h-full bg-[#5f666d] shadow-lg cursor-pointer transition' ]) class="flex flex-col rounded-lg w-61 h-full bg-[#5f666d] shadow-lg cursor-pointer">
-                                            <div class="flex flex-col justify-center w-full h-full px-2 gap-1">
+                                        <div wire:click="selectPrice({{ $price->id }})" @class(['ring-2 ring-amber-400' => $selectedPrice?->id === $price->id, 'flex flex-col rounded-lg lg:w-61 md:w-61 w-41.5 h-auto bg-[#5f666d] shadow-lg cursor-pointer transition' ]) class="flex flex-col rounded-lg lg:w-61 md:w-61 w-41.5 h-auto bg-[#5f666d] shadow-lg cursor-pointer">
+                                            <div class="flex flex-col justify-center w-auto h-auto px-2 gap-1">
                                                 <p class="text-sm text-white">{{ $price->value }} {{ $price->iconsgames->name }}</p>
                                                 <div class="flex gap-2 items-center">
                                                     @if( $price->iconsgames)
@@ -196,7 +196,7 @@
                 </div>
                 
                 <div class="lg:col-span-1 md:col-span-1 col-span-3">
-                    <div class="sticky flex flex-col gap-4 top-32">
+                    <div class="lg:sticky md:sticky absolute flex flex-col gap-4 lg:top-32 md:top-32 top-0 lg:bottom-0 md:bottom-0 bottom-0">
                         <div class="flex flex-col bg-[#444444] gap-2 h-32 w-full rounded-lg p-4">
                             <p class="text-white font-semibold">Ulasan dan rating</p>
                             <div class="flex gap-0.5">
@@ -282,7 +282,7 @@
             <div class="flex flex-col h-auto w-full col-span-3">
                 <div class="flex h-10 min-h-10 items-center bg-[#5f666d] rounded-t-lg shadow-lg">
                     <div class="flex h-full w-10 justify-center items-center bg-[#a58c6f] rounded-tl-lg"></div>
-                    <p class="text-sm text-white pl-4">
+                    <p class="lg:text-sm md:text-sm text-xs text-white pl-4">
                         Deskripsi {{ $games->name }}
                     </p>
                 </div>
@@ -293,14 +293,14 @@
 
                         {{-- PARAGRAPH --}}
                         @if ($block['type'] === 'paragraph')
-                            <p class="text-sm text-white">
+                            <p class="lg:text-sm md:text-sm text-xs text-white">
                                 {{ $block['content'][0]['text'] ?? '' }}
                             </p>
                         @endif
 
                         {{-- ORDERED LIST --}}
                         @if ($block['type'] === 'orderedList')
-                            <ol class="list-decimal list-inside space-y-2 text-sm text-white">
+                            <ol class="list-decimal list-inside space-y-2 lg:text-sm md:text-sm text-xs text-white">
                                 @foreach ($block['content'] as $item)
                                     <li>
                                         {{ $item['content'][0]['content'][0]['text'] ?? '' }}
@@ -319,7 +319,7 @@
 
                 <div class="hs-accordion bg-[#2f3133] px-4 py-3 rounded-md flex flex-col justify-center" id="hs-basic-with-arrow-heading-one">
                     <button class="flex justify-between hs-accordion-toggle items-center gap-x-3 w-full font-semibold text-start text-gray-800 hover:text-gray-500 focus:outline-hidden focus:text-gray-500 rounded-lg disabled:opacity-50 disabled:pointer-events-none dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400" aria-expanded="false" aria-controls="hs-basic-with-arrow-collapse-one">
-                        <p class="text-sm text-white">Bagaimana cara top up di Oura Store?</p>
+                        <p class="lg:text-sm md:text-sm text-xs text-white">Bagaimana cara top up di Oura Store?</p>
                         <svg class="hs-accordion-active:hidden block size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="m6 9 6 6 6-6"></path>
                         </svg>
@@ -337,7 +337,7 @@
 
                 <div class="hs-accordion bg-[#2f3133] px-4 py-3 rounded-md flex flex-col justify-center" id="hs-basic-with-arrow-heading-two">
                     <button class="flex justify-between hs-accordion-toggle items-center gap-x-3 w-full font-semibold text-start text-gray-800 hover:text-gray-500 focus:outline-hidden focus:text-gray-500 rounded-lg disabled:opacity-50 disabled:pointer-events-none dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400" aria-expanded="false" aria-controls="hs-basic-with-arrow-collapse-two">
-                        <p class="text-sm text-white">Metode pembayaran apa saja yang ada di Oura Store?</p>
+                        <p class="lg:text-sm md:text-sm text-xs text-white">Metode pembayaran apa saja yang ada di Oura Store?</p>
                         <svg class="hs-accordion-active:hidden block size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="m6 9 6 6 6-6"></path>
                         </svg>
@@ -354,7 +354,7 @@
 
                 <div class="hs-accordion bg-[#2f3133] px-4 py-3 rounded-md flex flex-col justify-center" id="hs-basic-with-arrow-heading-three">
                     <button class="flex justify-between hs-accordion-toggle items-center gap-x-3 w-full font-semibold text-start text-gray-800 hover:text-gray-500 focus:outline-hidden focus:text-gray-500 rounded-lg disabled:opacity-50 disabled:pointer-events-none dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400" aria-expanded="false" aria-controls="hs-basic-with-arrow-collapse-three">
-                        <p class="text-sm text-white">Mengapa harus top up di Oura Store?</p>
+                        <p class="lg:text-sm md:text-sm text-xs text-white">Mengapa harus top up di Oura Store?</p>
                         <svg class="hs-accordion-active:hidden block size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="m6 9 6 6 6-6"></path>
                         </svg>
@@ -371,7 +371,7 @@
 
                 <div class="hs-accordion bg-[#2f3133] px-4 py-3 rounded-md flex flex-col justify-center" id="hs-basic-with-arrow-heading-four">
                     <button class="flex justify-between hs-accordion-toggle items-center gap-x-3 w-full font-semibold text-start text-gray-800 hover:text-gray-500 focus:outline-hidden focus:text-gray-500 rounded-lg disabled:opacity-50 disabled:pointer-events-none dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400" aria-expanded="false" aria-controls="hs-basic-with-arrow-collapse-four">
-                        <p class="text-sm text-white">Berapa lama proses top up di Oura Store?</p>
+                        <p class="lg:text-sm md:text-sm text-xs text-white">Berapa lama proses top up di Oura Store?</p>
                         <svg class="hs-accordion-active:hidden block size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="m6 9 6 6 6-6"></path>
                         </svg>
@@ -388,7 +388,7 @@
 
                 <div class="hs-accordion bg-[#2f3133] px-4 py-3 rounded-md flex flex-col justify-center" id="hs-basic-with-arrow-heading-five">
                     <button class="flex justify-between hs-accordion-toggle items-center gap-x-3 w-full font-semibold text-start text-gray-800 hover:text-gray-500 focus:outline-hidden focus:text-gray-500 rounded-lg disabled:opacity-50 disabled:pointer-events-none dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400" aria-expanded="false" aria-controls="hs-basic-with-arrow-collapse-five">
-                        <p class="text-sm text-white">Apakah top up di Oura Store aman?</p>
+                        <p class="lg:text-sm md:text-sm text-xs text-white">Apakah top up di Oura Store aman?</p>
                         <svg class="hs-accordion-active:hidden block size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="m6 9 6 6 6-6"></path>
                         </svg>
@@ -405,7 +405,7 @@
 
                 <div class="hs-accordion bg-[#2f3133] px-4 py-3 rounded-md flex flex-col justify-center" id="hs-basic-with-arrow-heading-six">
                     <button class="flex justify-between hs-accordion-toggle items-center gap-x-3 w-full font-semibold text-start text-gray-800 hover:text-gray-500 focus:outline-hidden focus:text-gray-500 rounded-lg disabled:opacity-50 disabled:pointer-events-none dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400" aria-expanded="false" aria-controls="hs-basic-with-arrow-collapse-six">
-                        <p class="text-sm text-white">Bagaimana cara cek transaksi di Oura Store?</p>
+                        <p class="lg:text-sm md:text-sm text-xs text-white">Bagaimana cara cek transaksi di Oura Store?</p>
                         <svg class="hs-accordion-active:hidden block size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="m6 9 6 6 6-6"></path>
                         </svg>
@@ -422,7 +422,7 @@
 
                 <div class="hs-accordion bg-[#2f3133] px-4 py-3 rounded-md flex flex-col justify-center" id="hs-basic-with-arrow-heading-seven">
                     <button class="flex justify-between hs-accordion-toggle items-center gap-x-3 w-full font-semibold text-start text-gray-800 hover:text-gray-500 focus:outline-hidden focus:text-gray-500 rounded-lg disabled:opacity-50 disabled:pointer-events-none dark:hs-accordion-active:text-blue-500 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400" aria-expanded="false" aria-controls="hs-basic-with-arrow-collapse-seven">
-                        <p class="text-sm text-white">Apakah ada promo di Oura Store?</p>
+                        <p class="lg:text-sm md:text-sm text-xs text-white">Apakah ada promo di Oura Store?</p>
                         <svg class="hs-accordion-active:hidden block size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="m6 9 6 6 6-6"></path>
                         </svg>
@@ -439,7 +439,7 @@
 
                 <div class="hs-accordion bg-[#2f3133] px-4 py-3 rounded-md flex flex-col justify-center" id="hs-basic-with-arrow-heading-eight">
                     <button class="flex justify-between hs-accordion-toggle items-center gap-x-3 w-full font-semibold text-start text-gray-800 hover:text-gray-500 focus:outline-hidden focus:text-gray-500 rounded-lg disabled:opacity-50 disabled:pointer-events-none dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400" aria-expanded="false" aria-controls="hs-basic-with-arrow-collapse-eight">
-                        <p class="text-sm text-white">Jika ada kendala bagaimana cara chat Costumer Service Oura Store?</p>
+                        <p class="lg:text-sm md:text-sm text-xs text-white">Jika ada kendala bagaimana cara chat Costumer Service Oura Store?</p>
                         <svg class="hs-accordion-active:hidden block size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="m6 9 6 6 6-6"></path>
                         </svg>
@@ -456,7 +456,7 @@
 
                 <div class="hs-accordion bg-[#2f3133] px-4 py-3 rounded-md flex flex-col justify-center" id="hs-basic-with-arrow-heading-nine">
                     <button class="flex justify-between hs-accordion-toggle items-center gap-x-3 w-full font-semibold text-start text-gray-800 hover:text-gray-500 focus:outline-hidden focus:text-gray-500 rounded-lg disabled:opacity-50 disabled:pointer-events-none dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400" aria-expanded="false" aria-controls="hs-basic-with-arrow-collapse-nine">
-                        <p class="text-sm text-white">Berapa batas pembelian weekly diamond pass?</p>
+                        <p class="lg:text-sm md:text-sm text-xs text-white">Berapa batas pembelian weekly diamond pass?</p>
                         <svg class="hs-accordion-active:hidden block size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="m6 9 6 6 6-6"></path>
                         </svg>
@@ -473,7 +473,7 @@
 
                 <div class="hs-accordion bg-[#2f3133] px-4 py-3 rounded-md flex flex-col justify-center" id="hs-basic-with-arrow-heading-ten">
                     <button class="flex justify-between hs-accordion-toggle items-center gap-x-3 w-full font-semibold text-start text-gray-800 hover:text-gray-500 focus:outline-hidden focus:text-gray-500 rounded-lg disabled:opacity-50 disabled:pointer-events-none dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400" aria-expanded="false" aria-controls="hs-basic-with-arrow-collapse-ten">
-                        <p class="text-sm text-white">Apa penjelasan diamond yang dalam kurung misalnya: 277 (250+27) Diamonds?</p>
+                        <p class="lg:text-sm md:text-sm text-xs text-white">Apa penjelasan diamond yang dalam kurung misalnya: 277 (250+27) Diamonds?</p>
                         <svg class="hs-accordion-active:hidden block size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="m6 9 6 6 6-6"></path>
                         </svg>
@@ -490,7 +490,7 @@
 
                 <div class="hs-accordion bg-[#2f3133] px-4 py-3 rounded-md flex flex-col justify-center" id="hs-basic-with-arrow-heading-eleven">
                     <button class="flex justify-between hs-accordion-toggle items-center gap-x-3 w-full font-semibold text-start text-gray-800 hover:text-gray-500 focus:outline-hidden focus:text-gray-500 rounded-lg disabled:opacity-50 disabled:pointer-events-none dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400" aria-expanded="false" aria-controls="hs-basic-with-arrow-collapse-eleven">
-                        <p class="text-sm text-white">Bagaimana cara menyelesaikan misi event minimal top up 250 diamond?</p>
+                        <p class="lg:text-sm md:text-sm text-xs text-white">Bagaimana cara menyelesaikan misi event minimal top up 250 diamond?</p>
                         <svg class="hs-accordion-active:hidden block size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="m6 9 6 6 6-6"></path>
                         </svg>
