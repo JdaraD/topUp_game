@@ -1,6 +1,6 @@
 <div class="flex flex-col grow gap-4 justify-center items-center w-full h-full lg:mt-27.5 md:mt-27.5 mt-17 select-none">
     <div class="flex flex-col w-full h-full justify-center items-center">
-        <div class="flex justify-center items-center bg-gray-200/20 lg:h-91 md:h-91 h-72 w-full object-cover">
+        <div class="flex justify-center items-center bg-gray-200/20 lg:h-91 md:h-91 h-64 w-full object-cover">
             <img src="{{ asset('storage/'. $games->banner) }}" alt="" class="w-full h-full object-cover">
         </div>
 
@@ -43,35 +43,35 @@
             </div>
         </div>
 
-        <div class="grid grid-cols-3 relative my-8 gap-8 h-auto w-[80%]">
+        <div class="grid grid-cols-3 relative lg:my-8 md:my-8 my-4 lg:gap-8 md:gap-8 gap-2 h-auto lg:w-[80%] md:w-[80%] w-[96%]">
             <form wire:submit.prevent="submit" class="col-span-3 grid grid-cols-3 relative gap-4 h-auto w-full">
-                <div class="col-span-2 gap-8 flex flex-col h-auto w-full">
+                <div class="lg:col-span-2 md:col-span-2 col-span-3 lg:gap-8 md:gap-8 gap-2 flex flex-col h-auto w-full">
 
-                    <div class="flex flex-col h-auto w-full col-span-2 shadow-lg">
+                    <div class="flex flex-col h-auto w-full lg:col-span-2 md:col-span-2 col-span-3 shadow-lg">
                         <div class="flex h-10 w-full items-center bg-[#5f666d] rounded-t-lg">
                             <div class="flex h-full w-10 justify-center items-center bg-[#a58c6f] rounded-tl-lg">
-                                <p class="text-md text-white">1</p>
+                                <p class="lg:text-base md:text-base text-sm text-white">1</p>
                             </div>
-                            <p class="text-sm text-white pl-4">Masukkan Data Akun</p>
+                            <p class="lg:text-sm md:text-sm text-xs text-white pl-4">Masukkan Data Akun</p>
                         </div>
                         <div class="flex flex-row justify-center items-center px-4 pb-4 pt-5 gap-4 h-fit w-full bg-[#434649] rounded-b-lg">
                             <div class="flex flex-col w-full">
-                                <label for="Mid" class="text-white text-sm">ID</label>
-                                <input type="text" wire:model="Mid" id="Mid" class="w-full h-8.5 bg-[#5f666d] rounded-md mt-2.5 px-3.5 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Masukkan ID Akun Anda">
+                                <label for="Mid" class="text-white lg:text-sm md:text-sm text-xs">ID</label>
+                                <input type="text" wire:model="Mid" id="Mid" class="w-full h-8.5 lg:text-sm md:text-sm text-xs bg-[#5f666d] rounded-md mt-2.5 px-3.5 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Masukkan ID Akun Anda">
                             </div>
                             <div class="flex flex-col w-full">
-                                <label for="server" class="text-white text-sm">server</label>
-                                <input type="text" wire:model="server" id="server" class="w-full h-8.5 bg-[#5f666d] rounded-md mt-2.5 px-3.5 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Masukkan server">
+                                <label for="server" class="text-white lg:text-sm md:text-sm text-xs">server</label>
+                                <input type="text" wire:model="server" id="server" class="w-full h-8.5 lg:text-sm md:text-sm text-xs lg:placeholder:text-sm md:placeholder:text-sm placeholder:text-xs bg-[#5f666d] rounded-md mt-2.5 px-3.5 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Masukkan server">
                             </div>
                         </div>
                     </div>
 
-                    <div class="flex flex-col h-auto w-full col-span-2 shadow-lg">
+                    <div class="flex flex-col h-auto w-full lg:col-span-2 md:col-span-2 col-span-3 shadow-lg">
                         <div class="flex h-10 min-h-10 shrink-0 w-full items-center bg-[#5f666d] rounded-t-lg">
                             <div class="flex h-full w-10 shrink-0 justify-center items-center bg-[#a58c6f] rounded-tl-lg">
-                                <p class="text-md text-white">2</p>
+                                <p class="lg:text-base md:text-base text-xs text-white">2</p>
                             </div>
-                            <p class="text-sm text-white pl-4">Pilih Nominal</p>
+                            <p class="lg:text-sm md:text-sm text-xs text-white pl-4">Pilih Nominal</p>
                         </div>
 
                         <div class="flex flex-col h-full w-full py-4 gap-2 bg-[#434649] rounded-b-lg">
@@ -90,7 +90,7 @@
                                                     @if( $price->iconsgames)
                                                     <img src="{{ asset('storage/'.$price->iconsgames->gambar) }}" alt="" class="h-10 w-10 object-cover">
                                                     @endif
-                                                    <p class="text-sm text-white">Rp {{ number_format($price->harga, 0, ',','.') }}</p>
+                                                    <p class="lg:text-sm md:text-sm text-xs text-white">Rp {{ number_format($price->harga, 0, ',','.') }}</p>
                                                 </div>
                                                 <div class="flex w-full justify-end">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon text-white icon-tabler icons-tabler-outline icon-tabler-info-circle">
@@ -112,18 +112,18 @@
                         </div>
                     </div>
 
-                    <div class="flex flex-col h-auto w-full col-span-2 shadow-lg">
+                    <div class="flex flex-col h-auto w-full lg:col-span-2 md:col-span-2 col-span-3 shadow-lg">
                         <div class="flex h-10 min-h-10 shrink-0 w-full items-center bg-[#5f666d] rounded-t-lg">
                             <div class="flex h-full w-10 shrink-0 justify-center items-center bg-[#a58c6f] rounded-tl-lg">
-                                <p class="text-md text-white">3</p>
+                                <p class="lg:text-base md:text-base text-xs text-white">3</p>
                             </div>
-                            <p class="text-sm text-white pl-4">Masukkan Jumlah Pembelian</p>
+                            <p class="lg:text-sm md:text-sm text-xs text-white pl-4">Masukkan Jumlah Pembelian</p>
                         </div>
                         <div class="flex flex-col h-fit w-full bg-[#434649] rounded-b-lg">
                 
                             <div class="flex justify-center items-center px-4 gap-4 my-4 h-fit w-full bg-[#434649] rounded-b-lg">
                                 <div class="flex justify-center w-full items-center">
-                                    <input type="text" wire:model.debounce.100ms="qty" inputmode="numeric" pattern="[0-9+]*" oninput="this.value = this.value.replace(/[^0-9+]/g, '')" id="Mid" class="w-full h-9 bg-[#5f666d] rounded-md px-3.5 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" min="1">
+                                    <input type="text" wire:model.debounce.100ms="qty" inputmode="numeric" pattern="[0-9+]*" oninput="this.value = this.value.replace(/[^0-9+]/g, '')" id="Mid" class="w-full h-9 bg-[#5f666d] lg:placeholder:text-sm md:placeholder:text-sm placeholder:text-xs lg:text-sm md:text-sm text-xs rounded-md px-3.5 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" min="1">
                                 </div>
                                 <div class="flex justify-center items-center gap-2">
                                     <button type="button" wire:click="tambah" @class(['flex justify-center items-center h-9 w-9 rounded-md cursor-pointer', 'bg-[#a58c6f] hover:opacity-80 cursor-pointer' => $qty < 3, 'bg-[#5f564b] cursor-not-allowed' => $qty >= 3,]) @disabled($qty > 3) >
@@ -138,23 +138,23 @@
                         </div>
                     </div>
 
-                    <div class="flex flex-col h-auto w-full col-span-2 shadow-lg">
+                    <div class="flex flex-col h-auto w-full lg:col-span-2 md:col-span-2 col-span-3 shadow-lg">
                         <div class="flex h-10 min-h-10 shrink-0 w-full items-center bg-[#5f666d] rounded-t-lg">
                             <div class="flex h-full w-10 shrink-0 justify-center items-center bg-[#a58c6f] rounded-tl-lg">
-                                <p class="text-md text-white">4</p>
+                                <p class="lg:text-base md:text-base text-xs text-white">4</p>
                             </div>
-                            <p class="text-sm text-white pl-4">Detail Kontak</p>
+                            <p class="lg:text-sm md:text-sm text-xs text-white pl-4">Detail Kontak</p>
                         </div>
                         <div class="flex flex-col h-full w-full bg-[#434649] rounded-b-lg">
                             <div class="flex flex-col h-full w-full py-3 px-4 gap-3">
                                 <div class="flex flex-col gap-1 w-full">
-                                    <label for="email" class="text-sm text-white">Email</label>
-                                    <input type="text" wire:model="email" id="email" class="flex w-full h-8.5 bg-[#5f666d] rounded-md px-3.5 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="example@gmail.com">
+                                    <label for="email" class="lg:text-sm md:text-sm text-xs text-white">Email</label>
+                                    <input type="text" wire:model="email" id="email" class="flex lg:placeholder:text-sm md:placeholder:text-sm placeholder:text-xs lg:text-sm md:text-sm text-xs w-full h-8.5 bg-[#5f666d] rounded-md px-3.5 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="example@gmail.com">
                                 </div>
 
                                 <div class="flex flex-col gap-1 w-full">
-                                    <label for="noWa" class="text-sm text-white">No. WhatsApp</label>
-                                    <input type="text" wire:model="noWa" id="noWa" inputmode="numeric" pattern="[0-9+]*" oninput="this.value = this.value.replace(/[^0-9+]/g, '')" class="w-full h-8.5 bg-[#5f666d] rounded-md px-3.5 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="087xxxxxxxx">
+                                    <label for="noWa" class="lg:text-sm md:text-sm text-xs text-white">No. WhatsApp</label>
+                                    <input type="text" wire:model="noWa" id="noWa" inputmode="numeric" pattern="[0-9+]*" oninput="this.value = this.value.replace(/[^0-9+]/g, '')" class="lg:placeholder:text-sm md:placeholder:text-sm placeholder:text-xs lg:text-sm md:text-sm text-xs w-full h-8.5 bg-[#5f666d] rounded-md px-3.5 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="087xxxxxxxx">
                                 </div>
 
                                 <div class="flex flex-col gap-1 w-full">
@@ -170,17 +170,17 @@
                         </div>
                     </div>
 
-                    <div class="flex flex-col h-auto w-full col-span-2 shadow-lg">
+                    <div class="flex flex-col h-auto w-full lg:col-span-2 md:col-span-2 col-span-3 shadow-lg">
                         <div class="flex h-10 min-h-10 shrink-0 w-full items-center bg-[#5f666d] rounded-t-lg">
                             <div class="flex h-full w-10 shrink-0 items-center justify-center bg-[#a58c6f] rounded-tl-lg">
-                                <p class="text-md leading-none text-white">5</p>
+                                <p class="lg:text-base md:text-base text-xs leading-none text-white">5</p>
                             </div>
-                            <p class="text-sm leading-none text-white pl-4">Kode Promo</p>
+                            <p class="lg:text-sm md:text-sm text-xs leading-none text-white pl-4">Kode Promo</p>
                         </div>
                         <div class="flex flex-col h-full w-full bg-[#434649] rounded-b-lg">
                             <div class="flex flex-col h-full w-full gap-4 py-4 px-4">
                                 <div class="flex flex-row gap-4 w-full">
-                                    <input type="text" wire:model.defer="voucherCode" id="Email" class="flex w-full h-8.5 bg-[#5f666d] rounded-md px-3.5 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" @disabled(!$selectedPrice) placeholder="ketik Kode Promo Kamu">
+                                    <input type="text" wire:model.defer="voucherCode" id="Email" class="flex lg:placeholder:text-sm md:placeholder:text-sm placeholder:text-xs w-full h-8.5 bg-[#5f666d] rounded-md px-3.5 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" @disabled(!$selectedPrice) placeholder="ketik Kode Promo Kamu">
                                     <button type="button" wire:click="applyDiskon" class="flex justify-center items-center bg-[#a58c6f] w-20.75 h-8 text-sm text-white rounded-md cursor-pointer" @disabled(!$selectedPrice)>Gunakan</button>
                                 </div>
                                 <a href="{{ route('voucher') }}" class="flex justify-center items-center bg-[#a58c6f] gap-2 w-52 h-8 rounded-md ">
@@ -195,7 +195,7 @@
 
                 </div>
                 
-                <div class="col-span-1">
+                <div class="lg:col-span-1 md:col-span-1 col-span-3">
                     <div class="sticky flex flex-col gap-4 top-32">
                         <div class="flex flex-col bg-[#444444] gap-2 h-32 w-full rounded-lg p-4">
                             <p class="text-white font-semibold">Ulasan dan rating</p>
@@ -273,6 +273,7 @@
                         </button>
                     </div>
                 </div>
+
             </form>
             @php
                 $content = $games->deskripsi['content'] ?? [];
@@ -509,7 +510,7 @@
         </div>
 
 
-        <div class="flex w-full h-70">
+        <div class="flex w-full lg:h-70 md:h-52 h-16">
             @if (file_exists(public_path('image/bgS.png')))
                 <img src="{{ asset('image/bgS.png') }}" alt="" class="w-full h-full object-cover">  
                 
