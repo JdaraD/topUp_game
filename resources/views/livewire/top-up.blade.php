@@ -196,80 +196,80 @@
                 </div>
                 
                 <div class="lg:col-span-1 md:col-span-1 col-span-3">
-                    <div class="lg:sticky md:sticky absolute flex flex-col gap-4 lg:top-32 md:top-32 top-0 lg:bottom-0 md:bottom-0 bottom-0">
-                        <div class="flex flex-col bg-[#444444] gap-2 h-32 w-full rounded-lg p-4">
-                            <p class="text-white font-semibold">Ulasan dan rating</p>
-                            <div class="flex gap-0.5">
-                                <p class="text-6xl text-white font-bold">4.99</p>
+                    <div class="lg:sticky md:sticky fixed flex flex-col lg:gap-4 md:gap-2 gap-0.5 lg:top-32 md:top-32 bottom-2 w-[94%] mx-2">
+                        <div class="flex flex-col bg-[#444444] gap-2 lg:h-32 md:h-28 h-20.5 w-full rounded-lg p-4">
+                            <p class="text-white font-semibold lg:text-base md:text-base text-xs">Ulasan dan rating</p>
+                            <div class="flex gap-2">
+                                <p class="lg:text-6xl md:text-5xl text-xl text-white font-bold">4.99</p>
                                 <div class="flex flex-col gap-1">
                                     <div class="flex gap-0.5">
                                         @for ($z = 1; $z <= 5; $z++)
-                                            <svg class="w-10 h-10 text-yellow-400 fill-current" viewBox="0 0 24 24">
+                                            <svg class="lg:w-10 md:w-8 w-4 lg:h-10 md:h-8 h-4 text-yellow-400 fill-current" viewBox="0 0 24 24">
                                                 <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
                                             </svg>
                                         @endfor
                                     </div>
 
-                                    <p class="text-xs text-white font-bold">Berdasarkan total 6.96jt rating</p>
+                                    <p class="lg:text-xs md:text-xs text-[10px] text-white font-bold">Berdasarkan total 6.96jt rating</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="flex bg-[#444444] h-17.75 w-full rounded-lg p-4 gap-2 items-center">
+                        <div class="flex bg-[#444444] lg:h-17.75 md:h-17.75 h-14 w-full rounded-lg p-4 gap-2 items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon text-white icon-tabler icons-tabler-outline icon-tabler-headphones">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 13m0 2a2 2 0 0 1 2 -2h1a2 2 0 0 1 2 2v3a2 2 0 0 1 -2 2h-1a2 2 0 0 1 -2 -2z" /><path d="M15 13m0 2a2 2 0 0 1 2 -2h1a2 2 0 0 1 2 2v3a2 2 0 0 1 -2 2h-1a2 2 0 0 1 -2 -2z" /><path d="M4 15v-3a8 8 0 0 1 16 0v3" />
                             </svg>
                             <div class="flex flex-col gap-0.5">
-                                <p class="text-white text-sm font-semibold">Butuh Bantuan?</p>
-                                <p class="text-xs text-white/80">Kamu bisa hubungi admin disini.</p>
+                                <p class="text-white lg:text-sm md:text-sm text-xs font-semibold">Butuh Bantuan?</p>
+                                <p class="lg:text-xs md:text-xs text-[10px] text-white/80">Kamu bisa hubungi admin disini.</p>
                             </div>
                         </div>
                         @if ($selectedPrice)
                             <div class="flex flex-col gap-2 justify-center items-center border border-dashed border-white/30 bg-[#212121] h-full w-full rounded-lg p-4">
                                 <div class="flex flex-row gap-2 w-full h-full">
                                     <div class="flex flex-col w-full gap-1">
-                                        <p class="text-sm text-white/80 capitalize">
+                                        <p class="lg:text-sm md:text-sm text-xs text-white/80 capitalize">
                                             Game : {{ $selectedPrice->game->name }}
                                         </p>
-                                        <p class="text-sm text-white/80 capitalize">
+                                        <p class="lg:text-sm md:text-sm text-xs text-white/80 capitalize">
                                             Event : {{ $selectedPrice->name }}
                                         </p>
-                                        <p class="text-sm text-white/80 capitalize">
+                                        <p class="lg:text-sm md:text-sm text-xs text-white/80 capitalize">
                                             Diskon : {{ $diskon ?? 0 }} %
                                         </p>
 
                                     </div>
                                     <div class="flex flex-col w-full gap-1">
-                                        <p class="text-sm text-white/80 capitalize">
+                                        <p class="lg:text-sm md:text-sm text-xs text-white/80 capitalize">
                                             coin : {{ $selectedPrice->value }} {{ $selectedPrice->iconsgames->name }}
                                         </p>
-                                        <p class="text-sm text-white/80 capitalize">
+                                        <p class="lg:text-sm md:text-sm text-xs text-white/80 capitalize">
                                             harga : Rp. {{ number_format($selectedPrice->harga, 0, ',', '.') }}
                                         </p>
                                         
-                                        <p class="text-sm text-white/80 capitalize">
+                                        <p class="lg:text-sm md:text-sm text-xs text-white/80 capitalize">
                                             Qty : {{ $qty }}
                                         </p>
 
                                     </div>
                                 </div>
                                 <div class="flex justify-center items-center w-full h-full bg-[#a58c6f] rounded-md px-2">
-                                    <p class="text-sm text-white capitalize">
+                                    <p class="lg:text-sm md:text-sm text-xs text-white capitalize">
                                         total = Rp. {{ number_format($this->total, 0, ',', '.') }}
                                     </p>
                                 </div>
                             </div>
                         @else
                             <div class="flex justify-center items-center border border-dashed border-white/30 bg-[#212121] h-24.75 w-full rounded-lg p-4">
-                                <p class="text-sm text-white/80">
+                                <p class="lg:text-sm md:text-sm text-xs text-white/80">
                                     Belum ada item produk yang dipilih.
                                 </p>
                             </div>
                             
                         @endif
                         
-                        <button wire:click="submit" class="flex gap-1 bg-[#a58c6f] hover:bg-[#8d7861] h-8 w-full rounded-lg justify-center items-center cursor-pointer transition">
-                            <img src="{{ asset('image/bag.png') }}" alt="" class="h-4.5 w-4.5">
-                            <p class="text-white font-semibold">Pesan Sekarang!</p>
+                        <button wire:click="submit" class="flex gap-1 bg-[#a58c6f] hover:bg-[#8d7861] lg:h-8 md:h-8 h-6 w-full rounded-lg justify-center items-center cursor-pointer transition">
+                            <img src="{{ asset('image/bag.png') }}" alt="" class="lg:h-4.5 md:h-4 h-4 lg:w-4.5 md:w-4 w-4">
+                            <p class="text-white font-semibold lg:text-base md:text-sm text-sm">Pesan Sekarang!</p>
                         </button>
                     </div>
                 </div>
