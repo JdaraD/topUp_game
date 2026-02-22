@@ -196,7 +196,7 @@
                 </div>
                 
                 <div class="lg:col-span-1 md:col-span-1 col-span-3">
-                    <div class="lg:sticky md:sticky fixed flex justify-center items-center flex-col lg:gap-4 md:gap-2 gap-0.5 lg:top-32 md:top-32 bottom-2 w-[96%] h-auto">
+                    <div id="Checkout" class="lg:block md:block hidden lg:sticky md:sticky fixed flex justify-center items-center flex-col lg:gap-4 md:gap-2 gap-0.5 lg:top-32 md:top-32 bottom-2 w-[96%] h-auto">
                         <div class="flex flex-col bg-[#444444] gap-2 lg:h-32 md:h-28 h-20.5 w-full rounded-lg p-4">
                             <p class="text-white font-semibold lg:text-base md:text-base text-xs">Ulasan dan rating</p>
                             <div class="flex gap-2">
@@ -271,6 +271,15 @@
                             <img src="{{ asset('image/bag.png') }}" alt="" class="lg:h-4.5 md:h-4 h-4 lg:w-4.5 md:w-4 w-4">
                             <p class="text-white font-semibold lg:text-base md:text-sm text-sm">Pesan Sekarang!</p>
                         </button>
+                    </div>
+                </div>
+
+                <div class="lg:hidden md:hidden block fixed bottom-8 right-6 z-50" onclick="toggleCheckout()">
+                    <div class="flex justify-center items-center bg-amber-600 rounded-full w-12 h-12 shadow-lg cursor-pointer">
+                        <span id="open-checkout" class="text-white">
+                            <svg fill="#ffffff" width="22px" height="20px" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg"><path d="M891 308H340q-6 0-10.5-4t-5.5-10l-32-164q-2-14-12-22.5T256 99H110q-15 0-25.5 10.5T74 135v5q0 15 10.5 26t25.5 11h102q4 0 7 2.5t4 6.5l102 544q3 19 20 28 8 5 18 5h17q-22 25-21 58.5t25 56.5 57.5 23 58-23 25.5-56.5-22-58.5h186q-23 25-21.5 58.5T693 878t57.5 23 57.5-23 25-56.5-21-58.5h17q15 0 25.5-10.5T865 727v-8q0-15-11-25.5T828 683H409q-6 0-10.5-4t-5.5-9l-10-54q-1-8 4-14t12-5h460q13 0 22.5-8t11.5-21l33-219q3-16-7.5-28.5T891 308z"/></svg>
+                        </span>
+                        <span id="close-checkout" class="hidden text-white">✕</span>
                     </div>
                 </div>
 
