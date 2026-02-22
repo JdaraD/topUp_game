@@ -196,7 +196,7 @@
                 </div>
                 
                 <div class="lg:col-span-1 md:col-span-1 col-span-3">
-                    <div class="lg:sticky md:sticky fixed flex flex-col lg:gap-4 md:gap-2 gap-0.5 lg:top-32 md:top-32 bottom-2 w-[94%] mx-2">
+                    <div class="lg:sticky md:sticky fixed flex justify-center items-center flex-col lg:gap-4 md:gap-2 gap-0.5 lg:top-32 md:top-32 bottom-2 w-[96%] h-auto">
                         <div class="flex flex-col bg-[#444444] gap-2 lg:h-32 md:h-28 h-20.5 w-full rounded-lg p-4">
                             <p class="text-white font-semibold lg:text-base md:text-base text-xs">Ulasan dan rating</p>
                             <div class="flex gap-2">
