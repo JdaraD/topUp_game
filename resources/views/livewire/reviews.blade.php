@@ -1,7 +1,7 @@
-<div class="flex flex-col grow gap-4 justify-center items-center w-full h-full mt-27.5 select-none">
-    <div class="flex flex-col gap-4 justify-center items-center h-auto w-[80%]">
+<div class="flex flex-col grow gap-4 justify-center items-center w-full h-full lg:mt-27.5 md:mt-27.5 mt-17 select-none">
+    <div class="flex flex-col gap-4 justify-center items-center h-auto lg:w-[80%] md:w-[80%] w-[96%]">
         <div class="flex flex-col gap-4 justify-center w-full h-full items-center my-24">
-            <div class="flex flex-col gap-2 justify-center items-center w-[50%] h-auto text-center">
+            <div class="flex flex-col gap-2 justify-center items-center lg:w-[50%] md:w-[50%] w-[96%] h-auto text-center">
                 <p class="text-[#b09873] text-lg font-bold">Ulasan</p>
                 <h2 class="text-white font-bold text-3xl">Terima kasih kepada semua pelanggan yang memberikan ulasan dan penilaian kepada kami.</h2>
 
@@ -9,9 +9,9 @@
 
         </div>
 
-        <div class="grid grid-cols-3 h-auto justify-center items-center place-items-center gap-6 w-full">
+        <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-2 h-auto justify-center items-center place-items-center lg:gap-6 md:gap-6 gap-4 w-full">
             @for ($i = 0; $i < 7; $i++)
-                <div class="flex w-98.75 justify-center items-center h-42 bg-[#212121] rounded-md shadow-lg">
+                <div class="flex lg:w-98.75 md:w-96 w-75 justify-center items-center h-42 bg-[#212121] rounded-md shadow-lg">
                     <div class="flex flex-col h-full justify-center w-full px-6 py-4 gap-2">
                         <p class="text-white text-sm font-bold">PUBG Mobile</p>
                         <p class="text-white text-sm">prosesnya cepet banget</p>
@@ -43,7 +43,7 @@
 
         </div>
     </div>
-    <div class="flex w-full h-70">
+    <div class="flex w-full lg:h-70 md:h-52 h-16">
         @if (file_exists(public_path('image/bgS.png')))
             <img src="{{ asset('image/bgS.png') }}" alt="" class="w-full h-full object-cover">  
             
