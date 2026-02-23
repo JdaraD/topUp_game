@@ -28,9 +28,9 @@ window.toggleCheckout = function() {
     // toggle posisi bottom
     if (button.classList.contains('bottom-8')) {
         button.classList.remove('bottom-8');
-        button.classList.add('bottom-[280px]');
+        button.classList.add('bottom-[290px]');
     } else {
-        button.classList.remove('bottom-[280px]');
+        button.classList.remove('bottom-[290px]');
         button.classList.add('bottom-8');
     }
 }

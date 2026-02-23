@@ -43,8 +43,8 @@
             </div>
         </div>
 
-        <div class="grid grid-cols-3 relative lg:my-8 md:my-8 my-4 lg:gap-8 md:gap-8 gap-2 h-auto lg:w-[80%] md:w-[80%] w-[96%]">
-            <form wire:submit.prevent="submit" class="col-span-3 grid grid-cols-3 relative gap-4 h-auto w-full">
+        <div class="grid grid-cols-3 relative lg:my-8 md:my-8 my-4 lg:gap-8 md:gap-8 gap-0.5 h-auto lg:w-[80%] md:w-[80%] w-[96%]">
+            <form wire:submit.prevent="submit" class="col-span-3 grid grid-cols-3 relative lg:gap-4 md:gap-4 gap-2 h-auto w-full">
                 <div class="lg:col-span-2 md:col-span-2 col-span-3 lg:gap-8 md:gap-8 gap-2 flex flex-col h-auto w-full">
 
                     <div class="flex flex-col h-auto w-full lg:col-span-2 md:col-span-2 col-span-3 shadow-lg">
@@ -195,8 +195,8 @@
 
                 </div>
                 
-                <div class="lg:col-span-1 md:col-span-1 col-span-3">
-                    <div id="Checkout" class="lg:block md:block hidden lg:sticky md:sticky fixed justify-center items-center flex-col lg:gap-4 md:gap-2 gap-1 lg:top-32 md:top-32 bottom-2 w-[96%] h-auto">
+                <div id="Checkout" class="lg:col-span-1 md:col-span-1 col-span-3 lg:block md:block hidden">
+                    <div id="Checkout" class="lg:sticky md:sticky fixed flex justify-center items-center flex-col lg:gap-4 md:gap-2 gap-1 lg:top-32 md:top-32 bottom-2 w-[96%] h-auto">
                         <div class="flex flex-col bg-[#444444] gap-2 lg:h-32 md:h-28 h-20.5 w-full rounded-lg p-4">
                             <p class="text-white font-semibold lg:text-base md:text-base text-xs">Ulasan dan rating</p>
                             <div class="flex gap-2">
