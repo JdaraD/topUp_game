@@ -19,8 +19,18 @@ window.toggleCheckout = function() {
     const checkout = document.getElementById('Checkout');
     const openCheckout = document.getElementById('open-checkout');
     const closeCheckout = document.getElementById('close-checkout');
+    const button = document.getElementById('checkout-button');
 
     checkout.classList.toggle('hidden');
     openCheckout.classList.toggle('hidden');
     closeCheckout.classList.toggle('hidden');
+
+    // toggle posisi bottom
+    if (button.classList.contains('bottom-8')) {
+        button.classList.remove('bottom-8');
+        button.classList.add('bottom-[280px]');
+    } else {
+        button.classList.remove('bottom-[280px]');
+        button.classList.add('bottom-8');
+    }
 }
